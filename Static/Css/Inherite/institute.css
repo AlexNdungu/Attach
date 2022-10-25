@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+
+/* The main section */
+
+.main_section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+/* The dash navigation */
+
+.dash_nav {
+    width: 80px;
+    height: 100%;
+    background-color: #474747;
+}
+
+/* The logo */
+
+.attach_logo {
+    width: 100%;
+    height: 80px;
+    background-color: aquamarine;
+}
+
+
+/* The navigation section */
+
+.the_nav_self {
+    width: 100%;
+    height: max-content;
+}
+
+/* The indivividual nav section */
+
+.ind_nav_sections {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highl_nav {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    /*background-color: #4b39ef;*/
+}
+
+.highl_nav:hover {
+    background-color: #4b39ef;
+}
+
+.highl_nav svg {
+    transform: scale(1.6);
+    fill: #d9d9d9;
+}
+
+
+/* Now the nav body */
+
+.dash_body {
+    width: calc(100% - 80px);
+    height: 100%;
+}
+
+/* The body head */
+
+.body_head {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #bbbbbb;
+}
+
+
+/* The welcome writtings */
+
+.wel_writtings {
+    width: max-content;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wel_writtings h2 {
+    font-size: 25px;
+    color: #474747;
+    margin-bottom: 5px;
+}
+
+.wel_writtings h5 {
+    font-size: 17px;
+    color: #8f8f8f;
+    margin-top: 5px;
+
+}
+
+
+/* The navigation head section */
+
+.head_nav {
+    width: max-content;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.insti_own_logo {
+    width: max-content;
+    height: 100%;
+}
+
+.insti_own_logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Notification icon */
+
+.notify,.logOut {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notify svg,.logOut svg {
+    fill: #474747;
+    transform: scale(1.3);
+}
+
+
+/* The body section where everthing is */
+.body_body {
+    width: 100%;
+    height: calc(100% - 120px);
+    background-color: aqua;
+}

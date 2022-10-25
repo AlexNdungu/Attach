@@ -1,0 +1,38 @@
+/* The choice section on modal */
+.createChoose {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.indChoice_org {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #474747;
+    transition: 0.1s ease-in;
+}
+
+.indChoice_org:hover {
+    background-color: #4B39EF;
+}
+
+.indChoice_org svg {
+    fill: #D9D9D9;
+    transform: scale(4);
+}
+
+/* Custom tooltip */
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+}
+
+#loginBtnNow {
+    display: none;
+}

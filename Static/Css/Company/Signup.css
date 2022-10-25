@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+/* The body of the signin section */
+
+.signBody {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* The sign in form */
+
+.formSign {
+    width: 50%;
+    height: 100%;
+}
+
+/* The company icon */
+
+.companyIcon {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.companyIcon svg {
+    transform: scale(3);
+    fill: #474747;
+}
+
+/* Company title */
+
+.companyTitle {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.companyTitle h1 {
+    color: #474747;
+    font-size: 35px;
+}
+
+
+/* Company sign in form */
+
+.companyForm {
+    margin-top: 30px;
+    width: 100%;
+    height: max-content;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* The modal */
+
+.memodal {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.meinnerModal {
+    position: relative;
+    width: 90%;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modalMessage {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.dotCust {
+    position: absolute;
+    right: 0;
+    width: 70px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* company email */
+
+.companyEmail {
+    width: 350px;
+    height: 45px;
+    margin: 15px;
+    border-bottom: 2px solid #474747;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.companyEmail:hover {
+    border-bottom: 2px solid #4b39ef;
+}
+
+.companyEmail:hover svg {
+    fill: #4b39ef;
+}
+
+.companyEmail:hover ::placeholder {
+    color: #4b39ef;
+}
+
+.companyEmail input {
+    width: 80%;
+    height: 100%;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #4b39ef;
+}
+
+.companyEmail input:focus::placeholder{
+    color: #4b39ef;
+}
+
+.companyEmail input:focus ~ svg {
+    fill: #4b39ef;
+}
+
+
+.companyEmail:has(input:focus) {
+    border-bottom: 2px solid #4b39ef;
+
+}
+
+.companyEmail svg {
+    fill: #474747;
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+
+
+/* Company controls */
+
+.companyControls {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.innerCompCont,.alread,.showPass,.dontMatch {
+    width: 350px;
+    height: max-content;
+}
+
+
+.btnDivs {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.btnDivs:hover {
+    background-color: #4b39ef;
+}
+
+.btnDivs:hover span {
+    color: #d9d9d9;
+}
+
+.innerCompCont{
+    margin-bottom: 10px;
+}
+
+.btnDivs span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #474747;
+}
+
+
+/* Already have an account */
+
+
+.alread {
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+.alread span {
+    font-size: 18px;
+    color: #474747;
+}
+
+
+
+/* Show passwords */
+
+.showPass {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #474747;
+}
+
+.showPass span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#showPass {
+    display: none;
+}
+
+
+/* Passwords dont match */
+.dontMatch {
+    height: 50px;
+    border-radius: 5px;
+    background-color: #d14343;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9d9d9;
+}
+
+
+/* Email error */
+
+.companyEmailCheck {
+    width: 350px;
+    height: 45px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#emError {
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9d9d9;
+    background-color: #d14343;
+}
+
+/* Custom checkbox */
+.svgShow {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 2px solid #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svgShow svg {
+    fill: #474747;
+    transform: scale(0.9);
+}
+
+/* The image section */
+
+.signIm {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background-color:blue;
+}
+
+
+/* the image div */
+.signImg {
+    width: 100%;
+    height: 100%;
+}
+
+.signImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* imgage cover */
+
+.imgCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.3);
+}
+
+
+/* The welcome head */
+
+.theWelcome {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theWelcome h1 {
+    font-size: 35px;
+    color: white;
+}

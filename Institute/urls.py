@@ -1,0 +1,34 @@
+from django.urls import path
+
+from . import views
+
+app_name = "Institute"
+
+
+urlpatterns = [
+
+    path('SignUp/', views.signUp, name='SignUpinstitute'),
+    #Here we sign in an institute
+    path('createInstitute/', views.createInstitute, name="createInstitute"),
+
+    path('geoCode/', views.geocode, name="geocode"),
+
+    #The dashboard section
+    path('dash/',views.dash, name="inheritInstituteDash"),
+
+    path('dashboard/',views.dashboard, name="instDashboard"),
+
+    path('profile/',views.profile, name="Iprofile"),
+
+    path('location/',views.location, name="Ilocation"),
+
+    path('departments/',views.department,name="departments"),
+
+    path('heads/',views.heads,name="heads"),
+
+    path('lectures/',views.lectures,name="lectures"),
+
+    path('students/',views.students,name="students"),
+
+    path('active/',views.activeStudents,name="actStuds"),
+]

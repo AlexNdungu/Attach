@@ -1,0 +1,23 @@
+.ind_nav_sections:nth-child(3) .highl_nav{
+    background: none;
+}
+
+.ind_nav_sections:nth-child(4) .highl_nav{
+    background: none;
+}
+
+.ind_nav_sections:nth-child(6) .highl_nav{
+    background-color: #4b39ef;
+
+}
+
+
+
+/* Start to show dep heads */
+
+.show_dep_head {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: #32772c;
+}

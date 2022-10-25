@@ -1,0 +1,196 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attachment :: Institute - Location</title>
+
+    <link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/profile.css' %}">
+    <link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/location.css' %}">
+
+
+    <!--Font family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--The ajax link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <!--Bootstrap css link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <!--The heading section-->
+    <div class="navigation">
+
+        <!--The actual navigation-->
+        <div class="act_nav">
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg width="24" height="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm6.75 9.25v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1zm0-6.75v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1zm6.75 0v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1z" fill-rule="nonzero"/></svg>
+
+            </div>
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.963 8.261c-.566-.585-.536-1.503.047-2.07l5.948-5.768c.291-.281.664-.423 1.035-.423.376 0 .75.146 1.035.44l-8.065 7.821zm-9.778 14.696c-.123.118-.185.277-.185.436 0 .333.271.607.607.607.152 0 .305-.057.423-.171l.999-.972-.845-.872-.999.972zm8.44-11.234l-3.419 3.314c-1.837 1.781-2.774 3.507-3.64 5.916l1.509 1.559c2.434-.79 4.187-1.673 6.024-3.455l3.418-3.315-3.892-4.019zm9.97-10.212l-8.806 8.54 4.436 4.579 8.806-8.538c.645-.626.969-1.458.969-2.291 0-2.784-3.373-4.261-5.405-2.29z"/></svg>
+                
+            </div>
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-3.148 0-6 2.553-6 5.702 0 4.682 4.783 5.177 6 12.298 1.217-7.121 6-7.616 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 16l-6.707-2.427-5.293 2.427-5.581-2.427-6.419 2.427 4-9 3.96-1.584c.38.516.741 1.08 1.061 1.729l-3.523 1.41-1.725 3.88 2.672-1.01 1.506-2.687-.635 3.044 4.189 1.789.495-2.021.465 2.024 4.15-1.89-.618-3.033 1.572 2.896 2.732.989-1.739-3.978-3.581-1.415c.319-.65.681-1.215 1.062-1.731l4.021 1.588 3.936 9z"/></svg>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--The profile heading-->
+    <div class="pro_Heading">
+
+        <h2>LOCATION</h2>
+        
+    </div>
+
+    <!--choose location section-->
+    <div class="choose_loc">
+
+        <!--The location section-->
+        <div class="single_loc">
+
+            <!--The type location img-->
+            <div class="img_loc">
+
+                <img src="{% static 'Images/Institute/current.jpg' %}" alt="chooseLocationSave">
+
+            </div>
+
+            <!--The heading name-->
+            <div class="head_loc_sig">
+
+                <h3>Current Position</h3>
+
+            </div>
+
+            <!--Description type location-->
+            <div class="desc_loc_place">
+
+                <p>We will this devices current location and set its coordinates as this institutes primary location.</p>
+
+            </div>
+
+            <!--The button say-->
+            <div class="loc_sec_btn">
+
+                <button>
+
+                    <span>Get Current Location</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 11h-2.051c-.469-4.725-4.224-8.48-8.949-8.95v-2.05h-2v2.05c-4.725.47-8.48 4.225-8.949 8.95h-2.051v2h2.051c.469 4.725 4.224 8.48 8.949 8.95v2.05h2v-2.05c4.725-.469 8.48-4.225 8.949-8.95h2.051v-2zm-11 8.931v-3.931h-2v3.931c-3.611-.454-6.478-3.32-6.931-6.931h3.931v-2h-3.931c.453-3.611 3.32-6.477 6.931-6.931v3.931h2v-3.931c3.611.454 6.478 3.319 6.931 6.931h-3.931v2h3.931c-.453 3.611-3.32 6.477-6.931 6.931zm1-7.931c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2z"/></svg>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--The location section-->
+        <div class="single_loc">
+
+            <!--The type location img-->
+            <div class="img_loc">
+
+                <img src="{% static 'Images/Institute/geo.jpg' %}" alt="chooseLocationSave">
+
+            </div>
+
+            <!--The heading name-->
+            <div class="head_loc_sig">
+
+                <h3>GeoCoding</h3>
+
+            </div>
+
+            <!--Description type location-->
+            <div class="desc_loc_place">
+
+                <p>If you know your address, we will convert them to coordinates for you.</p>
+
+            </div>
+
+            <!--The button say-->
+            <div class="loc_sec_btn">
+
+                <button>
+
+                    <span>Start GeoCoding</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.5 2c1.309 0 2.5 1.16 2.5 2.434 0 1.358-1.044 3.303-2.5 5.723-1.456-2.42-2.5-4.365-2.5-5.723 0-1.274 1.191-2.434 2.5-2.434zm0-2c-2.361 0-4.5 1.985-4.5 4.434 0 2.45 1.951 5.373 4.5 9.566 2.549-4.193 4.5-7.116 4.5-9.566 0-2.449-2.139-4.434-4.5-4.434zm0 6c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm-7.26 1.237c-.004-.009-.289-.017-.24-.078l.137-.085c.012-.077.072-.162-.008-.304l.047-.125-.1.029s.141-.606.33-.332l-.08.093c.123.122.156.426.195.623.115.06.295.071.088.175.107-.018-.561.286-.648.161-.065-.076.289-.127.279-.157zm-.715-.159c-.078.078.002.128.082.094.113-.05.268-.048.283-.202l.074-.091c.031-.049-.062-.126-.102-.135-.059-.012-.1.064-.137.095l-.066.017-.062.08.008.044-.08.098zm7 9.167l-.734-1.206-.723-1.186c-.73-1.194-1.389-2.276-1.961-3.296l-.07.067c-.377.156-.943-.509-1.34-.531.193.03.018-.49.018-.524-.152-.189-1.123.021-1.377.055-.479.063-.979.057-1.346.355-.258.21-.262.551-.525.716-.17.106-.355.072-.502.209-.258.245-.553.607-.697.929-.061.135.078.458.043.632-.336 1.063.086 2.538 1.375 2.701.312.039.639.209.955.114.252-.076.475-.248.746-.268.377-.025.219.529.736.379.252-.074.365.172.365.359-.084.391-.268.609.088.883.242.188.443.456.486.78.027.182.197.494-.014.602-.15.075-.26.507-.258.649.031.165.365.481.467.621.145.2.039.436.158.663.121.232.236.41.322.645.111.324.959-.007 1.156-.006.674.004 1.014-.944 1.488-1.235.266-.165.191-.616.51-.848.295-.215.607-.344.635-.741.021-.344-.258-1.062-.104-1.353l.103-.165zm-7.302-7.76c.041.172-.119.645-.154.795-.031.138.443.226.416.295.004-.008.641-.22.705-.275l.143-.323c.121-.081.248-.146.385-.196l.164-.285c.055-.021.709-.123.756-.101.164.075.469.389.582.531l.041.032c-.326-.67-.59-1.314-.795-1.942l-.084.036c-.221 0-.527.251-.662.405-.096.104-.67.337-.732.33.33.035.314.276.287.482-.068.476-1.095.035-1.052.216zm10.904 5.049c-.277 4.807-4.252 8.623-9.129 8.623-2.604 0-4.951-1.086-6.619-2.83-.197-.208-.346-.7-.02-.9l.332-.085c.258-.22-.242-1.111-.045-1.254.617-.441.324-.982-.055-1.429-.16-.19-1.043-1.1-1.143-.937.074-.249-.16-.85-.301-1.087-.24-.398-.553-.643-.68-1.081-.047-.174-.047-.703-.151-.826-.041-.05-.359-.185-.348-.257.305-1.82 1.148-3.458 2.365-4.751l.819-.33c.516-.773.545-.173 1.008-.375.154 0 .332-.634.496-.734.289-.185.068-.185.016-.27-.113-.184 2.41-1.103 2.453-.938.033.14-1.25.809-1.109.788-.325.043-.387.627-.327.625.162-.005 1.182-.774 1.656-.61.467.161 1.301-.37 1.627-.64l.042-.039c.029-.761.195-1.494.48-2.172l-.494-.025c-6.074 0-11 4.925-11 11s4.926 11 11 11 11-4.925 11-11c0-.764-.078-1.509-.227-2.229-.49.864-1.043 1.779-1.646 2.763z"/></svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--The location section-->
+        <div class="single_loc">
+
+            <!--The type location img-->
+            <div class="img_loc">
+
+                <img src="{% static 'Images/Institute/adv.jpg' %}" alt="chooseLocationSave">
+
+            </div>
+
+            <!--The heading name-->
+            <div class="head_loc_sig">
+
+                <h3>Advanced</h3>
+
+            </div>
+
+            <!--Description type location-->
+            <div class="desc_loc_place">
+
+                <p>This option allows you to hardcode all of your location details.</p>
+
+            </div>
+
+            <!--The button say-->
+            <div class="loc_sec_btn">
+
+                <button>
+
+                    <span>Advanced Option</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-3.148 0-6 2.553-6 5.702 0 4.682 4.783 5.177 6 12.298 1.217-7.121 6-7.616 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 16l-6.707-2.427-5.293 2.427-5.581-2.427-6.419 2.427 4-9 3.96-1.584c.38.516.741 1.08 1.061 1.729l-3.523 1.41-1.725 3.88 2.672-1.01 1.506-2.687-.635 3.044 4.189 1.789.495-2.021.465 2.024 4.15-1.89-.618-3.033 1.572 2.896 2.732.989-1.739-3.978-3.581-1.415c.319-.65.681-1.215 1.062-1.731l4.021 1.588 3.936 9z"/></svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Boostrap Link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    
+</body>
+</html>

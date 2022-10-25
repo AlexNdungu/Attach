@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attachment :: Institute - Profile</title>
+
+    <link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/profile.css' %}">
+
+
+    <!--Font family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--The ajax link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <!--Bootstrap css link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <!--The heading section-->
+    <div class="navigation">
+
+        <!--The actual navigation-->
+        <div class="act_nav">
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg width="24" height="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm6.75 9.25v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1zm0-6.75v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1zm6.75 0v3.25c0 .53-.47 1-1 1h-3.25c-.53 0-1-.47-1-1v-3.25c0-.53.47-1 1-1h3.25c.53 0 1 .47 1 1z" fill-rule="nonzero"/></svg>
+
+            </div>
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.963 8.261c-.566-.585-.536-1.503.047-2.07l5.948-5.768c.291-.281.664-.423 1.035-.423.376 0 .75.146 1.035.44l-8.065 7.821zm-9.778 14.696c-.123.118-.185.277-.185.436 0 .333.271.607.607.607.152 0 .305-.057.423-.171l.999-.972-.845-.872-.999.972zm8.44-11.234l-3.419 3.314c-1.837 1.781-2.774 3.507-3.64 5.916l1.509 1.559c2.434-.79 4.187-1.673 6.024-3.455l3.418-3.315-3.892-4.019zm9.97-10.212l-8.806 8.54 4.436 4.579 8.806-8.538c.645-.626.969-1.458.969-2.291 0-2.784-3.373-4.261-5.405-2.29z"/></svg>
+                
+            </div>
+
+            <!--The icons-->
+            <div class="nav_part">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-3.148 0-6 2.553-6 5.702 0 4.682 4.783 5.177 6 12.298 1.217-7.121 6-7.616 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 16l-6.707-2.427-5.293 2.427-5.581-2.427-6.419 2.427 4-9 3.96-1.584c.38.516.741 1.08 1.061 1.729l-3.523 1.41-1.725 3.88 2.672-1.01 1.506-2.687-.635 3.044 4.189 1.789.495-2.021.465 2.024 4.15-1.89-.618-3.033 1.572 2.896 2.732.989-1.739-3.978-3.581-1.415c.319-.65.681-1.215 1.062-1.731l4.021 1.588 3.936 9z"/></svg>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--The profile heading-->
+    <div class="pro_Heading">
+
+        <h2>PROFILE</h2>
+        
+    </div>
+
+    <!--The biggest prof section-->
+    <div class="big_sec">
+
+        <!--The two semi sections-->
+        <div class="semi_sec">
+
+            <!--The icon section-->
+            <div class="ic_sec">
+
+                <!--the actual img-->
+                <div class="act_ic_img">
+
+                    <img src="{% static 'Images/Institute/dkut.png' %}" alt="instIcon">
+
+                </div>
+
+                <!--The image name-->
+                <div class="img_name">
+
+                    <span>dkut.jpg</span>
+
+                </div>
+
+                <!--Choose icon-->
+                <div class="choose_ic_sec">
+
+                    <!--The actual icon-->
+                    <div class="the_ic_self">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 14.378l-5.641 5.64c-.654.655-1.513.982-2.374.982-2.972 0-4.493-3.613-2.374-5.731l5.539-5.54c.488-.486 1.126-.729 1.766-.729 1.494 0 2.498 1.233 2.498 2.519 0 .61-.227 1.232-.734 1.74l-4.918 4.918c-.634.634-1.665.634-2.299 0-.633-.633-.633-1.664 0-2.298l3.971-3.97.828.828-3.971 3.97c-.178.177-.178.466 0 .643s.465.177.643 0l4.919-4.918c.517-.517.517-1.357 0-1.874-.517-.517-1.356-.517-1.874 0l-5.539 5.54c-.854.853-.854 2.241 0 3.093.852.853 2.24.853 3.093 0l5.64-5.64.827.827zm-17-5.878c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5zm7.57 3.013l-1.57-2.513-2.52 4-2.48-1.96-4 5.96h6.694c.144-1.139.63-2.242 1.503-3.114l2.373-2.373zm-3.754 7.487h-8.816v-14h18v2.126c.299-.062.604-.096.916-.096.371 0 .732.06 1.084.147v-4.177h-22v18h11.818c-.482-.605-.818-1.283-1.002-2z"/></svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--The institute nae-->
+            <div class="inst_name">
+
+                <input type="text" placeholder="Institute Name">
+
+            </div>
+
+            <!--Long writing-->
+            <div class="long_write">
+
+                <textarea placeholder="Institute Bio"></textarea>
+
+            </div>
+
+        </div>
+
+        <!--The two semi sections-->
+        <div class="semi_sec">
+
+            <!--The backpage image-->
+            <div class="backImg">
+
+                <!--The actual back image-->
+                <div class="act_back_img">
+
+                    <img src="{% static 'Images/Institute/school.jpg' %}" alt="">
+
+                </div>
+
+                <!--The back controls-->
+                <div class="back_cont">
+
+                    <!--Back img name-->
+                    <div class="b_img_name">
+
+                        <span>school.jpg</span>
+
+                    </div>
+
+                    <!--The actual icon-->
+                    <div class="the_ic_self">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 14.378l-5.641 5.64c-.654.655-1.513.982-2.374.982-2.972 0-4.493-3.613-2.374-5.731l5.539-5.54c.488-.486 1.126-.729 1.766-.729 1.494 0 2.498 1.233 2.498 2.519 0 .61-.227 1.232-.734 1.74l-4.918 4.918c-.634.634-1.665.634-2.299 0-.633-.633-.633-1.664 0-2.298l3.971-3.97.828.828-3.971 3.97c-.178.177-.178.466 0 .643s.465.177.643 0l4.919-4.918c.517-.517.517-1.357 0-1.874-.517-.517-1.356-.517-1.874 0l-5.539 5.54c-.854.853-.854 2.241 0 3.093.852.853 2.24.853 3.093 0l5.64-5.64.827.827zm-17-5.878c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5zm7.57 3.013l-1.57-2.513-2.52 4-2.48-1.96-4 5.96h6.694c.144-1.139.63-2.242 1.503-3.114l2.373-2.373zm-3.754 7.487h-8.816v-14h18v2.126c.299-.062.604-.096.916-.096.371 0 .732.06 1.084.147v-4.177h-22v18h11.818c-.482-.605-.818-1.283-1.002-2z"/></svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Mission -->
+            <!--Long writing-->
+            <div class="long_write">
+
+                <textarea placeholder="Institute Mission"></textarea>
+
+            </div>
+
+            <!--vission -->
+            <!--Long writing-->
+            <div class="long_write">
+
+                <textarea placeholder="Institute Vission"></textarea>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!--The upload button-->
+    <div class="Update_sec">
+
+        <div class="Update">
+
+            <span>Update</span>
+
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M8 11h-6v10h20v-10h-6v-2h8v14h-24v-14h8v2zm5 2h4l-5 6-5-6h4v-12h2v12z"/></svg>
+
+        </div>
+
+    </div>
+
+    <!--Boostrap Link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    
+</body>
+</html>

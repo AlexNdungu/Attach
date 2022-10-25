@@ -1,0 +1,117 @@
+/* Where we are */
+.nav_part:nth-child(2){
+    background-color: #474747;
+    transition: 0.1s ease-in;
+}
+
+.nav_part:nth-child(2):hover{
+    background-color: #4B39EF;
+}
+
+/* Where we are */
+.nav_part:nth-child(3){
+    background-color: #4B39EF;
+}
+
+
+/* The choose location section */
+
+.choose_loc {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Select single location */
+
+.single_loc {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+}
+
+/* The location choice image */
+
+.img_loc {
+    width: 100%;
+    height: 250px;
+}
+
+.img_loc img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+/* The heading */
+
+.head_loc_sig {
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.head_loc_sig h3 {
+    font-weight: 600;
+    font-size: 23px;
+    color: #4B39EF;
+}
+
+.desc_loc_place {
+    width: 100%;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.desc_loc_place p {
+    font-size: 18px;
+    color: #474747;
+}
+
+
+/* The button */
+
+.loc_sec_btn {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.loc_sec_btn button {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #474747;
+    color: #D9D9D9;
+    fill: #D9D9D9;
+    transition: 0.1s ease-in;
+}
+
+.loc_sec_btn button:hover {
+    background-color: #4B39EF;
+}
+
+.loc_sec_btn button svg {
+    transform: scale(1.2);
+}
+
+.loc_sec_btn button span {
+    font-size: 18px;
+
+}

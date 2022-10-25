@@ -1,0 +1,113 @@
+<!--This page inherits from index.html-->
+{% extends 'Inherite/institute.html' %}
+
+{% load static %}
+
+<!--The heading section-->
+{% block head %}
+
+<!--The title-->
+<title>Attachment :: Institute - Students</title>
+
+<!--The dashboard css-->
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/heads.css' %}">
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/actives.css' %}">
+
+
+
+{% endblock %}
+
+<!--The page user is in-->
+
+{% block place %}Institute Students{% endblock %}
+
+<!--The body section-->
+{% block body %}
+
+<!--The search section-->
+
+<div class="dep_search">
+
+    <!--department add and number-->
+    <div class="dep_add_num">
+
+        <!--Department number-->
+        <div class="dep_num">
+            <h2>10</h2>
+        </div>
+
+
+    </div>
+
+    <!--the actual search section-->
+    <div class="dep_actual_search">
+
+        <!--The search tab-->
+        <input type="text" placeholder="Search" >
+
+        <!--The seach icon-->
+        <div class="act_seach_icon">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"/></svg>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--All department heads-->
+<div class="all_dep_heads">
+
+    <!--Individual department head-->
+    <div class="ind_dep_head">
+
+        <!--The department head image-->
+        <div class="dep_head_img_sect">
+
+            <img src="{% static 'Images/Institute/user.jpg' %}" alt="">
+
+            <!--Show dep head-->
+            <div class="show_dep_head">
+
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12.5 17.52c1.415-1.054 3.624-1.846 5.5-2v6.479c-1.739.263-3.755 1.104-5.5 2v-6.479zm-1 0c-1.415-1.054-3.624-1.846-5.5-2v6.479c1.739.263 3.755 1.104 5.5 2v-6.479zm-6.5 2.917c-2.049-.674-2.996-1.437-2.996-1.437l-.004-2.025c-.008-2.127.088-3.344 2.648-3.909 2.805-.619 5.799-1.317 4.241-3.521-3.901-5.523-.809-9.545 3.111-9.545 3.921 0 6.996 3.991 3.11 9.545-1.529 2.185 1.376 2.888 4.242 3.521 2.57.568 2.657 1.791 2.647 3.934l-.003 2s-.947.763-2.996 1.437v-6.003l-1.082.089c-2.054.169-4.36 1.002-5.918 2.128-1.559-1.126-3.863-1.959-5.918-2.128l-1.082-.089v6.003z"/></svg>
+                
+            </div>
+
+            <!--The head name section-->
+            <div class="dep_head_name_sec">
+
+                <!--The actual name-->
+                <div class="head_act_name">
+                    <span>Alex Meta</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Department heads controls-->
+        <div class="dep_heads_cont">
+
+            <!--The controls-->
+            <div class="ind_head_cont_new">
+
+                <svg width="24" height="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 16.495c1.242 0 2.25 1.008 2.25 2.25s-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25 1.008-2.25 2.25-2.25zm0-6.75c1.242 0 2.25 1.008 2.25 2.25s-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25 1.008-2.25 2.25-2.25zm0-6.75c1.242 0 2.25 1.008 2.25 2.25s-1.008 2.25-2.25 2.25-2.25-1.008-2.25-2.25 1.008-2.25 2.25-2.25z"/></svg>
+
+
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+
+<!--The bottom section-->
+{% block below %}
+{% endblock %}

@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attachment :: Student - SignUp</title>
+
+    <!--Font family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--The ajax link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--The css file-->
+    <link rel="stylesheet" href="{% static '/Css/Company/Signup.css' %}">
+    <link rel="stylesheet" href="{% static '/Css/Student/student.css' %}">
+
+    <!--Bootstrap css link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <!--The body of the sign in-->
+    <div class="signBody">
+
+        <!--The sign in form-->
+        <div class="formSign">
+
+            <!--The company icon-->
+            <div class="companyIcon">
+
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 21h-3l1-3h1l1 3zm-12.976-4.543l8.976-4.575v6.118c-1.007 2.041-5.607 3-8.5 3-3.175 0-7.389-.994-8.5-3v-6.614l8.024 5.071zm11.976.543h-1v-7.26l-10.923 5.568-11.077-7 12-5.308 11 6.231v7.769z"/></svg>
+
+            </div>
+
+            <!--Company title-->
+            <div class="companyTitle">
+
+                <h1 id="wherePage" >Student</h1>
+
+            </div>
+
+            <!--Company form-->
+            <div class="companyForm">
+
+               
+                <!--Social auth divs-->
+                <a href="{% url "social:begin" "linkedin-oauth2" %}">
+
+                    <div class="socialStudAuth">
+
+                        <span>LinkedIn</span>
+    
+                        <div class="socImg">
+                            <img src="{% static '/Images/Student/linkedin.png' %}" alt="">
+                        </div>
+    
+                    </div>
+
+                </a>
+                
+
+                <!--Social auth divs-->
+                <a href="{% url "social:begin" "github" %}">
+
+                    <div class="socialStudAuth">
+
+                        <span>GitHub</span>
+    
+                        <div class="socImg">
+                            <img src="{% static '/Images/Student/github.png' %}" alt="">
+                        </div>
+    
+                    </div>
+
+                </a>
+                
+
+                <!--Social auth divs-->
+                <a href="{% url "social:begin" "google-oauth2" %}">
+
+                    <div class="socialStudAuth">
+
+                        <span>Google</span>
+    
+                        <div class="socImg">
+                            <img src="{% static '/Images/Student/google.png' %}" alt="">
+                        </div>
+    
+                    </div>    
+
+                </a>
+                
+
+                <!--The controls-->
+                <div class="companyControls">
+                   
+                    <!--Aready have an account-->
+                    <div class="alread">
+                        <span>Already Have An Account?</span>
+                    </div>
+
+                    <!--Inner controls-->
+                    <div class="innerCompCont">
+
+                        <!--Create Account-->
+                        <div class="btnDivs" ><span>Sign In</span></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--The image-->
+        <div class="signIm">
+
+            <!--The image-->
+            <div class="signImg">
+                <img src="{% static '/Images/Student/student.jpg' %}" alt="companySign">
+            </div>
+
+            <!--The image cover-->
+            <div class="imgCover">
+
+                <!--The welcome-->
+                <div class="theWelcome">
+
+                    <h1>WELCOME</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<!--Scripts-->
+<script src="{% static '/Js/Company/signError.js' %}"></script>
+
+</html>
