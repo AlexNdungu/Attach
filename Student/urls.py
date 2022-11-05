@@ -7,4 +7,15 @@ app_name = "Student"
 
 urlpatterns = [
     path('SignUp/', views.signUp, name='SignUpinstitute'),
+
+    path('dash/',views.dash, name='studentDash'),
+
+    #Company categories
+    path('categories/', views.categories, name='stuCats'),
+
+    #one category
+    path('category/<pk>/', views.category, name='campOneCat'),
+
+    #Companies offering opportunities
+    path('opportunity/', views.opport, name='Opportunity')
 ]

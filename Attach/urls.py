@@ -31,6 +31,11 @@ urlpatterns = [
     path('institute/', include('Institute.urls', namespace='Institute')),
     path('student/', include('Student.urls', namespace='Student')),
     #Social auth
+
+    # path('company/', include('Company.urls')),
+    # path('institute/', include('Institute.urls')),
+    # path('student/', include('Student.urls')),
+
     path('social-auth/', include('social_django.urls', namespace='social'))
 
 ]

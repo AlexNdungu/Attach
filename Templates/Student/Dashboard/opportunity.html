@@ -1,0 +1,142 @@
+<!--This page inherits from index.html-->
+{% extends 'Inherite/student.html' %}
+
+{% load static %}
+
+<!--The heading section-->
+{% block head %}
+
+<!--The title-->
+<title>Attachment :: Student - Opportunities</title>
+
+<!--The dashboard css-->
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/heads.css' %}">
+<link rel="stylesheet" href="{% static '/Css/Student/Dashboard/opportunity.css' %}">
+
+
+{% endblock %}
+
+<!--The page user is in-->
+
+{% block place %}Student Opportunities{% endblock %}
+
+
+<!--The body section-->
+{% block body %}
+
+<!--The search section-->
+
+<div class="dep_search">
+
+    <!--department add and number-->
+    <div class="dep_add_num">
+
+        <!--Department number-->
+        <div class="dep_num">
+            <h2>10</h2>
+        </div>
+
+
+    </div>
+
+    <!--the actual search section-->
+    <div class="dep_actual_search">
+
+        <!--The search tab-->
+        <input type="text" placeholder="Search">
+
+        
+        <!--The seach icon-->
+        <div class="act_seach_icon">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"/></svg>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--This is where it is all opportunities-->
+<div class="all_opps">
+
+    <!--individual opoortunity-->
+
+    <div class="ind_oops">
+
+        <!--This is where the image, logo and numbers are-->
+        <div class="logo_num_img">
+
+            <!--The back image-->
+            <div class="back_op_img">
+                <img src="{% static 'Images/Company/Company.jpg' %}" alt="back">
+            </div>
+
+            <!--The number of opps-->
+            <div class="ops_num">
+
+                <span>2</span>
+
+            </div>
+
+            <!--the company logo-->
+            <div class="logo_op">
+
+                <img src="{% static 'Images/Company/Logo.jpg' %}" alt="logo">
+
+            </div>
+
+        </div>
+
+        <!--Followers section-->
+        <div class="follow_oops">
+
+            <!--The actual foloowers-->
+            <div class="act_followers">
+
+                <span>10k</span>
+
+            </div>
+
+        </div>
+
+
+        <!--The name and controls-->
+        <div class="op_name_cont">
+
+            <!--The op name-->
+            <div class="opp_name">
+
+                <span>CodePinion</span>
+
+            </div>
+
+
+            <!--the opps controls-->
+            <div class="opps_controls">
+
+                <!--The visit-->
+                <div class="op_visit">
+
+                    <span>Visit</span>
+
+                </div>
+
+                <!--Op cancel-->
+                <div class="opp_cancel">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 3.752l-4.423-3.752-7.771 9.039-7.647-9.008-4.159 4.278c2.285 2.885 5.284 5.903 8.362 8.708l-8.165 9.447 1.343 1.487c1.978-1.335 5.981-4.373 10.205-7.958 4.304 3.67 8.306 6.663 10.229 8.006l1.449-1.278-8.254-9.724c3.287-2.973 6.584-6.354 8.831-9.245z"/></svg>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

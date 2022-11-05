@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 from django.contrib.auth.decorators import login_required
 
-from .decorators import unauthenticated_user,company_only
+from .decorators import unauthenticated_user
 
 
 from .models import *
@@ -67,7 +67,7 @@ def createCompany(request):
 
 #Company Profile
 @login_required(login_url='allLog')
-@company_only
+#@company_only
 def profile(request):
     return render(request ,'Company/Dashboard/profile.html')
 
@@ -125,7 +125,7 @@ def updateProfile(request):
 
 
 @login_required(login_url='allLog')
-@company_only
+#@company_only
 def location(request):
 
     context = {

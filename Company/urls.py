@@ -6,6 +6,7 @@ app_name = "Company"
 
 
 urlpatterns = [
+    #signup company
     path('SignUp/', views.signUp, name='SignUpCompany'),
     #Create company
     path('createCompany/', views.createCompany, name="createCompany"),

@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 def unauthenticated_user(view_func):
     def wrapper_func(request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('instDashboard')
+            return redirect('/institute/dashboard')
         else:
             return view_func(request, *args, **kwargs)
 
@@ -18,7 +18,7 @@ def institute_only(view_func):
         if request.user.groups.exists():
             group = request.user.groups.all()[0].name
         if group == 'Company':
-            return redirect('Cprofile')
+            return redirect('/company/profile')
         if group == 'Lechead':
             return redirect('') 
         if group == 'Lecturer':

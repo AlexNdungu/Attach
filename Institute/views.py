@@ -99,52 +99,52 @@ def createInstitute(request):
 
 #Here is the institute dashboard
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def dash(request):
     return render(request, 'Inherite/institute.html')
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def dashboard(request):
     return render(request, 'Institute/Dashboard/dash.html') 
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def profile(request):
     return render(request ,'Institute/Dashboard/profile.html')
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def location(request):
     return render(request ,'Institute/Dashboard/location.html')          
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def department(request):
     return render(request, 'Institute/Dashboard/department.html')     
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def heads(request):
     return render(request, 'Institute/Dashboard/heads.html')
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def lectures(request):
     return render(request, 'Institute/Dashboard/lecture.html')
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def students(request):
     return render(request, 'Institute/Dashboard/students.html')    
 
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def activeStudents(request):
     return render(request, 'Institute/Dashboard/actives.html')    
     
 @login_required(login_url='allLog')
-@institute_only
+#@institute_only
 def geocode(request):
 
     context = {
