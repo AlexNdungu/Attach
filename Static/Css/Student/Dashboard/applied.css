@@ -1,0 +1,154 @@
+.ind_nav_sections:nth-child(4) .highl_nav{
+    background-color: #4b39ef;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav{
+    background-color: #474747;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav:hover{
+    background-color: #4b39ef;
+}
+
+/* All applicants section */
+
+.all_new_apps {
+    width: 100%;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Individual application */
+
+.ind_app {
+    width: 98%;
+    height: 200px;
+    margin-top: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #D9D9D9;
+}
+
+/* The company logo to which the opprtunity belongs */
+
+.logo_app_comp {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+}
+
+.logo_app_comp img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+/* The info section */
+.info_applica {
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+/* The name and date */
+
+.app_name_date {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.app_name_date h2 {
+    font-size: 26px;
+    color: #474747;
+}
+
+.app_name_date span {
+    color: #808080;
+}
+
+/* location of job */
+
+.app_location {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.app_location span {
+    font-size: 21px;
+    color: #474747;
+}
+
+/* The number of applicatnts and the control */
+
+.app_control_num_apps {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #4b39ef;
+}
+
+
+/* The app controls */
+
+.app_control {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The withdraw button */
+
+.withd_app {
+    width: 200px;
+    height: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5F5F5;
+    transition: 0.1 ease-in;
+    cursor: pointer;
+}
+
+.withd_app:hover {
+    background-color: #4b39ef;
+}
+
+/* Status */
+
+.app_sent_status {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #32772C;
+}
+
+.app_sent_status svg {
+    fill: #F5F5F5;
+}

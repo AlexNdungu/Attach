@@ -17,5 +17,8 @@ urlpatterns = [
     path('category/<pk>/', views.category, name='campOneCat'),
 
     #Companies offering opportunities
-    path('opportunity/', views.opport, name='Opportunity')
+    path('opportunity/', views.opport, name='Opportunity'),
+
+    #Applied attachments
+    path('applied/',views.applied, name='applied')
 ]

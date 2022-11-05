@@ -87,4 +87,9 @@ def category(request, pk):
 #Opportunities section
 
 def opport(request):
-    return render(request,'Student\Dashboard\opportunity.html')    
+    return render(request,'Student\Dashboard\opportunity.html')   
+
+
+#Applied Attachments
+def applied(request):
+    return render(request,'Student/Dashboard/applied.html')     

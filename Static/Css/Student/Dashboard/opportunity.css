@@ -6,6 +6,10 @@
     background-color: #474747;
 }
 
+.ind_nav_sections:nth-child(2) .highl_nav:hover{
+    background-color: #4b39ef;
+}
+
 /* The big opportunity section */
 
 .all_opps {

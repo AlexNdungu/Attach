@@ -1,0 +1,188 @@
+<!--This page inherits from index.html-->
+{% extends 'Inherite/student.html' %}
+
+{% load static %}
+
+<!--The heading section-->
+{% block head %}
+
+<!--The title-->
+<title>Attachment :: Student - Opportunities</title>
+
+<!--The dashboard css-->
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/heads.css' %}">
+<link rel="stylesheet" href="{% static '/Css/Student/Dashboard/applied.css' %}">
+
+
+{% endblock %}
+
+<!--The page user is in-->
+
+{% block place %}Student Opportunities{% endblock %}
+
+
+<!--The body section-->
+{% block body %}
+
+<!--The search section-->
+
+<div class="dep_search">
+
+    <!--department add and number-->
+    <div class="dep_add_num">
+
+        <!--Department number-->
+        <div class="dep_num">
+            <h2>10</h2>
+        </div>
+
+
+    </div>
+
+    <!--the actual search section-->
+    <div class="dep_actual_search">
+
+        <!--The search tab-->
+        <input type="text" placeholder="Search">
+
+        
+        <!--The seach icon-->
+        <div class="act_seach_icon">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"/></svg>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--All applications-->
+<div class="all_new_apps">
+
+    <!--Individual application-->
+    <div class="ind_app">
+
+        <!--the logo section-->
+        <div class="logo_app_comp">
+
+            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="logo-company">
+
+        </div>
+
+        <!--The info part-->
+        <div class="info_applica">
+
+            <!--the name and date-->
+            <div class="app_name_date">
+
+                <!--The job name-->
+                <h2> Cartography - Industrial attachment</h2>
+
+                <!--teh job date-->
+                <span>3 days ago</span>
+
+            </div>
+
+            <!--The location-->
+            <div class="app_location">
+
+                <span>Nairobi, Kenya</span>
+
+            </div>
+
+            <!--the application controls-->
+            <div class="app_control_num_apps">
+
+                <!--the number of applicatnts-->
+                <span>18 Applicants</span>
+
+                <!--App controls-->
+                <div class="app_control">
+
+                    <!--withdrwa app-->
+                    <div class="withd_app">
+
+                        <span>Withdraw</span>
+
+                    </div>
+
+                    <!--The sent status-->
+                    <div class="app_sent_status">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 11.386l1.17-1.206c1.951.522 5.313 1.731 8.33 3.597 3.175-4.177 9.582-9.398 13.456-11.777l1.044 1.073-14 18.927-10-10.614z"/></svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ind_app">
+
+        <!--the logo section-->
+        <div class="logo_app_comp">
+
+            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="logo-company">
+
+        </div>
+
+        <!--The info part-->
+        <div class="info_applica">
+
+            <!--the name and date-->
+            <div class="app_name_date">
+
+                <!--The job name-->
+                <h2> Cartography - Industrial attachment</h2>
+
+                <!--teh job date-->
+                <span>3 days ago</span>
+
+            </div>
+
+            <!--The location-->
+            <div class="app_location">
+
+                <span>Nairobi, Kenya</span>
+
+            </div>
+
+            <!--the application controls-->
+            <div class="app_control_num_apps">
+
+                <!--the number of applicatnts-->
+                <span>18 Applicants</span>
+
+                <!--App controls-->
+                <div class="app_control">
+
+                    <!--withdrwa app-->
+                    <div class="withd_app">
+
+                        <span>Withdraw</span>
+
+                    </div>
+
+                    <!--The sent status-->
+                    <div class="app_sent_status">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 11.386l1.17-1.206c1.951.522 5.313 1.731 8.33 3.597 3.175-4.177 9.582-9.398 13.456-11.777l1.044 1.073-14 18.927-10-10.614z"/></svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
