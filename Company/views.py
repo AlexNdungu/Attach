@@ -194,3 +194,7 @@ def students(request):
 #The institutes related
 def institutes(request):
     return render(request, 'Company/Dashboard/institutes.html')    
+
+#All opportunities
+def allOpps(request):
+    return render(request, 'Company/Dashboard/opportunity.html')    
