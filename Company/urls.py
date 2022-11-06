@@ -20,4 +20,9 @@ urlpatterns = [
 
     path('currentLocation/',views.currentLocation, name='currentLocation'),
 
+    #Here is the dashboard
+    path('dashboard/', views.dashboard, name='dashboard'),
+
+    path('dash/', views.dash, name='dash'),
+
 ]

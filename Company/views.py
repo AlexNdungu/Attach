@@ -177,3 +177,12 @@ def currentLocation(request):
 
 
     return JsonResponse({'status':'updated'})
+
+
+#Here we deal with the dashboard
+def dashboard(request):
+    return render(request, 'Inherite/company.html')    
+
+#The dashboard
+def dash(request):
+    return render(request,'Company/Dashboard/dash.html')    

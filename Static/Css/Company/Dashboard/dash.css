@@ -1,0 +1,8 @@
+/* Change the styling of the num div */
+.dash_numbers {
+    justify-content: flex-start;
+}
+
+.total_sec {
+    margin-left: 20px;
+}

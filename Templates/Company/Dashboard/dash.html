@@ -1,0 +1,200 @@
+<!--This page inherits from index.html-->
+{% extends 'Inherite/company.html' %}
+
+{% load static %}
+
+<!--The heading section-->
+{% block head %}
+
+<!--The title-->
+<title>Attachment :: Company - Dashboard</title>
+
+<!--The dashboard css-->
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/dash.css' %}">
+<link rel="stylesheet" href="{% static '/Css/Company/Dashboard/dash.css' %}">
+
+
+{% endblock %}
+
+
+
+<!--The body section-->
+{% block body %}
+
+<!--The dashboard Numbers-->
+<div class="dash_numbers">
+
+    <!--Totals departments-->
+    <div class="total_sec">
+
+        <div class="num_icons">
+            <h2>20</h2>
+        </div>
+
+        <div class="num_icons">
+            <h5>Total Attachees</h5>
+        </div>
+
+        <!--Numbers icons-->
+        <div class="num_icons">
+
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M4.861 9.713c-.131-.146-.242-.299-.33-.459v-3.181l7.107 3.804 7.852-3.298v2.675c-.074.15-.169.294-.284.431.342.948.392 2.073.399 2.623 1.229-.437 2.398.593 2.398 2.492 0 3.208-2.462 4.017-2.561 4.053-2.414 4.776-6.276 5.147-7.404 5.147-1.128 0-4.99-.372-7.403-5.147-.1-.036-2.563-.845-2.563-4.061 0-2.003 1.289-2.917 2.4-2.48.007-.551.056-1.659.389-2.599zm13.52.669c-1.62 1.032-4.431 1.524-6.371 1.524-2.107 0-4.736-.501-6.319-1.508-.156.621-.241 1.298-.241 2.033 0 .528-.425.918-.897.918-.121 0-.244-.026-.365-.08-.06-.029-.152-.051-.256-.051-.112 0-.236.026-.344.099-.898.595-.804 3.838 1.393 4.598.219.076.403.238.509.451 2.16 4.299 5.557 4.634 6.548 4.634.99 0 4.389-.335 6.547-4.634.108-.213.291-.375.51-.451 2.197-.76 2.291-4.003 1.393-4.598-.365-.245-.632.032-.964.032-.472 0-.898-.388-.898-.918 0-.741-.085-1.424-.245-2.049zm4.619-.373h-2.99l1.012-2.002-.015-3.142-9.316 3.907-9.691-5.12 10.451-3.651 9.552 4.446v3.56l.997 2.002z"/></svg>
+
+        </div>
+
+    </div>
+
+    <!--Totals Courses-->
+    <div class="total_sec">
+
+        <div class="num_icons">
+            <h2>20</h2>
+        </div>
+
+        <div class="num_icons">
+            <h5>Total Related Institutes</h5>
+        </div>
+
+        <!--Numbers icons-->
+        <div class="num_icons">
+
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23 24h-22v-2h1v-7h-2l3-9h5.429l2.571-2.203v-3.797h5l-1 1.491 1 1.509h-4l3.571 3h5.429l3 9h-2v7h1v2zm-12-5h-1v4h1v-4zm3 0h-1v4h1v-4zm6-4h-16v7h4v-5h8v5h4v-7zm-15 4h2v2h-2v-2zm14 0v2h-2v-2h2zm-14-3h2v2h-2v-2zm12 0h2v2h-2v-2zm.905-8l-1.297 1.513-4.608-3.949-4.608 3.949-1.297-1.513h-1.653l-1.667 5h18.45l-1.667-5h-1.653zm-5.905-.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5zm0 1.5h-.763v1.8h1.763v-.8h-1v-1z"/></svg>
+
+        </div>
+
+    </div>
+
+    <!--Totals Lectures-->
+    <div class="total_sec">
+
+        <div class="num_icons">
+            <h2>20</h2>
+        </div>
+
+        <div class="num_icons">
+            <h5>Total Opportunities</h5>
+        </div>
+
+        <!--Numbers icons-->
+        <div class="num_icons">
+
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M7 2c1.695 1.942 2.371 3 4 3h13v17h-24v-20h7zm4 5c-2.339 0-3.537-1.388-4.917-3h-4.083v16h20v-13h-11zm2 6h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3z"/></svg>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--the map section-->
+<div class="dash_map">
+
+    <!--The map icom-->
+    <!--The map head-->
+    <div class="map_head">
+
+        <div class="map_icon">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-3.148 0-6 2.553-6 5.702 0 4.682 4.783 5.177 6 12.298 1.217-7.121 6-7.616 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm12 16l-6.707-2.427-5.293 2.427-5.581-2.427-6.419 2.427 4-9 3.96-1.584c.38.516.741 1.08 1.061 1.729l-3.523 1.41-1.725 3.88 2.672-1.01 1.506-2.687-.635 3.044 4.189 1.789.495-2.021.465 2.024 4.15-1.89-.618-3.033 1.572 2.896 2.732.989-1.739-3.978-3.581-1.415c.319-.65.681-1.215 1.062-1.731l4.021 1.588 3.936 9z"/></svg>
+    
+        </div>
+
+    </div>
+    
+
+    <!--The map itself-->
+
+    <div class="the_map_itself">
+
+        <div id="map">
+
+        </div>
+
+    </div>
+
+    <!--the recent students-->
+
+    <div class="recent_students">
+
+        <!--The recent heading-->
+        <div class="rec_head">
+            <h3>Recent Students</h3>
+        </div>
+
+
+        <!--The recent list-->
+        <div class="rec_list">
+
+            <!--Individual student-->
+            <div class="ind_stud">
+
+                <!--The student image-->
+                <div class="stud_det_cont">
+                    <div class="stud_img">
+                        <img src="{% static 'Images/Institute/user.jpg' %}" alt="">
+                    </div>
+                </div>
+                
+
+                <!--Sudent full name-->
+                <div class="stud_det_cont">
+                    <span>Alex Meta Ndung'u</span>
+                </div>
+
+                <!--Student email-->
+                <div class="stud_det_cont">
+                    <span>alexmeta@gmail.com</span>
+                </div>
+
+                <!--Student join date-->
+                <div class="stud_det_cont">
+                    <span>7 Nov 2022</span>
+                </div>
+
+            </div>
+
+            <!--Individual student-->
+            <div class="ind_stud">
+
+                <!--The student image-->
+                <div class="stud_det_cont">
+                    <div class="stud_img">
+                        <img src="{% static 'Images/Institute/user.jpg' %}" alt="">
+                    </div>
+                </div>
+                
+
+                <!--Sudent full name-->
+                <div class="stud_det_cont">
+                    <span>Alex Meta Ndung'u</span>
+                </div>
+
+                <!--Student email-->
+                <div class="stud_det_cont">
+                    <span>alexmeta@gmail.com</span>
+                </div>
+
+                <!--Student join date-->
+                <div class="stud_det_cont">
+                    <span>7 Nov 2022</span>
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+    
+
+</div>
+
+{% endblock %}
+
+
+
+<!--The bottom section-->
+{% block below %}
+{% endblock %}
