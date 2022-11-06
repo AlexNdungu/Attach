@@ -19,6 +19,9 @@ urlpatterns = [
     #Companies offering opportunities
     path('opportunity/', views.opport, name='Opportunity'),
 
+    #The company opportunities
+    path('companyOpps/', views.allOpps, name='company_Opps'),
+
     #Applied attachments
-    path('applied/',views.applied, name='applied')
+    path('applied/',views.applied, name='applied'),
 ]

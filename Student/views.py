@@ -90,6 +90,11 @@ def opport(request):
     return render(request,'Student\Dashboard\opportunity.html')   
 
 
+#The all company opportunities
+def allOpps(request):
+    return render(request,'Student/Dashboard/campopps.html')
+
+
 #Applied Attachments
 def applied(request):
     return render(request,'Student/Dashboard/applied.html')     
