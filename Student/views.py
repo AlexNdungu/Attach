@@ -94,6 +94,10 @@ def opport(request):
 def allOpps(request):
     return render(request,'Student/Dashboard/campopps.html')
 
+#The individual opportunity 
+def indopp(request):
+    return render(request, 'Student/Dashboard/indopp.html')   
+
 
 #Applied Attachments
 def applied(request):

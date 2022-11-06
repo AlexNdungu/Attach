@@ -22,6 +22,8 @@ urlpatterns = [
     #The company opportunities
     path('companyOpps/', views.allOpps, name='company_Opps'),
 
+    path('indopp/', views.indopp, name='ind_opp'),
+
     #Applied attachments
     path('applied/',views.applied, name='applied'),
 ]

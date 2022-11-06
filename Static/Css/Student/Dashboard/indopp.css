@@ -1,0 +1,157 @@
+.name_search {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The name */
+.com_name {
+    width: 100%;
+    height: 130px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.com_name h2 {
+    font-size: 27px;
+    color: #474747;
+}
+
+/* The application details */
+
+.app_details {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* The actual details */
+
+.act_det {
+    width: calc(100% - 40px);
+    height: max-content;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+
+/* the job name and details */
+
+.job_name_conts {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.job_name_conts h2 {
+    font-size: 25px;
+    color: #474747;
+}
+
+/* Job controls */
+
+.job_share_details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share_btn,.job_info {
+    width: 50px;
+    height: 50px;
+    background-color: #474747;
+    fill: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-left: 10px;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+
+.share_btn:hover {
+    background-color: #32772C;
+}
+
+.job_info:hover {
+    background-color: #4B39EF;
+}
+
+/* Number of applicants and location */
+
+.no_of_app_loc {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.no_of_app_loc span:nth-child(1) {
+    font-size: 20px;
+    color: #474747;
+}
+
+.no_of_app_loc span:nth-child(2) {
+    font-size: 18px;
+    color: #4B39EF;
+    margin-left: 10px;
+}
+
+/* Save the job or apply */
+
+.apply_save_conts {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* The control buttons apply and save */
+
+.job_apply,.job_save {
+    width: 200px;
+    height: 50px;
+    background-color: #474747;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    color: #F5F5F5;
+    fill: #F5F5F5;
+    font-size: 20px;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+
+.job_apply:hover {
+    background-color: #32772C;
+}
+
+.job_save:hover {
+    background-color: #4B39EF;
+}
+
+
+/*  The job details */
+
+.job_details {
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    font-size: 18px;
+}
