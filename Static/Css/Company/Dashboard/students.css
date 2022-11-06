@@ -1,0 +1,21 @@
+.ind_nav_sections:nth-child(2) .highl_nav{
+    background-color: #4b39ef;
+}
+
+.ind_nav_sections:nth-child(4) .highl_nav{
+    background-color: #474747;
+}
+
+.ind_nav_sections:hover .highl_nav{
+    background-color: #4b39ef;
+}
+
+/* The control buttons for student */
+
+.ind_head_cont:nth-child(1):hover {
+    background-color: #4b39ef;
+}
+
+.ind_head_cont:nth-child(2):hover {
+    background-color: #4b39ef;
+}

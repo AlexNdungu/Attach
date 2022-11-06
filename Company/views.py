@@ -186,3 +186,11 @@ def dashboard(request):
 #The dashboard
 def dash(request):
     return render(request,'Company/Dashboard/dash.html')    
+
+#The students attached
+def students(request):
+    return render(request,'Company/Dashboard/students.html')    
+
+#The institutes related
+def institutes(request):
+    return render(request, 'Company/Dashboard/institutes.html')    

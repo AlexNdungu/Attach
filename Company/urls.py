@@ -25,4 +25,10 @@ urlpatterns = [
 
     path('dash/', views.dash, name='dash'),
 
+    #The attched students
+    path('students/', views.students, name='students'),
+
+    #The institutes related
+    path('institutes/',views.institutes, name='institutes'),
+
 ]
