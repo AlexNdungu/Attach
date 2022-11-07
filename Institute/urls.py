@@ -20,7 +20,13 @@ urlpatterns = [
 
     path('profile/',views.profile, name="Iprofile"),
 
+    #Update profile
+    path('updateProfile/',views.updateProfile, name="updateProfile"),
+
     path('location/',views.location, name="Ilocation"),
+
+    #Update location
+    path('currentLocation/',views.currentLocation, name='currentLocation'),
 
     path('departments/',views.department,name="departments"),
 

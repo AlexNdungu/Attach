@@ -20,7 +20,16 @@ class InstituteProfile(models.Model):
     vission = models.TextField(verbose_name='Vision')
 
     logo = models.ImageField(upload_to='Logos', verbose_name='Logo', default = 'instituteIc.png')
+    logo_name = models.CharField(max_length=40, verbose_name='Logo Source',default = 'instituteIc.png')
+
     act = models.ImageField(upload_to='Activity', verbose_name='Activity Image', default = 'actIc.png')
+    act_name = models.CharField(max_length=40, verbose_name='Activity Source',default = 'actIc.png')
+
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.institute_name
@@ -40,6 +49,11 @@ class InstituteLocation(models.Model):
 
     latitude = models.CharField(max_length=20, verbose_name='Latitude')
     longitude = models.CharField(max_length=20, verbose_name='Longitude')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.institute.instituteprofile.institute_name

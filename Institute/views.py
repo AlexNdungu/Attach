@@ -13,6 +13,11 @@ from .decorators import *
 
 from django.contrib.auth.decorators import login_required
 
+#Lets get the groups
+from django.contrib.auth.models import Group
+
+#Import 
+
 
 # Create your views here.
 
@@ -79,7 +84,12 @@ def createInstitute(request):
         else:    
             if(pass1 == pass2):
 
-                institute = User.objects.create_user(username=email,email=email,password=pass1)       
+                institute = User.objects.create_user(username=email,email=email,password=pass1)   
+
+                #Now we add the institute to the School Group
+                school = Group.objects.get(name='School')     
+                school.user_set.add(institute)
+
 
                 #Now we create an account 
                 InstituteProfile.objects.create(
@@ -113,10 +123,110 @@ def dashboard(request):
 def profile(request):
     return render(request ,'Institute/Dashboard/profile.html')
 
+#Update profile
+def updateProfile(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        the_institute = InstituteProfile.objects.get(institute = request.user)
+
+        #Company Name
+        name = request.POST.get('name')
+        #Compoany Bio
+        bio = request.POST.get('bio')
+        #Company Mission
+        mission = request.POST.get('mission')
+        #Comapny Vision
+        vision = request.POST.get('vision')
+
+        #Comapny Logo
+        if request.FILES.get('logo') != None:
+
+            logo = request.FILES.get('logo')
+
+            logoname = request.POST.get('logoname')
+
+        #The active image
+        if request.FILES.get('active') != None:
+
+            active = request.FILES.get('active')
+
+            activename = request.POST.get('activename')
+
+
+        #Now we update the profile
+        the_institute.institute_name = name
+        the_institute.bio = bio
+        the_institute.mission = mission
+        the_institute.vission = vision
+
+        #Now update the image
+        if request.FILES.get('logo') != None:
+            the_institute.logo = logo
+            the_institute.logo_name = logoname
+
+        if request.FILES.get('active') != None:
+            the_institute.act = active
+            the_institute.act_name = activename
+
+
+        #Now we save the record
+        the_institute.save()
+
+    return JsonResponse({'status':'updated'})   
+
 @login_required(login_url='allLog')
 #@institute_only
 def location(request):
-    return render(request ,'Institute/Dashboard/location.html')          
+
+    context = {
+        'google_map_api':settings.GOOGLE_API_KEY,
+        'base_country':settings.BASE_COUNTRY
+    }
+
+    return render(request ,'Institute/Dashboard/location.html',context)    
+
+#Update location
+def currentLocation(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        institute_location = InstituteLocation.objects.get(institute = request.user)
+
+        #Here i get the posted data
+
+        address = request.POST.get('address')
+
+        country = request.POST.get('country')
+
+        county = request.POST.get('county')
+
+        town = request.POST.get('town')
+
+        latitude = request.POST.get('latitude')
+
+        longitude = request.POST.get('longitude')
+
+        #Now we update coumpnay location
+
+        institute_location.address = address
+
+        institute_location.country = country
+
+        institute_location.county = county
+
+        institute_location.town = town
+
+        institute_location.latitude = latitude
+
+        institute_location.longitude = longitude
+
+        #Now we save the location
+
+        institute_location.save()
+
+
+    return JsonResponse({'status':'updated'})          
 
 @login_required(login_url='allLog')
 #@institute_only

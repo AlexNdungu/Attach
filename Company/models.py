@@ -12,6 +12,11 @@ class Category(models.Model):
 
     cate_description = models.TextField(verbose_name='Category Description')
 
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.cate_name
 
@@ -36,6 +41,11 @@ class CompanyProfile(models.Model):
     act = models.ImageField(upload_to='Activity', verbose_name='Activity Image', default = 'actIc.png')
     act_name = models.CharField(max_length=40, verbose_name='Activity Source',default = 'actIc.png')
 
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.company_name
 
@@ -55,6 +65,11 @@ class CompanyLocation(models.Model):
     latitude = models.CharField(max_length=20, verbose_name='Latitude')
     longitude = models.CharField(max_length=20, verbose_name='Longitude')
 
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.company.companyprofile.company_name
 
@@ -66,6 +81,11 @@ class CompanyCategory(models.Model):
     company = models.OneToOneField(CompanyProfile, on_delete=models.CASCADE)
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.company.company_name

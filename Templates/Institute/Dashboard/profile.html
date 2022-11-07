@@ -9,6 +9,7 @@
     <title>Attachment :: Institute - Profile</title>
 
     <link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/profile.css' %}">
+    <link rel="stylesheet" href="{% static '/Css/Company/Dashboard/profile.css' %}">
 
 
     <!--Font family-->
@@ -27,6 +28,49 @@
 
 </head>
 <body>
+
+    <!--The toast section success-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Profile Update Successfully!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
+    <!--The toast section failure-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="failedToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Profile Update Unsuccessfull!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
 
     <!--The heading section-->
     <div class="navigation">
@@ -78,19 +122,19 @@
                 <!--the actual img-->
                 <div class="act_ic_img">
 
-                    <img src="{% static 'Images/Institute/dkut.png' %}" alt="instIcon">
+                    <img id="theIcSrc" src="{{request.user.instituteprofile.logo.url}}" alt="instIcon">
 
                 </div>
 
                 <!--The image name-->
                 <div class="img_name">
 
-                    <span>dkut.jpg</span>
+                    <span id="iconSelectName" >{{request.user.instituteprofile.logo_name}}</span>
 
                 </div>
 
                 <!--Choose icon-->
-                <div class="choose_ic_sec">
+                <div class="choose_ic_sec" id="choose_ic_sec" >
 
                     <!--The actual icon-->
                     <div class="the_ic_self">
@@ -106,14 +150,14 @@
             <!--The institute nae-->
             <div class="inst_name">
 
-                <input type="text" placeholder="Institute Name">
+                <input type="text" id="companyNewName" placeholder="Institute Name" value="{{request.user.instituteprofile.institute_name}}">
 
             </div>
 
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea placeholder="Institute Bio"></textarea>
+                <textarea id="companyNewBio" placeholder="Institute Bio" >{{request.user.instituteprofile.bio}}</textarea>
 
             </div>
 
@@ -128,7 +172,7 @@
                 <!--The actual back image-->
                 <div class="act_back_img">
 
-                    <img src="{% static 'Images/Institute/school.jpg' %}" alt="">
+                    <img id="actImgSrc" src="{{request.user.instituteprofile.act.url}}" alt="">
 
                 </div>
 
@@ -138,12 +182,12 @@
                     <!--Back img name-->
                     <div class="b_img_name">
 
-                        <span>school.jpg</span>
+                        <span id="actSelectName" >{{request.user.instituteprofile.act_name}}</span>
 
                     </div>
 
                     <!--The actual icon-->
-                    <div class="the_ic_self">
+                    <div class="the_ic_self" id="the_ic_self">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 14.378l-5.641 5.64c-.654.655-1.513.982-2.374.982-2.972 0-4.493-3.613-2.374-5.731l5.539-5.54c.488-.486 1.126-.729 1.766-.729 1.494 0 2.498 1.233 2.498 2.519 0 .61-.227 1.232-.734 1.74l-4.918 4.918c-.634.634-1.665.634-2.299 0-.633-.633-.633-1.664 0-2.298l3.971-3.97.828.828-3.971 3.97c-.178.177-.178.466 0 .643s.465.177.643 0l4.919-4.918c.517-.517.517-1.357 0-1.874-.517-.517-1.356-.517-1.874 0l-5.539 5.54c-.854.853-.854 2.241 0 3.093.852.853 2.24.853 3.093 0l5.64-5.64.827.827zm-17-5.878c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5zm7.57 3.013l-1.57-2.513-2.52 4-2.48-1.96-4 5.96h6.694c.144-1.139.63-2.242 1.503-3.114l2.373-2.373zm-3.754 7.487h-8.816v-14h18v2.126c.299-.062.604-.096.916-.096.371 0 .732.06 1.084.147v-4.177h-22v18h11.818c-.482-.605-.818-1.283-1.002-2z"/></svg>
 
@@ -157,7 +201,7 @@
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea placeholder="Institute Mission"></textarea>
+                <textarea id="companyNewMission" placeholder="Institute Mission" >{{request.user.instituteprofile.mission}}</textarea>
 
             </div>
 
@@ -165,7 +209,7 @@
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea placeholder="Institute Vission"></textarea>
+                <textarea id="companyNewVisson" placeholder="Institute Vission" >{{request.user.instituteprofile.vission}}</textarea>
 
             </div>
             
@@ -176,7 +220,7 @@
     <!--The upload button-->
     <div class="Update_sec">
 
-        <div class="Update">
+        <div class="Update" id="Update" >
 
             <span>Update</span>
 
@@ -186,9 +230,65 @@
 
     </div>
 
+    <form method="post" id="companyProfForm" >
+
+        {% csrf_token %}
+
+        <input type ="file" id="companyIc" accept="image/*" onchange="previewImage(event)">
+
+        <input type="text" id="logoNameV" >
+
+        <script>
+
+            const previewImage = e => {
+                const reader = new FileReader();
+                reader.readAsDataURL(e.target.files[0]);
+                reader.onload = () => {
+                    const preview = document.getElementById('theIcSrc');
+                    preview.src = reader.result;
+                };
+                };
+
+        </script>
+
+        <input type ="file" id="companyAct" accept="image/*" onchange="previewImage1(event)">
+
+        <input type="text" id="actNameV" >
+
+        <script>
+            
+            const previewImage1 = e => {
+                const reader = new FileReader();
+                reader.readAsDataURL(e.target.files[0]);
+                reader.onload = () => {
+                    const preview = document.getElementById('actImgSrc');
+                    preview.src = reader.result;
+                };
+            };
+
+        </script>
+
+        <input type="text" id="companyName">
+
+        <textarea id="bio" ></textarea>
+
+        <textarea id="mission" ></textarea>
+
+        <textarea id="vision" ></textarea>
+
+        <button type="submit" id="updatePNow" >send</button>
+
+    </form>
+
     <!--Boostrap Link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     
 </body>
+
+<!--Scripts-->
+<script src="{% static '/Js/Institute/Dashboard/postProfile.js' %}"></script>
+
+<script src="{% static '/Js/Institute/Dashboard/updateProfile.js' %}"></script>
+
 </html>
