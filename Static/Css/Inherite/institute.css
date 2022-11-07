@@ -126,6 +126,11 @@
     align-items: center;
 }
 
+.head_nav a {
+    width: max-content;
+    height: 100%;
+}
+
 .insti_own_logo {
     width: max-content;
     height: 100%;

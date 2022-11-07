@@ -7,8 +7,8 @@
 }
 
 /* Where we are */
-.nav_part:nth-child(2){
-    background-color: #4B39EF;
+.nav_prof_blue {
+    background-color: #4B39EF !important;
 }
 
 
