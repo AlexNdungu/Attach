@@ -7,7 +7,6 @@
 {% block head %}
 
 <!--The title-->
-<title>Attachment :: Institute - Department Heads</title>
 
 <!--The dashboard css-->
 <link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/heads.css' %}">
@@ -20,6 +19,120 @@
 
 <!--The body section-->
 {% block body %}
+
+<!--The create head modal section-->
+<!-- Modal -->
+<div class="modal fade" id="createHeadModal" tabindex="-1" aria-labelledby="createHeadModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Department Head</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+            
+                <form  method="post" id="createHeadForm">
+
+                    {% csrf_token %}
+
+                    <input type="text"  id="email" placeholder="Email">
+
+                    <!--Check email-->
+                    <div id="checkMail">
+                        <span id="emMess" >Invalid Email</span>
+                    </div>
+
+                    <input type="password"  id="headPass" placeholder="Password">
+
+                    
+                    <input type="password"  id="headPass1" placeholder="Confirm Password">
+
+                    <div class="seePass">
+
+                        <input type="checkbox" id="checkPassShow">
+
+                        <span>Show Passwords</span>
+
+                        <div class="showPs" id="showPs">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" id="checkSee" width="24" height="24" viewBox="0 0 24 24"><path d="M9 21.035l-9-8.638 2.791-2.87 6.156 5.874 12.21-12.436 2.843 2.817z"/></svg>
+
+                        </div>
+
+                    </div>
+
+                    <div id="checkPass1">
+                        <span id="messagePass" >Invalid Email</span>
+                    </div>
+
+                    <button type="submit" id="createComptBtn" >Create</button>
+
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeCreateHead" >Close</button>
+                <button type="button" class="btn btn-primary" id="createStart" >Create</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--The toast section success-->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+        <div class="d-flex">
+
+          <div class="toast-body">
+
+            Head Created Successfully!
+
+          </div>
+
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+
+        </div>
+
+    </div> 
+
+</div>
+
+<!--The toast section failure-->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div id="failedToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+        <div class="d-flex">
+
+          <div class="toast-body" id="toastMess" >
+
+            Head Create Unsuccessfull!
+
+          </div>
+
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+
+        </div>
+
+    </div> 
+
+</div>
 
 <!--The search section-->
 
@@ -34,7 +147,7 @@
         </div>
 
         <!--Department add-->
-        <div class="dep_add">
+        <div class="dep_add" data-bs-toggle="modal" data-bs-target="#createHeadModal">
             <span>Add Department Head</span>
 
             <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z" fill-rule="nonzero"/></svg>
@@ -115,9 +228,16 @@
 
 </div>
 
+ 
+
 {% endblock %}
 
 
 <!--The bottom section-->
 {% block below %}
+
+<script src="{% static 'Js/Institute/Dashboard/head.js' %}"></script>
+<script src="{% static 'Js/Institute/Dashboard/createHead.js' %}"></script>
+
+
 {% endblock %}

@@ -68,6 +68,8 @@ currentForm.addEventListener('submit', (e)=> {
         error: function(error){
             console.log(error)
 
+            document.getElementById('closeCreateHead').click();
+
             const failedToast = document.getElementById('failedToast');
         
             const toast = new bootstrap.Toast(failedToast);

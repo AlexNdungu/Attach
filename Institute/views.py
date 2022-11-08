@@ -17,6 +17,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 
 #Import 
+from Lecturer.models import *
 
 
 # Create your views here.
@@ -237,6 +238,44 @@ def department(request):
 #@institute_only
 def heads(request):
     return render(request, 'Institute/Dashboard/heads.html')
+
+#here we create new head
+def createHead(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        email = request.POST.get('email')
+        pass1 = request.POST.get('pass1')
+        pass2 = request.POST.get('pass2')
+
+        if(User.objects.filter(username=email).exists()):
+
+            return JsonResponse({'Message':'Exist'})
+
+        else:    
+            if(pass1 == pass2):
+
+                head = User.objects.create_user(username=email,email=email,password=pass1)   
+
+                institute = InstituteProfile.objects.get(institute = request.user)
+
+                #Now we add the institute to the School Group
+                hleac = Group.objects.get(name='HLecturer')   
+                lec = Group.objects.get(name='Lecturer') 
+
+                hleac.user_set.add(head)
+                lec.user_set.add(head)
+
+
+                #Now we create an account 
+                HeadLecturer.objects.create(
+                    lecturer = head,
+                    institute = institute,
+                    lec_name = head.email
+                )             
+
+
+            return JsonResponse({'status':'created'}) 
 
 @login_required(login_url='allLog')
 #@institute_only

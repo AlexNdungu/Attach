@@ -30,6 +30,7 @@ urlpatterns = [
     path('company/', include('Company.urls', namespace='Company')),
     path('institute/', include('Institute.urls', namespace='Institute')),
     path('student/', include('Student.urls', namespace='Student')),
+    path('lecturer/', include('Lecturer.urls', namespace='Lecturer')),
     #Social auth
 
     # path('company/', include('Company.urls')),

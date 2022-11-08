@@ -32,6 +32,9 @@ urlpatterns = [
 
     path('heads/',views.heads,name="heads"),
 
+    #Create head
+    path('createHead/',views.createHead, name='create_head'),
+
     path('lectures/',views.lectures,name="lectures"),
 
     path('students/',views.students,name="students"),

@@ -57,6 +57,12 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #32772c;
+    transition: 0.2s ease-in;
+}
+
+.dep_add:hover {
+    transform: scale(1.05);
+    background-color: #164d11;
 }
 
 .dep_add span {
@@ -222,4 +228,96 @@
 
 .ind_head_cont svg,.ind_head_cont_new svg {
     fill: #d9d9d9;
+}
+
+
+/* Create head form on modal */
+
+#createHeadForm {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#createHeadForm input {
+    width: 320px;
+    height: 45px;
+    margin: 10px;
+    outline: none;
+    border: 2px solid #474747;
+    border-radius: 10px;
+    padding: 10px;
+    color: #4b39ef;
+}
+
+#createHeadForm input:focus {
+    border: 2px solid #4b39ef;
+}
+
+
+/* Email checker */
+
+#checkMail,#checkPass,#checkPass1 {
+    width: 320px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #f5f5f5;
+    background-color: #9f3333;
+}
+
+/* Show password */
+
+.seePass {
+    width: 320px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #474747;
+}
+
+#checkPassShow {
+    display: none;
+}
+
+.seePass:hover {
+    color: #4b39ef;
+}
+
+.seePass span {
+    margin-right: 10px;
+}
+
+.showPs {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #474747;
+    fill: #474747;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+
+.showPs:hover {
+    transform: scale(1.2);
+    fill: #4b39ef;
+    border: 2px solid #4b39ef;
+}
+
+
+.showPs svg {
+    transform: scale(0.8);
+}
+
+#createComptBtn {
+    display: none;
 }

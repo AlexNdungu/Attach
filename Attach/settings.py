@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Company',
     'Institute',
     'Student',
+    'Lecturer',
 
     'social_django',
 ]
