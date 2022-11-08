@@ -237,7 +237,14 @@ def department(request):
 @login_required(login_url='allLog')
 #@institute_only
 def heads(request):
-    return render(request, 'Institute/Dashboard/heads.html')
+
+    heads = HeadLecturer.objects.all()
+
+    context = {
+        'heads':heads
+    }
+
+    return render(request, 'Institute/Dashboard/heads.html',context)
 
 #here we create new head
 def createHead(request):
@@ -268,14 +275,34 @@ def createHead(request):
 
 
                 #Now we create an account 
-                HeadLecturer.objects.create(
+                createdHead = HeadLecturer.objects.create(
                     lecturer = head,
                     institute = institute,
                     lec_name = head.email
                 )             
 
+                NewHead = {
+                    'id':createdHead.lecturer.username,
+                    'name':createdHead.lec_name,
+                    'profile':createdHead.profile_image.url
+                }
 
-            return JsonResponse({'status':'created'}) 
+            return JsonResponse({'status':'created','NewHead':NewHead}) 
+
+
+#Now we delete the head
+def deleteHead(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        headId = request.POST.get('id')
+
+        #Get the Head with this id
+        theHead = User.objects.get(username = headId)
+
+        theHead.delete()
+
+    return JsonResponse({'Message':'Delete'})
 
 @login_required(login_url='allLog')
 #@institute_only

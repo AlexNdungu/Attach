@@ -35,6 +35,9 @@ urlpatterns = [
     #Create head
     path('createHead/',views.createHead, name='create_head'),
 
+    #Delete the head
+    path('deleteHead/', views.deleteHead, name='delete_Head'),
+
     path('lectures/',views.lectures,name="lectures"),
 
     path('students/',views.students,name="students"),

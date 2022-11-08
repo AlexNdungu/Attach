@@ -92,6 +92,63 @@
 </div>
 
 
+<!--The delete model-->
+<!-- Modal -->
+<div class="modal fade" id="deleteHeadModal" tabindex="-1" aria-labelledby="deleteHeadModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h1 class="modal-title fs-5" id="del_head_name"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <!--The department head image-->
+                <div class="dep_del_img">
+
+                    <div>
+
+                        <img id="del_dep_img_show" src="" alt="dep_del_img">
+
+                    </div>
+
+
+                </div>
+
+                <!--The form responsible in deleting the head-->
+
+                <form method="post" id="deleteHeadForm" >
+
+                    {% csrf_token %}
+
+                    <input type="text" id="head_id_del_form">
+
+                    <button type="submit" id="deleteHeadBtnForm" >delete</button>
+
+                </form>
+            
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeDelete" >Cancel</button>
+                <button type="button" class="btn btn-danger" id="clickDeleletTo" >Delete</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <!--The toast section success-->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
 
@@ -99,7 +156,7 @@
 
         <div class="d-flex">
 
-          <div class="toast-body">
+          <div class="toast-body" id="toastMessSucc">
 
             Head Created Successfully!
 
@@ -175,7 +232,9 @@
 
 
 <!--All department heads-->
-<div class="all_dep_heads">
+<div class="all_dep_heads" id="all_dep_heads">
+
+    {% for head in heads %}
 
     <!--Individual department head-->
     <div class="ind_dep_head">
@@ -183,14 +242,16 @@
         <!--The department head image-->
         <div class="dep_head_img_sect">
 
-            <img src="{% static 'Images/Institute/user.jpg' %}" alt="">
+            <span class="head_id" >{{head.lecturer.username}}</span>
+
+            <img class="del_profile_img" src="{{head.profile_image.url}}" alt="">
 
             <!--The head name section-->
             <div class="dep_head_name_sec">
 
                 <!--The actual name-->
                 <div class="head_act_name">
-                    <span>Alex Meta</span>
+                    <span class="parse_del_name" >{{head.lec_name}}</span>
                 </div>
 
             </div>
@@ -208,7 +269,7 @@
             </div>
 
             <!--The controls-->
-            <div class="ind_head_cont">
+            <div class="ind_head_cont del_head_btn " data-bs-toggle="modal" data-bs-target="#deleteHeadModal">
 
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M19 24h-14c-1.104 0-2-.896-2-2v-17h-1v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2h-1v17c0 1.104-.896 2-2 2zm0-19h-14v16.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-16.5zm-9 4c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm-2-7h-4v1h4v-1z"/></svg>
                 
@@ -224,6 +285,8 @@
         </div>
 
     </div>
+
+    {% endfor %}
 
 
 </div>
