@@ -34,7 +34,9 @@ urlpatterns = [
     #add opportunity
     path('newOp/', views.addOp, name='new_op'),
 
+    path('postNewJob/',views.postNewJob,name='Post_job'),
+
     #The opportunity section
-    path('resOpps/', views.allOpps, name='res_Opps')
+    path('resOpps/', views.allOpps, name='res_Opps'),
 
 ]

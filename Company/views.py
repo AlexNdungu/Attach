@@ -215,6 +215,41 @@ def addOp(request):
 
     return render(request, 'Company/Dashboard/addOp.html',context)
 
+
+
+def postNewJob(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        company = CompanyProfile.objects.get(company = request.user)
+
+        name = request.POST.get('name')
+
+        #Job level
+        level = request.POST.get('level')
+
+        new_level = JobLevel.objects.get(job_level_name = level)
+
+        #Job location
+        location = request.POST.get('location')
+
+        new_location = JobLocation.objects.get(job_loc_name = location)
+
+        body = request.POST.get('body')
+
+        #Now we create a job
+
+        Job.objects.create(
+            company = company,
+            job_location = new_location,
+            job_level = new_level,
+            job_name = name,
+            job_decr = body
+        )
+
+    return JsonResponse({'status':'created'})
+
+
 #All opportunities
 def allOpps(request):
     return render(request, 'Company/Dashboard/opportunity.html')    

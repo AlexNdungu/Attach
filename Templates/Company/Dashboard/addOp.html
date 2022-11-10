@@ -27,6 +27,50 @@
 <!--The body section-->
 {% block body %}
 
+<!--Toast-->
+
+    <!--The toast section success-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Job Created Successfully!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
+    <!--The toast section failure-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="failedToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Job Create Unsuccessfull!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
 <!--The heading op opportunity-->
 <div class="op_head">
 
@@ -41,7 +85,7 @@
     <!--post now-->
     <div class="post_now" id="goReview" >
 
-        <div class="mini_post_now">
+        <div class="mini_post_now" >
 
             <!--The name drops-->
             <div class="name_drops">
@@ -299,7 +343,7 @@
 
                         <script>
 
-                   
+                    
                             document.getElementById('goToPost').addEventListener('click', function (e) {
                                 e.preventDefault();
                         
@@ -316,8 +360,19 @@
 
             </div>
 
+            <!-- <button type="submit" id="clickPostJob" >Submit</button> -->
+
         </div>
 
+
+        <!--The submit form-->
+        <form method="post" id="postJobNow" >
+
+            {% csrf_token %}
+
+            <button type="submit" id="clickPostJob" >Submit</button>
+
+        </form>
 
     </div>
     <!--review now-->
@@ -329,14 +384,14 @@
             <!--The review name-->
             <div class="review_name">
 
-                <h2 id="review_name" ></h2> <h2>-</h2> <h2 id="review_level" >Industrial attachment</h2>
+                <h2 id="review_name" ></h2> <h2>-</h2> <h2 id="review_level" ></h2>
 
             </div>
 
             <!--The location-->
             <div class="review_location">
 
-                <span >Nairobi, Kenya</span><span class="loc_sep" >-</span><span id="select_location" >(On-Site)</span>
+                <span >{{request.user.companylocation.county}}, {{request.user.companylocation.country}}</span><span class="loc_sep" >-</span><span id="select_location" >(On-Site)</span>
 
             </div>
 
@@ -375,7 +430,7 @@
                 </script>
                 
                 <!--Save the job-->
-                <div class="post">
+                <div class="post" id="submitJobPost" >
 
                     <span>Post</span>
 
@@ -401,7 +456,6 @@
 <script src="{% static 'Js/Company/Dashboard/addOp.js' %}"></script>
 <script src="{% static 'Js/Company/Dashboard/rich.js' %}"></script>
 <script src="{% static 'Js/Company/Dashboard/review.js' %}"></script>
-
-
+<script src="{% static 'Js/Company/Dashboard/postOp.js' %}"></script>
 
 {% endblock %}

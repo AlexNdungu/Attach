@@ -255,6 +255,7 @@
     border: 2px solid #474747;
     padding: 20px;
     color: #4B39EF;
+    overflow-y: auto;
 }
 
 /* The post controls */
@@ -385,4 +386,8 @@
 
 .loc_sep {
     margin: 8px;
+}
+
+#clickPostJob,#postJobNow {
+    display: none;
 }
