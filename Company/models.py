@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 #Company categories
@@ -89,3 +90,64 @@ class CompanyCategory(models.Model):
 
     def __str__(self):
         return self.company.company_name
+
+
+#The job posted by the company
+
+class JobLocation(models.Model):
+
+    job_loc_id = models.AutoField(primary_key=True)
+
+    job_loc_name = models.CharField(max_length=50, verbose_name='Job Location Name')
+
+    job_location_decription = models.TextField(verbose_name='Job Location Description')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.job_loc_name
+
+
+
+class JobLevel(models.Model):
+
+    job_level_id = models.AutoField(primary_key=True)
+
+    job_level_name = models.CharField(max_length=50, verbose_name='Job Location Name')
+
+    job_level_decription = models.TextField(verbose_name='Job Location Description')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.job_level_name
+
+
+
+class Job(models.Model):
+
+    job_id = models.AutoField(primary_key=True)
+
+    company = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE) 
+
+    job_location = models.ForeignKey(JobLocation, on_delete=models.CASCADE) 
+
+    job_level = models.ForeignKey(JobLevel, on_delete=models.CASCADE) 
+
+    job_name = models.CharField(max_length=50, verbose_name='Job Name')
+
+    job_decr = RichTextField()
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.job_name

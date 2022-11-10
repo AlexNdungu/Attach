@@ -31,6 +31,9 @@ urlpatterns = [
     #The institutes related
     path('institutes/',views.institutes, name='institutes'),
 
+    #add opportunity
+    path('newOp/', views.addOp, name='new_op'),
+
     #The opportunity section
     path('resOpps/', views.allOpps, name='res_Opps')
 

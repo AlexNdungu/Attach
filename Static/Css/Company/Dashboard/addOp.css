@@ -1,0 +1,379 @@
+.body_body {
+    background-color: white;
+}
+
+/* The heading  */
+
+.op_head {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    font-size: 16px;
+    color: #474747;
+}
+
+/* The opportunity body */
+
+.opport_body {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+    overflow-x: hidden;
+}
+
+
+/* The post body */
+.post_now,.rev_now {
+    min-width: 100%;
+    height: 100%;
+    background-color: green;
+}
+
+/* Post body all */
+.post_now {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_post_now {
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* name and drops */
+
+.name_drops {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* The name input */
+.div_name {
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.div_name input {
+    width: 350px;
+    height: 45px;
+    outline: none;
+    border: 2px solid #474747;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #4B39EF;
+}
+
+.div_name input:focus {
+    border: 2px solid #4B39EF;
+}
+
+
+/* The level drop menu */
+.level_drop,.level_drop1 {
+    height: 100%;
+    width: 33.3%;
+    position: relative;
+}
+
+.btn_drop_both,.btn_drop_both1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.level_drop input,.level_drop1 input {
+    width: 350px;
+    height: 45px;
+    outline: none;
+    border: 2px solid #474747;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #4B39EF;
+    margin: 20px;
+}
+
+.level_drop input:focus,.level_drop1 input:focus {
+    border: 2px solid #4B39EF;
+}
+
+/* The drop btn */
+
+.level_drop_btn,.level_drop_btn1 {
+    width: 45px !important;
+    height: 45px !important;
+    border: 2px solid #474747;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    fill: #474747;
+}
+
+.level_drop_btn:hover,.level_drop_btn1:hover {
+    fill: #4B39EF;
+    border: 2px solid #4B39EF;
+    transform: scale(1.2);
+}
+
+.level_drop_btn svg,.level_drop_btn1 svg {
+    transform: scale(1.2);
+    transition: 0.2s ease-in;
+}
+
+
+/* The drop npw */
+
+.the_level_drop_it,.the_level_drop_it1 {
+    position: absolute;
+    left: 20px;
+    top: 100%;
+    width: 350px;
+    height: max-content;
+    border-radius: 10px;
+    background-color: #474747;
+}
+
+/* The selected item */
+
+.lev_select,.lev_select1 {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    color: #F5F5F5;
+    font-size: 17px;
+    cursor: pointer;
+    border: 2px solid #474747;
+    border-radius: 10px;
+}
+
+.lev_select:hover,.lev_select1:hover {
+    border: 2px solid #D9D9D9;
+}
+
+
+/* The body of post */
+.mini_body {
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rich_editor {
+    width: calc(100% - 40px);
+    height: calc(100% - 20px);
+    border: 2px solid #474747;
+    border-radius: 15px;
+}
+
+/* Rich text oprions */
+.options {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.options button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    fill: #474747;
+    transition: 0.1s ease-in;
+    background: none;
+}
+
+.options button:hover {
+    border: 2px solid #4B39EF;
+    fill: #4B39EF;
+    transform: scale(1.1);
+}
+
+/* The editable*/
+
+.rich_editable {
+    height: 410px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.richEdit {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 10px;
+    border: 2px solid #474747;
+    padding: 20px;
+    color: #4B39EF;
+}
+
+/* The post controls */
+
+.post_controls {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Discharge */
+
+.discharge,.review {
+    width: 200px;
+    height: 50px;
+    background-color: #474747;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    color: #F5F5F5;
+    fill: #F5F5F5;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.1s ease-in;
+}
+
+.discharge:hover {
+    background-color: #a93d3d;
+}
+
+.review:hover {
+    background-color: #4B39EF;
+}
+
+
+/* Now we review the question */
+
+.rev_now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.review_space {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+/* The review name */
+
+.review_name,.review_location {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    color: #474747;
+}
+
+#review_level {
+    margin-left: 8px;
+}
+
+/* Location review */
+
+.review_location {
+    height: 50px;
+}
+
+.review_location span {
+    font-size: 18px;
+}
+
+
+/* The rich body */
+.review_rich_body {
+    width: 100%;
+    height: max-content;
+    padding: 40px;
+}
+
+
+/* Post and review */
+
+.review_cont_save {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit,.post {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    background-color: #474747;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #F5F5F5;
+    fill: #F5F5F5;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.edit:hover {
+    background-color: #4B39EF;
+}
+
+.post:hover {
+    background-color: #32772C;
+}
+
+#review_name {
+    margin-right: 8px;
+}
+
+.loc_sep {
+    margin: 8px;
+}

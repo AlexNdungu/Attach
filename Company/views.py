@@ -16,6 +16,9 @@ from .models import *
 #Import settings
 from Attach import settings
 
+#Lets get the groups
+from django.contrib.auth.models import Group
+
 # Create your views here.
 
 @unauthenticated_user
@@ -44,6 +47,10 @@ def createCompany(request):
             if(pass1 == pass2):
 
                 new_company = User.objects.create_user(username=email,email=email,password=pass1)    
+
+                #Now we add the institute to the School Group
+                company = Group.objects.get(name='Company')     
+                company.user_set.add(new_company)
 
                 #Create a new company profile
                 new_company_profile = CompanyProfile.objects.create(
@@ -194,6 +201,10 @@ def students(request):
 #The institutes related
 def institutes(request):
     return render(request, 'Company/Dashboard/institutes.html')    
+
+#create new opportunty
+def addOp(request):
+    return render(request, 'Company/Dashboard/addOp.html')
 
 #All opportunities
 def allOpps(request):

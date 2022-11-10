@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'Institute',
     'Student',
     'Lecturer',
+    
+    'ckeditor',
 
     'social_django',
 ]
