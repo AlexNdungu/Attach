@@ -6,6 +6,9 @@ from django.db.models import Count
 
 from Attach import settings
 
+from django.contrib.auth.models import User
+
+
 
 
 # Create your views here.
@@ -87,16 +90,78 @@ def category(request, pk):
 #Opportunities section
 
 def opport(request):
-    return render(request,'Student\Dashboard\opportunity.html')   
+
+    companies = CompanyProfile.objects.all()
+
+    new_companies = []
+
+    print(companies)
+
+    for company in companies:
+
+        if company.company_job.exists():
+
+            new_companies.append(company)
+
+     
+    print(new_companies) 
+
+    context = {
+        'companys': new_companies
+    }
+
+    return render(request,'Student\Dashboard\opportunity.html',context)   
 
 
 #The all company opportunities
-def allOpps(request):
-    return render(request,'Student/Dashboard/campopps.html')
+def allOpps(request, pk):
+
+    company = CompanyProfile.objects.get(company_profile_id = pk)
+
+    #print(company.company)
+
+    company_user = company.company.username
+
+    user_now_company = User.objects.get(username = company_user)
+
+    location = CompanyLocation.objects.get(company = user_now_company)
+
+    opports = Job.objects.filter(company = company)
+
+    num_ops = opports.count()
+
+    print(location)
+
+    context = {
+        'location':location,
+        'company':company,
+        'num_ops':num_ops,
+        'opports':opports
+    }
+
+    return render(request,'Student/Dashboard/campopps.html',context)
 
 #The individual opportunity 
-def indopp(request):
-    return render(request, 'Student/Dashboard/indopp.html')   
+def indopp(request, pk):
+
+    job = Job.objects.get(job_id = pk)
+
+    profile_company = job.company.company.username
+
+    #print(profile_company)
+
+    company_user = User.objects.get(username = profile_company)
+
+    location = CompanyLocation.objects.get(company = company_user)
+
+    print(location)
+
+    context = {
+        'location':location,
+        'job':job
+    }
+
+    return render(request, 'Student/Dashboard/indopp.html',context)   
 
 
 #Applied Attachments

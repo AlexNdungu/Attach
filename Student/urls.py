@@ -20,9 +20,9 @@ urlpatterns = [
     path('opportunity/', views.opport, name='Opportunity'),
 
     #The company opportunities
-    path('companyOpps/', views.allOpps, name='company_Opps'),
+    path('companyOpps/<pk>/', views.allOpps, name='company_Opps'),
 
-    path('indopp/', views.indopp, name='ind_opp'),
+    path('indopp/<pk>/', views.indopp, name='ind_opp'),
 
     #Applied attachments
     path('applied/',views.applied, name='applied'),

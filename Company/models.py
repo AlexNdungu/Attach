@@ -28,7 +28,7 @@ class CompanyProfile(models.Model):
     company_profile_id = models.AutoField(primary_key=True)
 
     #One user to one institute
-    company = models.OneToOneField(User, on_delete=models.CASCADE)
+    company = models.OneToOneField(User, on_delete=models.CASCADE, related_name='company_user')
 
     company_name = models.CharField(max_length=40, verbose_name='Company Name')
 
@@ -72,7 +72,7 @@ class CompanyLocation(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.company.companyprofile.company_name
+        return self.company.company_user.company_name
 
 
 class CompanyCategory(models.Model):
@@ -134,7 +134,7 @@ class Job(models.Model):
 
     job_id = models.AutoField(primary_key=True)
 
-    company = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE) 
+    company = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE, related_name='company_job') 
 
     job_location = models.ForeignKey(JobLocation, on_delete=models.CASCADE) 
 

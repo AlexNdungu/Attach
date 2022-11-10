@@ -33,23 +33,27 @@
     <div class="back_logo">
 
         <!--The back button-->
-        <div class="back_dash">
+        <a href="{% url 'Student:company_Opps' job.company.company_profile_id %}">
 
-            <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10.978 14.999v3.251c0 .412-.335.75-.752.75-.188 0-.375-.071-.518-.206-1.775-1.685-4.945-4.692-6.396-6.069-.2-.189-.312-.452-.312-.725 0-.274.112-.536.312-.725 1.451-1.377 4.621-4.385 6.396-6.068.143-.136.33-.207.518-.207.417 0 .752.337.752.75v3.251h9.02c.531 0 1.002.47 1.002 1v3.998c0 .53-.471 1-1.002 1z" fill-rule="nonzero"/></svg>
+            <div class="back_dash">
 
-        </div>
+                <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10.978 14.999v3.251c0 .412-.335.75-.752.75-.188 0-.375-.071-.518-.206-1.775-1.685-4.945-4.692-6.396-6.069-.2-.189-.312-.452-.312-.725 0-.274.112-.536.312-.725 1.451-1.377 4.621-4.385 6.396-6.068.143-.136.33-.207.518-.207.417 0 .752.337.752.75v3.251h9.02c.531 0 1.002.47 1.002 1v3.998c0 .53-.471 1-1.002 1z" fill-rule="nonzero"/></svg>
+    
+            </div>
+
+        </a>
 
         <!--The back image -->
         <div class="back_img">
 
-            <img src="{% static 'Images/Company/Company.jpg' %}" alt="backImage">
+            <img src="{{job.company.act.url}}" alt="backImage">
 
         </div>
         
         <!--The logo section-->
         <div class="logo_back">
 
-            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="Logo">
+            <img src="{{job.company.logo.url}}" alt="Logo">
 
         </div>
 
@@ -62,7 +66,7 @@
         <!--The name section-->
         <div class="com_name">
 
-            <h2>CodePinion</h2>
+            <h2>{{job.company.company_name}}</h2>
 
         </div>
 
@@ -79,7 +83,7 @@
             <div class="job_name_conts">
 
                 <!--the name-->
-                <h2> Cadastral survey - Industrial attachment</h2>
+                <h2> {{job.job_name}} - {{job.job_level}}</h2>
 
                 <!--The job controls-->
                 <div class="job_share_details">
@@ -105,7 +109,7 @@
             <!--the number of applicants and location-->
             <div class="no_of_app_loc">
 
-                <span>Nairobi, Kenya(On-Site)</span>
+                <span>{{location.county}}, {{location.country}}({{job.job_location}})</span>
 
                 <span>18 Applicants</span>
 
@@ -137,31 +141,7 @@
             </div>
 
             <!--the job detaisl-->
-            <div class="job_details">
-
-                <p>Role Profile
-
-                    For 3  months, you can expect to be challenged and grow as a land surveyor  as you will work on real projects on the ground.
-                    
-                    Key Responsibilities
-                    
-                    Carry out various field surveys that involve subdivision and amalgamation
-                    Transferring of land titles and carrying out search.
-                    Hanle the vsarios field instruments such as RTK.
-                    Learn how to use softwares such as Autocad.
-                    Collaborate with other interns to complete challenges assigned to you.
-                    Learn new skills and implement them in your daily work process.
-                    
-                    Minimum Requirements
-                    
-                    A recommendation letter from your learning institution.
-                    Applicants curriculum Vitae.
-                    A letter of good conduct.
-                    
-                    
-                    </p>
-
-            </div>
+            <div class="job_details">{{job.job_decr | safe}}</div>
 
         </div>
 
