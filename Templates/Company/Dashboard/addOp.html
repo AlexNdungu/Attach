@@ -74,13 +74,19 @@
                     <!--The drop self-->
                     <div class="the_level_drop_it" id="the_level_drop_it">
 
+                        {% for level in levels %}
+
                         <!--The selected items-->
                         <div class="lev_select">
 
-                            Attachment
+                            {{level.job_level_name}}
 
                         </div>
 
+                        {% endfor %}
+
+                        
+<!-- 
                         <div class="lev_select">
 
                             Internship
@@ -91,7 +97,7 @@
 
                             Work
 
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -103,7 +109,7 @@
                     <!--The level input-->
                     <div class="btn_drop_both" >
 
-                        <input type="text" placeholder="Level Of Post" id="level_put1" disabled>
+                        <input type="text" placeholder="Location Of Post" id="level_put1" disabled>
 
                         <!--The drop button-->
 
@@ -118,14 +124,18 @@
                     <!--The drop self-->
                     <div class="the_level_drop_it1" id="the_level_drop_it1">
 
+                        {% for location in locations %}
+
                         <!--The selected items-->
                         <div class="lev_select1">
 
-                            Attachment
+                            {{location.job_loc_name}}
 
                         </div>
 
-                        <div class="lev_select1">
+                        {% endfor %}
+
+                        <!-- <div class="lev_select1">
 
                             Internship
 
@@ -135,7 +145,7 @@
 
                             Work
 
-                        </div>
+                        </div> -->
 
                     </div>
 

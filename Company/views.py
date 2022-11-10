@@ -204,7 +204,16 @@ def institutes(request):
 
 #create new opportunty
 def addOp(request):
-    return render(request, 'Company/Dashboard/addOp.html')
+
+    levels = JobLevel.objects.all()
+    locations = JobLocation.objects.all()
+
+    context = {
+        'levels':levels,
+        'locations':locations
+    }
+
+    return render(request, 'Company/Dashboard/addOp.html',context)
 
 #All opportunities
 def allOpps(request):

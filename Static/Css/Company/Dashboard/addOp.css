@@ -2,6 +2,14 @@
     background-color: white;
 }
 
+
+.ind_nav_sections:nth-child(4) .highl_nav{
+    background-color: #4b39ef;
+}
+
+.ind_nav_sections:hover .highl_nav{
+    background-color: #4b39ef;
+}
 /* The heading  */
 
 .op_head {
@@ -83,6 +91,7 @@
     padding: 10px;
     font-size: 16px;
     color: #4B39EF;
+    background: none;
 }
 
 .div_name input:focus {
