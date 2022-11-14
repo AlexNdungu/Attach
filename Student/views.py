@@ -16,6 +16,10 @@ from django.contrib.auth.models import User
 def signUp(request):
     return render(request, 'Student\Signup.html')
 
+#Profile
+def profile(request):
+    return render(request,'Student\Dashboard\profile.html' )
+
 #Student Dashboard
 
 def dash(request):

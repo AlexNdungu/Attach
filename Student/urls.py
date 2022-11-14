@@ -10,6 +10,8 @@ urlpatterns = [
 
     path('dash/',views.dash, name='studentDash'),
 
+    path('profile/',views.profile, name='profile'),
+
     #Company categories
     path('categories/', views.categories, name='stuCats'),
 
