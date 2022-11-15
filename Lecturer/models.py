@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 #Import institute
-from Institute.models import *
-
+from Institute.models import InstituteProfile
 
 # Create your models here.
 
@@ -34,3 +33,43 @@ class HeadLecturer(models.Model):
 
     def __str__(self):
         return self.lec_name
+
+
+#The department
+class Department(models.Model):
+
+    dep_id = models.AutoField(primary_key=True)
+
+    institute = models.ForeignKey(InstituteProfile, on_delete=models.CASCADE)
+
+    dep_name = models.CharField(max_length=40, verbose_name='Department Name')
+
+    dep_desc = models.TextField(verbose_name='Depertment Bio')
+
+    head = models.OneToOneField(HeadLecturer, on_delete=models.SET_NULL, null=True)
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    # def __str__(self):
+    #     return self.dep_name
+
+
+#Course
+class Course(models.Model):
+
+    Course_id = models.AutoField(primary_key=True)
+
+    institute = models.ForeignKey(InstituteProfile, on_delete=models.CASCADE)
+
+    Course_name = models.CharField(max_length=40, verbose_name='Course Name')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    # def __str__(self):
+    #     return self.Course_name
