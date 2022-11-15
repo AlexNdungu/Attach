@@ -30,6 +30,13 @@ urlpatterns = [
 
     path('departments/',views.department,name="departments"),
 
+    #Json response to create depart,ments
+    path('getHeads/',views.getDepHeads,name="get_heads"),
+
+    path('createDepart/',views.createDepartment,name="create_heads"),
+
+    path('deleteDepart/',views.deleteDep,name="delete_heads"),
+
     path('heads/',views.heads,name="heads"),
 
     #Create head

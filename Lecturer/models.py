@@ -21,9 +21,16 @@ class HeadLecturer(models.Model):
 
     #Images
     profile_image = models.ImageField(upload_to='Profile', verbose_name='Profile', default = 'instituteIc.png')
+
+    profile_url = models.CharField(max_length=100, verbose_name='Profile Url')
+
     profile_image_name = models.CharField(max_length=40, verbose_name='Profile Source',default = 'instituteIc.png')
 
+
     act = models.ImageField(upload_to='Activity', verbose_name='Activity Image', default = 'actIc.png')
+    
+    act_url = models.CharField(max_length=100, verbose_name='Act Url')
+
     act_name = models.CharField(max_length=40, verbose_name='Activity Source',default = 'actIc.png')
 
     #Create And Update date
@@ -33,6 +40,12 @@ class HeadLecturer(models.Model):
 
     def __str__(self):
         return self.lec_name
+
+    # @property
+    # def profile_url(self):
+    #     if self.profile_image and hasattr(self.profile_image, 'url'):
+    #         return self.profile_image
+
 
 
 #The department

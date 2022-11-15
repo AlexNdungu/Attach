@@ -19,6 +19,9 @@ from django.contrib.auth.models import Group
 #Import 
 from Lecturer.models import *
 
+from django.core import serializers
+
+
 
 # Create your views here.
 
@@ -232,17 +235,76 @@ def currentLocation(request):
 @login_required(login_url='allLog')
 #@institute_only
 def department(request):
-    return render(request, 'Institute/Dashboard/department.html')     
+
+    departs = Department.objects.all();
+
+    context = {
+        'departs':departs
+    }
+
+    return render(request, 'Institute/Dashboard/department.html',context)     
+
+def getDepHeads(request):
+
+    heads = HeadLecturer.objects.all()
+
+    for head in heads:
+        print(head.profile_image.url)
+    #head_json = serializers.serialize('json', allH)
+
+    return JsonResponse({'heads':list(heads.values())})  
+    #return JsonResponse(new)
+
+def createDepartment(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        theinstitute = InstituteProfile.objects.get(institute = request.user)
+
+        name = request.POST.get('depart_name')
+        dec = request.POST.get('depart_desc')
+        head = request.POST.get('head_id')
+
+        dep_head = HeadLecturer.objects.get(lec_id = head)
+
+        newDep = Department.objects.create(
+            institute = theinstitute,
+            dep_name = name,
+            dep_desc = dec,
+            head = dep_head
+        )
+
+        pass_head = {
+            'id': newDep.dep_id,
+            'name': newDep.dep_name,
+            'desc': newDep.dep_desc,
+            'date': newDep.created
+        }
+
+    return JsonResponse({'status':'Created','pass_head':pass_head})   
+
+#delete department
+def deleteDep(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        depertid = request.POST.get('id')
+
+        dep = Department.objects.get(dep_id = depertid)
+
+        dep.delete()
+
+    return JsonResponse({'status':'Delete'})
 
 @login_required(login_url='allLog')
 #@institute_only
 def heads(request):
 
     heads = HeadLecturer.objects.all()
-
     context = {
         'heads':heads
     }
+
 
     return render(request, 'Institute/Dashboard/heads.html',context)
 
@@ -279,7 +341,12 @@ def createHead(request):
                     lecturer = head,
                     institute = institute,
                     lec_name = head.email
-                )             
+                )        
+
+                createdHead.profile_url = createdHead.profile_image.url
+                createdHead.act_url = createdHead.act.url    
+                createdHead.save() 
+     
 
                 NewHead = {
                     'id':createdHead.lecturer.username,
