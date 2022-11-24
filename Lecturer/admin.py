@@ -7,4 +7,6 @@ from .models import *
 admin.site.register(HeadLecturer)
 admin.site.register(Department)
 admin.site.register(Course)
+admin.site.register(Lecturer)
+
 
