@@ -6,5 +6,6 @@ app_name = "Lecturer"
 
 
 urlpatterns = [
-    
+    path('dash/',views.Inherite, name="lecInstituteDash"),
+    path('lecturer/',views.lecturer, name="lecInstituteDash"),
 ]
