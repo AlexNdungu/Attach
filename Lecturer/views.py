@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
+from Institute.models import *
+from .models import *
 
 
 # Create your views here.
@@ -13,7 +15,7 @@ def Inherite(request):
 def lecturer(request):
     return render(request,'Lecturer/Dashboard/addLec.html')    
 
-def createHead(request):
+def createLec(request):
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
 
@@ -28,37 +30,43 @@ def createHead(request):
         else:    
             if(pass1 == pass2):
 
-                head = User.objects.create_user(username=email,email=email,password=pass1)   
+                lec = User.objects.create_user(username=email,email=email,password=pass1)   
 
                 institute = InstituteProfile.objects.get(institute = request.user)
 
+                #Get head
+                head = HeadLecturer.objects.get(lecturer = request.user)
+
+                depart = Department.objects.get(head = head)
+
                 #Now we add the institute to the School Group
-                hleac = Group.objects.get(name='HLecturer')   
+                #hleac = Group.objects.get(name='HLecturer')   
                 lec = Group.objects.get(name='Lecturer') 
 
-                hleac.user_set.add(head)
-                lec.user_set.add(head)
+                #hleac.user_set.add(head)
+                lec.user_set.add(lec)
 
 
                 #Now we create an account 
-                createdHead = HeadLecturer.objects.create(
-                    lecturer = head,
+                createdLec = Lecturer.objects.create(
+                    lecturer = lec,
+                    department = depart,
                     institute = institute,
-                    lec_name = head.email
+                    lec_name = lec.email
                 )        
 
-                createdHead.profile_url = createdHead.profile_image.url
-                createdHead.act_url = createdHead.act.url    
-                createdHead.save() 
+                createdLec.profile_url = createdLec.profile_image.url
+                createdLec.act_url = createdLec.act.url    
+                createdLec.save() 
      
 
-                NewHead = {
-                    'id':createdHead.lecturer.username,
-                    'name':createdHead.lec_name,
-                    'profile':createdHead.profile_image.url
+                NewLec = {
+                    'id':createdLec.lecturer.username,
+                    'name':createdLec.lec_name,
+                    'profile':createdLec.profile_image.url
                 }
 
-            return JsonResponse({'status':'created','NewHead':NewHead}) 
+            return JsonResponse({'status':'created','NewHead':NewLec}) 
 
 
 #Now we delete the head
@@ -66,11 +74,11 @@ def deleteHead(request):
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
 
-        headId = request.POST.get('id')
+        lecId = request.POST.get('id')
 
         #Get the Head with this id
-        theHead = User.objects.get(username = headId)
+        theLec = User.objects.get(username = lecId)
 
-        theHead.delete()
+        theLec.delete()
 
     return JsonResponse({'Message':'Delete'})    

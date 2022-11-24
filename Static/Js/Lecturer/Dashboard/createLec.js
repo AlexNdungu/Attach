@@ -65,7 +65,7 @@ function deleteHead(){
 
                 $.ajax({
                     type:'POST',
-                    url:'/institute/deleteHead/',
+                    url:'/lecturer/deleteLec/',
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -125,7 +125,7 @@ deleteHead();
 
 
 
-//Create A Head
+//Create A Lecturer
 let createHeadForm = document.getElementById('createHeadForm');
 
 let password = document.getElementById('headPass');
@@ -159,7 +159,7 @@ createHeadForm.addEventListener('submit', (e)=> {
 
     $.ajax({
         type:'POST',
-        url:'/institute/createHead/',
+        url:'/lecturer/createLec/',
         data: formData,
         processData: false,
         contentType: false,
