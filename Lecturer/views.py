@@ -13,7 +13,17 @@ def Inherite(request):
 
 #Add lecturer
 def lecturer(request):
-    return render(request,'Lecturer/Dashboard/addLec.html')    
+
+    head = HeadLecturer.objects.get(lecturer = request.user)
+
+    depart = Department.objects.get(head = head)
+
+    lecs = Lecturer.objects.filter(department = depart).all()
+    context = {
+        'heads':lecs
+    }
+
+    return render(request,'Lecturer/Dashboard/addLec.html',context)    
 
 def createLec(request):
 
@@ -86,3 +96,51 @@ def deleteHead(request):
         theLec.delete()
 
     return JsonResponse({'Message':'Delete'})    
+
+#Course
+def SeeCourse(request):
+
+    dHead = HeadLecturer.objects.get(lecturer = request.user)
+
+    the_department = Department.objects.get(head = dHead)
+
+    courses = Course.objects.filter(department = the_department).all();
+
+    context = {
+        'departs':courses
+    }
+
+    return render(request, 'Lecturer/Dashboard/course.html',context)   
+
+#Create Course
+def createCourse(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        head = HeadLecturer.objects.get(lecturer = request.user)
+
+        theinstitute = head.institute
+
+        dep = Department.objects.get(head = head)
+
+        name = request.POST.get('depart_name')
+        dec = request.POST.get('depart_desc')
+        #head = request.POST.get('head_id')
+
+        #dep_head = HeadLecturer.objects.get(lec_id = head)
+
+        newCourse = Course.objects.create(
+            institute = theinstitute,
+            department = dep,
+            Course_name = name,
+            course_desc = dec
+        )
+
+        pass_course = {
+            'id': newCourse.Course_id,
+            'name': newCourse.Course_name,
+            'desc': newCourse.course_desc,
+            'date': newCourse.created
+        }
+
+    return JsonResponse({'status':'Created','pass_head':pass_course})

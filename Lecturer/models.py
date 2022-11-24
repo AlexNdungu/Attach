@@ -77,6 +77,10 @@ class Course(models.Model):
 
     institute = models.ForeignKey(InstituteProfile, on_delete=models.CASCADE)
 
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+    course_desc = models.TextField(verbose_name='Course Bio')
+
     Course_name = models.CharField(max_length=40, verbose_name='Course Name')
 
     #Create And Update date
