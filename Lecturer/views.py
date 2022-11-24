@@ -32,19 +32,23 @@ def createLec(request):
 
                 lec = User.objects.create_user(username=email,email=email,password=pass1)   
 
-                institute = InstituteProfile.objects.get(institute = request.user)
+                #institute = InstituteProfile.objects.get(institute = request.user)
 
                 #Get head
                 head = HeadLecturer.objects.get(lecturer = request.user)
+
+                institute = head.institute
+
+                print(institute)
 
                 depart = Department.objects.get(head = head)
 
                 #Now we add the institute to the School Group
                 #hleac = Group.objects.get(name='HLecturer')   
-                lec = Group.objects.get(name='Lecturer') 
+                lecGroup = Group.objects.get(name='Lecturer') 
 
                 #hleac.user_set.add(head)
-                lec.user_set.add(lec)
+                lecGroup.user_set.add(lec)
 
 
                 #Now we create an account 
