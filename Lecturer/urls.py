@@ -13,6 +13,7 @@ urlpatterns = [
     path('deleteLec/', views.deleteHead, name='delete_Lec'),
     #Course
     path('course/', views.SeeCourse, name='course_url'),
-    path('createCourse/', views.createCourse, name='create_course')
+    path('createCourse/', views.createCourse, name='create_course'),
+    path('deleteCourse/', views.deleteCourse, name='delete_course'),
 
 ]

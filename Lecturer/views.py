@@ -144,3 +144,16 @@ def createCourse(request):
         }
 
     return JsonResponse({'status':'Created','pass_head':pass_course})
+
+#delete couse
+def deleteCourse(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        courseid = request.POST.get('id')
+
+        course = Course.objects.get(Course_id = courseid)
+
+        course.delete()
+
+    return JsonResponse({'status':'Delete'})    

@@ -178,7 +178,7 @@ function deleteHead(){
 
                 $.ajax({
                     type:'POST',
-                    url:'/institute/deleteDepart/',
+                    url:'/lecturer/deleteCourse/',
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -190,7 +190,7 @@ function deleteHead(){
 
                         document.getElementById('closeDelete').click();
 
-                        document.getElementById('toastMessSucc').innerHTML = "Department Delete Successfull!"
+                        document.getElementById('toastMessSucc').innerHTML = "Course Delete Successfull!"
 
                         const successToast = document.getElementById('successToast');
                 
@@ -202,7 +202,7 @@ function deleteHead(){
                     error: function(error){
                         console.log(error);
 
-                        document.getElementById('toastMess').innerHTML = "Department Delete Unsuccesfull!"
+                        document.getElementById('toastMess').innerHTML = "Course Delete Unsuccesfull!"
 
                         const failedToast = document.getElementById('failedToast');
                 
