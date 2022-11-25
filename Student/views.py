@@ -8,7 +8,7 @@ from Attach import settings
 
 from django.contrib.auth.models import User
 
-
+from Institute.models import *
 
 
 # Create your views here.
@@ -18,7 +18,15 @@ def signUp(request):
 
 #Profile
 def profile(request):
-    return render(request,'Student\Dashboard\profile.html' )
+
+    #Select all universities
+    schools = InstituteProfile.objects.all()
+
+    context = {
+        'schools':schools
+    }
+
+    return render(request,'Student\Dashboard\profile.html',context )
 
 #Student Dashboard
 

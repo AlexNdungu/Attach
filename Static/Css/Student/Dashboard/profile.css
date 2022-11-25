@@ -211,7 +211,7 @@
 /* The school image */
 
 .school_img {
-    width: max-content;
+    width: 80px;
     height: 80px;
     margin: 10px;
 }
@@ -299,4 +299,107 @@
     height: 100%;
     border-radius: 15px;
     object-fit: cover;
+}
+
+
+/* The profile input modal */
+
+.studPerson {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.studPerson input {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #4B39EF;
+    outline: none;
+}
+
+.studPerson input:focus {
+    border: 2px solid #4B39EF;
+}
+
+
+/* Select university modal */
+
+.uniSeeSelect {
+    width: 100%;
+    height: max-content;
+}
+
+.searchUni {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.searchUni input {
+    width: 400px;
+    height: 50px;
+    color: #4B39EF;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.searchUni input:focus {
+    border: 2px solid #4B39EF;
+}
+
+/* Select university */
+
+.selectUni {
+    width: 100%;
+    height: max-content;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Individual school */
+
+.indSelectUni {
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.1s ease-in;
+    color: #474747;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.indSelectUni:hover {
+    background-color: #4B39EF;
+    color: #D9D9D9;
+}
+
+.uniCheckAct {
+    background-color: #4B39EF;
+    color: #D9D9D9;
+}
+
+.uniImg {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+}
+
+.uniImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }

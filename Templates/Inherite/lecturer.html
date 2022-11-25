@@ -209,7 +209,7 @@
                     <h2>{% block place %}Lecturere Dashboard{% endblock %}</h2>
 
                     <!--The institute name-->
-                    <h5>Welcome, </h5>
+                    <h5>Welcome, {{request.user.headlecturer.lec_name}}</h5>
 
                 </div>
 
