@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('profile/',views.profile, name='profile'),
 
+    path('getDeps/', views.getDeps, name='get_deps'),
     #Company categories
     path('categories/', views.categories, name='stuCats'),
 

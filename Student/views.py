@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 
 from Institute.models import *
 
+from django.http import JsonResponse
+
+from Lecturer.models import *
 
 # Create your views here.
 
@@ -27,6 +30,18 @@ def profile(request):
     }
 
     return render(request,'Student\Dashboard\profile.html',context )
+
+def getDeps(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        school_id = request.POST.get('id')
+
+        school = InstituteProfile.objects.get(institute_profile_id = school_id)
+
+        deps = Department.objects.filter(institute = school).all()
+
+    return JsonResponse({'deps':list(deps.values())}) 
 
 #Student Dashboard
 
