@@ -43,6 +43,19 @@ def getDeps(request):
 
     return JsonResponse({'deps':list(deps.values())}) 
 
+
+def getCourses(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        dep_id = request.POST.get('id')
+
+        dep = Department.objects.get(dep_id = dep_id)
+
+        courses = Course.objects.filter(department = dep).all()
+
+    return JsonResponse({'deps':list(courses.values())}) 
+
 #Student Dashboard
 
 def dash(request):

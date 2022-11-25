@@ -13,6 +13,8 @@ urlpatterns = [
     path('profile/',views.profile, name='profile'),
 
     path('getDeps/', views.getDeps, name='get_deps'),
+
+    path('getCourses/', views.getCourses, name='get_courses'),
     #Company categories
     path('categories/', views.categories, name='stuCats'),
 

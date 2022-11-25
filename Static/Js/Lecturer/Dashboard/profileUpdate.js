@@ -187,9 +187,62 @@ function departAct(){
 //Now lets get the courses
 let getCoursesForm = document.getElementById('getCourses');
 
+let depIdGet = document.getElementById('depGetID')
+
 getCoursesForm.addEventListener('submit', (e)=> {
     e.preventDefault();
 
-    console.log('submit')
+    //console.log('submit')
+
+    let formData = new FormData();
+
+    formData.append('id',depIdGet.value);
+
+    formData.append('csrfmiddlewaretoken', csrf[0].value);
+
+    $.ajax({
+        type:'POST',
+        url:'/student/getCourses/',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response){
+
+            console.log(response)
+
+            // $("#selectDepartSee").empty();
+
+            // console.log(response.deps);
+
+            // let deps = response.deps;
+
+
+            // for(var littleDep in deps){
+                
+            //     let oneDEp = `
+            //     <!--Inidvidual schol-->
+            //     <div class="indSelectUni1">
+
+            //         <span>${deps[littleDep].dep_name}</span>
+
+            //         <span class="selDepId" >${deps[littleDep].dep_id}</span>
+
+            //         <input type="checkbox" class="selDepCheck">
+
+            //     </div>
+            //     `
+
+            //     $("#selectDepartSee").append(oneDEp);
+            // }
+
+            // departAct();
+
+        },
+        error: function(error){
+
+            // console.log(error)
+            
+        }
+    });
 
 })
