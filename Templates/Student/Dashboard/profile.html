@@ -98,11 +98,11 @@
 
                                 <div class="uniImg">
 
-                                    <img src="{{school.logo.url}}" alt="">
+                                    <img class="schoolImageSetClass" src="{{school.logo.url}}" alt="">
 
                                 </div>
 
-                                <span>{{school.institute_name}}</span>
+                                <span class="changeUniName" >{{school.institute_name}}</span>
 
                                 <span class="selUniId" >{{school.institute_profile_id}}</span>
 
@@ -160,7 +160,7 @@
                             <!--Inidvidual schol-->
                             <div class="indSelectUni1">
 
-                                <span></span>
+                                <span class="changeDepartNameClass" ></span>
 
                                 <span class="selDepId" ></span>
 
@@ -263,7 +263,7 @@
                             <!--Inidvidual schol-->
                             <div class="indSelectUni2">
 
-                                <span></span>
+                                <span class="changeCourseNameClass" ></span>
 
                                 <span class="selCourseId" ></span>
 
@@ -405,11 +405,11 @@
                     <!--School image-->
                     <div class="school_img">
 
-                        <img src="{% static 'Images/Institute/dkut.png' %}" alt="">
+                        <img id="schoolImageSetID" src="{% static 'Images/Institute/dkut.png' %}" alt="">
 
                     </div>
 
-                    <span>Dedan Kimathi</span>
+                    <span id="changeUniNameID" >Dedan Kimathi</span>
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#uniSelect">
@@ -429,7 +429,7 @@
 
                     </div>
 
-                    <span>Dedan Kimathi</span>
+                    <span id="changeDepartNameID" >Dedan Kimathi</span>
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#depSelectModal" >
@@ -449,7 +449,7 @@
 
                     </div>
 
-                    <span>Dedan Kimathi</span>
+                    <span id="changeCourseNameID" >Dedan Kimathi</span>
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#selectCouseModal">

@@ -29,6 +29,16 @@ let selIniChecks = document.getElementsByClassName('selIniCheck');
 
 let selUniIds = document.getElementsByClassName('selUniId');
 
+//The images
+let schoolImageSetClass = document.getElementsByClassName('schoolImageSetClass');
+
+let schoolImageSetID = document.getElementById('schoolImageSetID');
+
+//The university name
+let changeUniNames = document.getElementsByClassName('changeUniName');
+
+let changeUniNameID = document.getElementById('changeUniNameID');
+
 for(let a = 0; a < indSelectUnis.length; a++){
 
     indSelectUnis[a].addEventListener('click', ()=> {
@@ -52,6 +62,12 @@ for(let a = 0; a < indSelectUnis.length; a++){
             indSelectUnis[a].classList.add('uniCheckAct');
 
             uniGetIdDep.value = selUniIds[a].innerHTML;
+
+            //Change image
+            schoolImageSetID.src = schoolImageSetClass[a].src;
+
+            //Change Uni Name
+            changeUniNameID.innerHTML = changeUniNames[a].innerHTML
 
             setTimeout(function(){
 
@@ -105,7 +121,7 @@ getDepsForm.addEventListener('submit', (e)=> {
                 <!--Inidvidual schol-->
                 <div class="indSelectUni1">
 
-                    <span>${deps[littleDep].dep_name}</span>
+                    <span class="changeDepartNameClass"  >${deps[littleDep].dep_name}</span>
 
                     <span class="selDepId" >${deps[littleDep].dep_id}</span>
 
@@ -117,6 +133,7 @@ getDepsForm.addEventListener('submit', (e)=> {
                 $("#selectDepartSee").append(oneDEp);
             }
 
+            //Call the fuction
             departAct();
 
         },
@@ -143,6 +160,11 @@ function departAct(){
 
     let depGetIdDep = document.getElementById('depGetID');
 
+    //The department name
+    let changeDepartNameClass = document.getElementsByClassName('changeDepartNameClass');
+
+    let changeDepartNameID = document.getElementById('changeDepartNameID');
+
     for(let a = 0; a < indSelectUnis1.length; a++){
 
         indSelectUnis1[a].addEventListener('click', ()=> {
@@ -168,6 +190,9 @@ function departAct(){
                 indSelectUnis1[a].classList.add('uniCheckAct');
 
                 depGetIdDep.value = selDepIds[a].innerHTML;
+
+                //Change the department name
+                changeDepartNameID.innerHTML = changeDepartNameClass[a].innerHTML;
 
                 setTimeout(function(){
 
@@ -223,7 +248,7 @@ getCoursesForm.addEventListener('submit', (e)=> {
                 <!--Inidvidual schol-->
                 <div class="indSelectUni2">
 
-                    <span>${deps[littleDep].Course_name}</span>
+                    <span class="changeCourseNameClass" >${deps[littleDep].Course_name}</span>
 
                     <span class="selCourseId" >${deps[littleDep].Course_id}</span>
 
@@ -260,6 +285,11 @@ function courseAct(){
 
     let courseGetIdDep = document.getElementById('setCourseID');
 
+    //We change the course name
+    let changeCourseNameClass = document.getElementsByClassName('changeCourseNameClass');
+
+    let changeCourseNameID = document.getElementById('changeCourseNameID');
+
     for(let a = 0; a < indSelectUnis2.length; a++){
 
         indSelectUnis2[a].addEventListener('click', ()=> {
@@ -285,6 +315,9 @@ function courseAct(){
                 indSelectUnis2[a].classList.add('uniCheckAct');
 
                 courseGetIdDep.value = selCourseIds[a].innerHTML;
+
+                //Change the course name
+                changeCourseNameID.innerHTML = changeCourseNameClass[a].innerHTML;
 
                 // setTimeout(function(){
 
