@@ -210,32 +210,32 @@ getCoursesForm.addEventListener('submit', (e)=> {
 
             console.log(response)
 
-            // $("#selectDepartSee").empty();
+            $("#selectCourseSee").empty();
 
-            // console.log(response.deps);
+            console.log(response.deps);
 
-            // let deps = response.deps;
+            let deps = response.deps;
 
 
-            // for(var littleDep in deps){
+            for(var littleDep in deps){
                 
-            //     let oneDEp = `
-            //     <!--Inidvidual schol-->
-            //     <div class="indSelectUni1">
+                let oneDEp = `
+                <!--Inidvidual schol-->
+                <div class="indSelectUni2">
 
-            //         <span>${deps[littleDep].dep_name}</span>
+                    <span>${deps[littleDep].Course_name}</span>
 
-            //         <span class="selDepId" >${deps[littleDep].dep_id}</span>
+                    <span class="selCourseId" >${deps[littleDep].Course_id}</span>
 
-            //         <input type="checkbox" class="selDepCheck">
+                    <input type="checkbox" class="selCourseCheck">
 
-            //     </div>
-            //     `
+                </div>
+                `
 
-            //     $("#selectDepartSee").append(oneDEp);
-            // }
+                $("#selectCourseSee").append(oneDEp);
+            }
 
-            // departAct();
+            courseAct();
 
         },
         error: function(error){
@@ -246,3 +246,76 @@ getCoursesForm.addEventListener('submit', (e)=> {
     });
 
 })
+
+
+//The course cursor
+
+function courseAct(){
+
+    let indSelectUnis2 = document.getElementsByClassName('indSelectUni2');
+
+    let selCourseChecks = document.getElementsByClassName('selCourseCheck');
+
+    let selCourseIds = document.getElementsByClassName('selCourseId');
+
+    let courseGetIdDep = document.getElementById('setCourseID');
+
+    for(let a = 0; a < indSelectUnis2.length; a++){
+
+        indSelectUnis2[a].addEventListener('click', ()=> {
+
+            console.log('hello')
+
+            for(let b = 0; b < selCourseChecks.length; b++){
+
+                if(selCourseChecks[b].checked == true){
+
+                    selCourseChecks[b].checked = false;
+
+                    indSelectUnis2[b].classList.remove('uniCheckAct');
+
+                }
+
+            }
+
+            if(selCourseChecks[a].checked == false){
+
+                selCourseChecks[a].checked = true;
+
+                indSelectUnis2[a].classList.add('uniCheckAct');
+
+                courseGetIdDep.value = selCourseIds[a].innerHTML;
+
+                // setTimeout(function(){
+
+                //     document.getElementById('getCoursesBtn').click();
+
+                // },500);
+
+            }
+        
+        })
+
+    };
+
+}
+
+
+
+//Now we select the cv and recommendation
+let selectCV = document.getElementById('selectCV');
+let selectRec = document.getElementById('selectRec');
+
+//Select cv
+selectCV.addEventListener('click', ()=> {
+
+    document.getElementById('cv').click();
+
+});
+
+//Select Recommendation
+selectRec.addEventListener('click', ()=> {
+
+    document.getElementById('recommend').click();
+
+});

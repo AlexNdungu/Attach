@@ -358,7 +358,7 @@
 
 /* Select university */
 
-.selectUni,.selectUni1 {
+.selectUni,.selectUni1,.selectUni2 {
     width: 100%;
     height: max-content;
     max-height: 250px;
@@ -367,7 +367,7 @@
 
 /* Individual school */
 
-.indSelectUni,.indSelectUni1 {
+.indSelectUni,.indSelectUni1,.indSelectUni2 {
     width: 100%;
     height: 100px;
     border-radius: 20px;
@@ -382,7 +382,7 @@
     background-color: #f5f5f5;
 }
 
-.indSelectUni:hover,.indSelectUni1:hover {
+.indSelectUni:hover,.indSelectUni1:hover,.indSelectUni2:hover {
     background-color: #4B39EF;
     color: #D9D9D9;
 }
@@ -405,6 +405,6 @@
     border-radius: 15px;
 }
 
-.indSelectUni1 span {
+.indSelectUni1 span,.indSelectUni2 span {
     margin: 10px;
 }
