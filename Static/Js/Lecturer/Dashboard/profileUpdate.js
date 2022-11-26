@@ -319,3 +319,75 @@ selectRec.addEventListener('click', ()=> {
     document.getElementById('recommend').click();
 
 });
+
+//now we look at the value
+let cv = document.getElementById('cv');
+let recommend = document.getElementById('recommend');
+
+
+//The cv section
+cv.addEventListener('change', ()=> {
+    //console.log(cv.value.split('.').pop())
+
+    let pdf = cv.value.split('.').pop();
+
+    if(pdf != 'pdf'){
+
+        console.log('not pdf!');
+
+        cv.value = '';
+
+        //DShow failed toast
+        const notPDfToast = document.getElementById('notPDfToast');
+        
+        const toast = new bootstrap.Toast(notPDfToast);
+
+        toast.show();
+
+    }
+    else {
+
+        //DShow failed toast
+        const isPDfToast = document.getElementById('isPDfToast');
+        
+        const toast = new bootstrap.Toast(isPDfToast);
+
+        toast.show();
+
+    }
+
+})
+
+
+//Recommendation selected
+recommend.addEventListener('change', ()=> {
+    //console.log(cv.value.split('.').pop())
+
+    let pdf = recommend.value.split('.').pop();
+
+    if(pdf != 'pdf'){
+
+        console.log('not pdf!');
+
+        recommend.value = '';
+
+        //DShow failed toast
+        const notPDfToast = document.getElementById('notPDfToast');
+        
+        const toast = new bootstrap.Toast(notPDfToast);
+
+        toast.show();
+
+    }
+    else {
+
+        //DShow failed toast
+        const isPDfToast = document.getElementById('isPDfToast');
+        
+        const toast = new bootstrap.Toast(isPDfToast);
+
+        toast.show();
+
+    }
+
+})
