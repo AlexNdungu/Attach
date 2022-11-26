@@ -356,11 +356,15 @@ selectRec.addEventListener('click', ()=> {
 //now we look at the value
 let cv = document.getElementById('cv');
 let recommend = document.getElementById('recommend');
+let cvName = document.getElementById('cvName');
+let recName = document.getElementById('recName');
 
 
 //The cv section
 cv.addEventListener('change', ()=> {
-    //console.log(cv.value.split('.').pop())
+    //console.log(cv.value)
+
+    //console.log(filename)
 
     let pdf = cv.value.split('.').pop();
 
@@ -379,6 +383,13 @@ cv.addEventListener('change', ()=> {
 
     }
     else {
+
+        let fullPath = cv.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        //Change cv name
+        cvName.innerHTML = filename;
 
         //DShow failed toast
         const isPDfToast = document.getElementById('isPDfToast');
@@ -413,6 +424,13 @@ recommend.addEventListener('change', ()=> {
 
     }
     else {
+
+        let fullPath = recommend.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        //Change recommendation name
+        recName.innerHTML = filename;
 
         //DShow failed toast
         const isPDfToast = document.getElementById('isPDfToast');
