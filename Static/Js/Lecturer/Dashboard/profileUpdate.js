@@ -20,6 +20,27 @@ studentProfileImage.addEventListener('click', ()=> {
 });
 
 
+//Here we change the value of name and phone
+let studentNameIn = document.getElementById('studentNameIn');
+let studentPhoneIn = document.getElementById('studentPhoneIn');
+
+let newStudentNameC = document.getElementById('newStudentNameC');
+let newStudentPhoneC = document.getElementById('newStudentPhoneC');
+
+//Change Student Name
+studentNameIn.addEventListener('change', ()=> {
+
+    newStudentNameC.innerHTML = studentNameIn.value;
+
+});
+
+//Change Student Email
+studentPhoneIn.addEventListener('change', ()=> {
+
+    newStudentPhoneC.innerHTML = studentPhoneIn.value;
+
+});
+
 
 /* Here we select university */ //uniCheckAct
 
