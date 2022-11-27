@@ -1,3 +1,6 @@
+//Shorten the words
+
+
 //Now we click the inputs
 
 let studentActImage = document.getElementById('studentBackImage');

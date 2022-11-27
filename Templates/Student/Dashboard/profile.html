@@ -195,7 +195,7 @@
 
             <div class="d-flex">
     
-              <div class="toast-body">
+              <div class="toast-body" id="profileFailState" >
     
                 File Selected Not PDF!
     
@@ -217,7 +217,7 @@
 
             <div class="d-flex">
     
-              <div class="toast-body">
+              <div class="toast-body" id="profileSuccessState" >
     
                 File Selected Successfully!
     
@@ -316,7 +316,7 @@
 
             <div class="inner_profile">
 
-                <img src="{% static 'Images/Company/Logo.jpg' %}" id="studentProSee" alt="student">
+                <img src="{{request.user.student.profile_image.url}}" id="studentProSee" alt="student">
 
                 <div class="back2" id="studentProfileImage">
 
@@ -515,7 +515,11 @@
 
                     {% if request.user.student.cv_name != '0' %}
 
-                    <span id="cvName" >{{request.user.student.cv_name}}</span>
+                    <a href="{{request.user.student.cv.url}}">
+
+                        <span id="cvName" >{{request.user.student.cv_name}}</span>
+
+                    </a>
 
                     {% else %}
 
@@ -543,7 +547,11 @@
 
                     {% if request.user.student.rec_name != '0' %}
 
-                    <span id="recName" >{{request.user.student.rec_name}}</span>
+                    <a href="{{request.user.student.rec.url}}">
+
+                        <span id="recName" >{{request.user.student.rec_name}}</span>
+
+                    </a>
 
                     {% else %}
 
@@ -595,7 +603,7 @@
 
         {% csrf_token %}
 
-        <input type="text" id="uniGetID">
+        <input type="text" id="uniGetID" value="{{request.user.student.institute.institute_profile_id}}" >
 
         <button id="getDEpsBtn" type="submit" >getDEps</button>
 
@@ -606,7 +614,7 @@
 
         {% csrf_token %}
 
-        <input type="text" id="depGetID">
+        <input type="text" id="depGetID" value="{{request.user.student.department.dep_id}}" >
 
         <button id="getCoursesBtn" type="submit" >getCourse</button>
 
@@ -659,7 +667,7 @@
         <input type="file" id="recommend">
 
         <!--The id of course-->
-        <input type="text" id="setCourseID">
+        <input type="text" id="setCourseID" value="{{request.user.student.course.Course_id}}" >
 
         <button type="submit" id="sendProfileBTN" >sendProfileBTN</button>
 

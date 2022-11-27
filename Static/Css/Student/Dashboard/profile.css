@@ -442,3 +442,8 @@
 #sendFormPr:hover {
     background-color: #32772c;
 }
+
+/* Hide all forms */
+form {
+    display: none;
+}

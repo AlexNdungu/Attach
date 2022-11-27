@@ -126,9 +126,30 @@ upStudProfForm.addEventListener('submit', (e)=> {
         success: function(response){
             console.log(response)
 
+            let profileSuccessState = document.getElementById('profileSuccessState');
+
+            profileSuccessState.innerHTML = 'Profile Updated Successfully!'
+
+            //DShow failed toast
+            const isPDfToast = document.getElementById('isPDfToast');
+            
+            const toast = new bootstrap.Toast(isPDfToast);
+
+            toast.show();
+
         },
         error: function(error){
             console.log(error)
+
+            let profileFailState = document.getElementById('profileFailState');
+
+            profileFailState.innerHTML = 'Profile Update Failed!'
+
+            const notPDfToast = document.getElementById('notPDfToast');
+        
+            const toast = new bootstrap.Toast(notPDfToast);
+
+            toast.show();
 
 
         }
