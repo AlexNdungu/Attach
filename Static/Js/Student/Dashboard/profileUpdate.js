@@ -1,5 +1,3 @@
-//Shorten the words
-
 
 //Now we click the inputs
 
