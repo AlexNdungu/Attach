@@ -309,7 +309,7 @@
         </div>
 
         <!--The back image-->
-        <img src="{% static 'Images/Student/student.jpg' %}" id="studentBackSee" alt="profile_back">
+        <img src="{{request.user.student.act.url}}" id="studentBackSee" alt="profile_back">
 
         <!--The profile image-->
         <div class="profile_img">
@@ -405,11 +405,27 @@
                     <!--School image-->
                     <div class="school_img">
 
+                        {% if request.user.student.institute.logo.url %}
+
+                        <img id="schoolImageSetID" src="{{request.user.student.institute.logo.url}}" alt="">
+
+                        {% else %}
+
                         <img id="schoolImageSetID" src="{% static 'Images/Institute/dkut.png' %}" alt="">
+
+                        {% endif %}
 
                     </div>
 
-                    <span id="changeUniNameID" >Dedan Kimathi</span>
+                    {% if request.user.student.institute %}
+
+                    <span id="changeUniNameID" >{{request.user.student.institute}}</span>
+
+                    {% else %}
+
+                    <span id="changeUniNameID" >University</span>
+
+                    {% endif %}
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#uniSelect">
@@ -429,7 +445,15 @@
 
                     </div>
 
-                    <span id="changeDepartNameID" >Dedan Kimathi</span>
+                    {% if request.user.student.department %}
+
+                    <span id="changeDepartNameID" >{{request.user.student.department}}</span>
+
+                    {% else %}
+
+                    <span id="changeDepartNameID" >Department</span>
+
+                    {% endif %}
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#depSelectModal" >
@@ -449,7 +473,15 @@
 
                     </div>
 
-                    <span id="changeCourseNameID" >Dedan Kimathi</span>
+                    {% if request.user.student.course %}
+
+                    <span id="changeCourseNameID" >{{request.user.student.course}}</span>
+
+                    {% else %}
+
+                    <span id="changeCourseNameID" >Course</span>
+
+                    {% endif %}
 
                     <!--Change school-->
                     <div class="change_school" data-bs-toggle="modal" data-bs-target="#selectCouseModal">
@@ -481,7 +513,15 @@
 
                     </div>
 
+                    {% if request.user.student.cv_name != '0' %}
+
+                    <span id="cvName" >{{request.user.student.cv_name}}</span>
+
+                    {% else %}
+
                     <span id="cvName" >CV</span>
+
+                    {% endif %}
 
                     <!--Change school-->
                     <div class="change_school" id="selectCV" >
@@ -501,7 +541,15 @@
 
                     </div>
 
+                    {% if request.user.student.rec_name != '0' %}
+
+                    <span id="recName" >{{request.user.student.rec_name}}</span>
+
+                    {% else %}
+
                     <span id="recName" >Recommendation</span>
+
+                    {% endif %}
 
                     <!--Change school-->
                     <div class="change_school" id="selectRec" >

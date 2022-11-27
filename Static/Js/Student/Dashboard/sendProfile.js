@@ -5,6 +5,8 @@ sendFormPr.addEventListener('click', ()=> {
 
     document.getElementById('sendProfileBTN').click();
 
+    
+
 });
 
 //Get the form
@@ -46,6 +48,12 @@ upStudProfForm.addEventListener('submit', (e)=> {
 
         formData.append('profileIMG',stuProImg.files[0]);
 
+        let fullPath = stuProImg.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        formData.append('prof_name', filename)
+
     }
     else{
         console.log('no profile value');
@@ -55,6 +63,12 @@ upStudProfForm.addEventListener('submit', (e)=> {
     if(stuBackImg.value != ''){
 
         formData.append('backIMG',stuBackImg.files[0]);
+
+        let fullPath = stuBackImg.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        formData.append('back_name', filename)
 
     }
     else{
@@ -75,6 +89,12 @@ upStudProfForm.addEventListener('submit', (e)=> {
 
         formData.append('cv',studentCV.files[0]);
 
+        let fullPath = studentCV.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        formData.append('cv_name', filename)
+
     }
     else{
         console.log('no cv value');
@@ -85,11 +105,16 @@ upStudProfForm.addEventListener('submit', (e)=> {
 
         formData.append('recommend',studentRecommendation.files[0]);
 
+        let fullPath = studentRecommendation.value;
+
+        let filename = fullPath.replace(/^.*[\\\/]/, '');
+
+        formData.append('rec_name', filename)
+
     }
     else{
         console.log('no recommend value');
     }
-
 
     //Send the data
     $.ajax({

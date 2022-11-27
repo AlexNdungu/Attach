@@ -14,6 +14,8 @@ from django.http import JsonResponse
 
 from Lecturer.models import *
 
+from .models import *
+
 # Create your views here.
 
 def signUp(request):
@@ -35,7 +37,78 @@ def profile(request):
 #Update the profile
 def updateProfile(request):
 
-    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        the_student = request.user
+
+        new_student = Student.objects.get(student = the_student)
+
+        #Personal info
+        fullName = request.POST.get('name')
+        new_student.stud_name = fullName
+
+        phone = request.POST.get('phone')
+        new_student.stud_phone = phone
+        #Education Info
+        #University
+        uniID = request.POST.get('uniID')
+
+        the_uni = InstituteProfile.objects.get(institute_profile_id = uniID)
+        new_student.institute = the_uni
+
+        #Department
+        depID = request.POST.get('depID')
+
+        the_dep = Department.objects.get(dep_id = depID)
+        new_student.department = the_dep
+
+        #Course
+        courseID = request.POST.get('courseID')
+
+        the_course = Course.objects.get(Course_id = courseID)
+        new_student.course = the_course
+
+        #Images
+        #Profile
+        if request.FILES.get('profileIMG') != None:
+
+            profilePicture = request.FILES.get('profileIMG')
+            new_student.profile_image = profilePicture
+
+            prof_name = request.POST.get('prof_name')
+            new_student.profile_image_name = prof_name
+
+        #Back Image
+        if request.FILES.get('backIMG') != None:
+
+            backPicture = request.FILES.get('backIMG')    
+            new_student.act = backPicture
+
+            back_name = request.POST.get('back_name')
+            new_student.act_name = back_name
+
+        #Files
+        #CV
+        if request.FILES.get('cv') != None:
+
+            cv = request.FILES.get('cv')
+            new_student.cv = cv
+
+            cv_name = request.POST.get('cv_name')
+            new_student.cv_name = cv_name
+
+        #Recommend
+        if request.FILES.get('recommend') != None:
+
+            recommend = request.FILES.get('recommend')  
+            new_student.rec = recommend
+
+            recommend_name = request.POST.get('rec_name')
+            new_student.rec_name = recommend_name
+
+        
+        #Now we update the profile
+        new_student.save()
 
     return JsonResponse({'status':'success'})
 
