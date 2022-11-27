@@ -518,6 +518,30 @@
 
     </div>
 
+
+    <!--The submit section-->
+    <div class="submitBTNs">
+
+        <!--Reset sending-->
+        <div id="defaultProf">
+
+            <span>Discharge</span>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 3.752l-4.423-3.752-7.771 9.039-7.647-9.008-4.159 4.278c2.285 2.885 5.284 5.903 8.362 8.708l-8.165 9.447 1.343 1.487c1.978-1.335 5.981-4.373 10.205-7.958 4.304 3.67 8.306 6.663 10.229 8.006l1.449-1.278-8.254-9.724c3.287-2.973 6.584-6.354 8.831-9.245z"/></svg>
+
+        </div>
+
+        <!--Send form,-->
+        <div id="sendFormPr">
+
+            <span>Update</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 11.386l1.17-1.206c1.951.522 5.313 1.731 8.33 3.597 3.175-4.177 9.582-9.398 13.456-11.777l1.044 1.073-14 18.927-10-10.614z"/></svg>
+
+        </div>
+
+    </div>
+
     <!--Get departments-->
     <form method="post" id="getDeps">
 
@@ -542,7 +566,7 @@
 
 
 
-    <form method="post">
+    <form method="post" id="upStudProfForm" >
 
         {% csrf_token %}
 
@@ -589,6 +613,8 @@
         <!--The id of course-->
         <input type="text" id="setCourseID">
 
+        <button type="submit" id="sendProfileBTN" >sendProfileBTN</button>
+
     </form>
     
 
@@ -598,6 +624,8 @@
 </body>
 
 <!--The javascript-->
-<script src="{% static 'Js/Lecturer/Dashboard/profileUpdate.js' %}"></script>
+<script src="{% static 'Js/Student/Dashboard/profileUpdate.js' %}"></script>
+<script src="{% static 'Js/Student/Dashboard/sendProfile.js' %}"></script>
+
 
 </html>

@@ -31,6 +31,16 @@ def profile(request):
 
     return render(request,'Student\Dashboard\profile.html',context )
 
+
+#Update the profile
+def updateProfile(request):
+
+    
+
+    return JsonResponse({'status':'success'})
+
+
+
 def getDeps(request):
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
