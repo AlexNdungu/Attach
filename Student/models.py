@@ -20,6 +20,8 @@ class Student(models.Model):
 
     stud_name = models.CharField(max_length=40, verbose_name='Student Name')
 
+    stud_phone = models.CharField(max_length=40, verbose_name='Student Phone')
+
     #Images
     profile_image = models.ImageField(upload_to='Profile', verbose_name='Profile', default = 'instituteIc.png')
     profile_image_name = models.CharField(max_length=40, verbose_name='Profile Source',default = 'instituteIc.png')
@@ -29,8 +31,10 @@ class Student(models.Model):
 
     #files
     cv = models.FileField(upload_to='Files', verbose_name='CV')
+    cv_name = models.CharField(max_length=40, verbose_name='CV Name')
 
     rec = models.FileField(upload_to='Files', verbose_name='Recommendation Letter')
+    rec_name = models.CharField(max_length=40, verbose_name='Recommend Name')
 
     #Create And Update date
     update = models.DateTimeField(auto_now=True)

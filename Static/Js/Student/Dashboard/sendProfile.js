@@ -23,6 +23,7 @@ let courseID = document.getElementById('setCourseID');
 let studentCV = document.getElementById('cv');
 let studentRecommendation = document.getElementById('recommend');
 
+let csrf1 = document.getElementsByName('csrfmiddlewaretoken');
 
 let upStudProfForm = document.getElementById('upStudProfForm');
 
@@ -31,6 +32,8 @@ upStudProfForm.addEventListener('submit', (e)=> {
     e.preventDefault();
 
     let formData = new FormData();
+
+    formData.append('csrfmiddlewaretoken', csrf1[0].value);
 
     //Append data to the form data
     //The fullname
