@@ -31,6 +31,9 @@ urlpatterns = [
 
     path('indopp/<pk>/', views.indopp, name='ind_opp'),
 
+    #Apply job now
+    path('applyJob/', views.applyJob, name='apply_job'),
+
     #Applied attachments
     path('applied/',views.applied, name='applied'),
 ]

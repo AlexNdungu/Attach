@@ -108,6 +108,12 @@
     font-size: 18px;
     color: #4B39EF;
     margin-left: 10px;
+    margin-right: 5px;
+}
+
+.no_of_app_loc span:nth-child(3){
+    font-size: 18px;
+    color: #4B39EF;
 }
 
 /* Save the job or apply */
@@ -144,6 +150,12 @@
 
 .job_save:hover {
     background-color: #4B39EF;
+}
+
+.job_act {
+    background-color: #32772C;
+    transform: scale(1.1);
+    pointer-events: none;
 }
 
 
