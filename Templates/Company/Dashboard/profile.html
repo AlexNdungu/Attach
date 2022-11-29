@@ -134,14 +134,14 @@
                 <!--the actual img-->
                 <div class="act_ic_img">
 
-                    <img id="theIcSrc" src="{{request.user.companyprofile.logo.url}}" alt="instIcon">
+                    <img id="theIcSrc" src="{{request.user.company_user.logo.url}}" alt="instIcon">
 
                 </div>
 
                 <!--The image name-->
                 <div class="img_name">
 
-                    <span id="iconSelectName" >{{request.user.companyprofile.logo_name}}</span>
+                    <span id="iconSelectName" >{{request.user.company_user.logo_name}}</span>
 
                 </div>
 
@@ -162,14 +162,14 @@
             <!--The institute nae-->
             <div class="inst_name">
 
-                <input type="text" id="companyNewName" placeholder="Company Name" value="{{request.user.companyprofile.company_name}}">
+                <input type="text" id="companyNewName" placeholder="Company Name" value="{{request.user.company_user.company_name}}">
 
             </div>
 
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea id="companyNewBio" placeholder="Company Bio" >{{request.user.companyprofile.bio}}</textarea>
+                <textarea id="companyNewBio" placeholder="Company Bio" >{{request.user.company_user.bio}}</textarea>
 
             </div>
 
@@ -184,7 +184,7 @@
                 <!--The actual back image-->
                 <div class="act_back_img">
 
-                    <img id="actImgSrc" src="{{request.user.companyprofile.act.url}}" alt="">
+                    <img id="actImgSrc" src="{{request.user.company_user.act.url}}" alt="">
 
                 </div>
 
@@ -194,7 +194,7 @@
                     <!--Back img name-->
                     <div class="b_img_name">
 
-                        <span id="actSelectName" >{{request.user.companyprofile.act_name}}</span>
+                        <span id="actSelectName" >{{request.user.company_user.act_name}}</span>
 
                     </div>
 
@@ -213,7 +213,7 @@
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea id="companyNewMission" placeholder="Company Mission" >{{request.user.companyprofile.mission}}</textarea>
+                <textarea id="companyNewMission" placeholder="Company Mission" >{{request.user.company_user.mission}}</textarea>
 
             </div>
 
@@ -221,7 +221,7 @@
             <!--Long writing-->
             <div class="long_write">
 
-                <textarea id="companyNewVisson" placeholder="Company Vission" >{{request.user.companyprofile.vission}}</textarea>
+                <textarea id="companyNewVisson" placeholder="Company Vission" >{{request.user.company_user.vission}}</textarea>
 
             </div>
             

@@ -188,6 +188,11 @@ def currentLocation(request):
 
 #Here we deal with the dashboard
 def dashboard(request):
+
+    company = request.user.company_user
+
+    print(company)
+
     return render(request, 'Inherite/company.html')    
 
 #The dashboard
