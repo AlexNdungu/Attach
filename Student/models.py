@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from Institute.models import *
 from Lecturer.models import *
+#from Company.models import Job
 
 
 # Create your models here.
@@ -43,3 +44,4 @@ class Student(models.Model):
 
     def __str__(self):
         return self.stud_name
+

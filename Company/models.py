@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from Student.models import *
 
 
 #Company categories
@@ -151,3 +152,43 @@ class Job(models.Model):
 
     def __str__(self):
         return self.job_name
+
+
+class JobApplicants(models.Model):
+
+    job_app_id = models.AutoField(primary_key=True)
+
+    company = models.ForeignKey(CompanyProfile, on_delete=models.CASCADE, verbose_name='Company') 
+
+    job = models.OneToOneField(Job, on_delete=models.CASCADE,verbose_name='Job') 
+
+    applicants = models.ManyToManyField(Student, blank=True,verbose_name='All Applicants', related_name='new_applicants')
+
+    accepted = models.ManyToManyField(Student, blank=True,verbose_name='Accepted Applicants',related_name='accepted_applicants')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.job.job_name
+
+
+class StudentApplication(models.Model):
+
+    app_id = models.AutoField(primary_key=True)
+
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True) 
+
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, null=True)     
+
+    status = models.BooleanField(default=False)
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.student.stud_name        
