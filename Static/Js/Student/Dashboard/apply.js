@@ -3,6 +3,7 @@ let job_apply = document.getElementById('job_apply');
 let applyJobForm = document.getElementById('applyJob');
 let btnApply = document.getElementById('sendApply');
 let csrf = document.getElementsByName('csrfmiddlewaretoken');
+let applsCount = document.getElementById('applsCount');
 
 
 job_apply.addEventListener('click', ()=> {
@@ -34,6 +35,13 @@ applyJobForm.addEventListener('submit', (e)=> {
             //job_act Disable the button
             job_apply.classList.add('job_act');
 
+            //Add the number of applicants
+            let newAppCount = parseInt(applsCount.innerHTML) + 1;
+
+            console.log(newAppCount);
+
+            applsCount.innerHTML = newAppCount;
+
             //Success toast
             const isPDfToast = document.getElementById('isPDfToast');
             
@@ -57,3 +65,4 @@ applyJobForm.addEventListener('submit', (e)=> {
     });
 
 })
+

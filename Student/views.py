@@ -279,9 +279,15 @@ def indopp(request, pk):
 
     print(location)
 
+    #Check if the sudent has applied
+    this_student_apply = StudentApplication.objects.filter(student = request.user.student, job = job).exists()
+
+    print(this_student_apply)
+
     context = {
         'location':location,
-        'job':job
+        'job':job,
+        'this_student_apply':this_student_apply
     }
 
     return render(request, 'Student/Dashboard/indopp.html',context)   
