@@ -296,28 +296,35 @@ def indopp(request, pk):
 #job apply
 def applyJob(request):
 
-    # if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
 
-    #     job_id = request.POST.get('jobID')
+        job_id = request.POST.get('jobID')
 
-    #     #Now we add this student to the applied section
-    #     student = request.user.student
+        #Now we add this student to the applied section
+        student = request.user.student
 
-    #     #Add student to applied
-    #     this_job = Job.objects.get(job_id = job_id)
+        #Add student to applied
+        this_job = Job.objects.get(job_id = job_id)
 
-    #     this_job_application = JobApplicants.objects.get(job = this_job)
+        this_job_application = JobApplicants.objects.get(job = this_job)
 
-    #     this_job_application.applicants.add(student)
+        this_job_application.applicants.add(student)
 
-    #     #Now we create an application for this student
-    #     StudentApplication.objects.create(
-    #         student = student,
-    #         job = this_job
-    #     )
+        #Now we create an application for this student
+        StudentApplication.objects.create(
+            student = student,
+            job = this_job
+        )
 
     return JsonResponse({'status':'Success'})
 
 #Applied Attachments
 def applied(request):
-    return render(request,'Student/Dashboard/applied.html')     
+
+    my_apps = StudentApplication.objects.filter(student = request.user.student).all()
+
+    context = {
+        'my_apps':my_apps
+    }
+
+    return render(request,'Student/Dashboard/applied.html',context)     

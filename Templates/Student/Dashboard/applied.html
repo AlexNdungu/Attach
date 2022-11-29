@@ -60,6 +60,8 @@
 <!--All applications-->
 <div class="all_new_apps">
 
+    {% for app in my_apps %}
+
     <!--Individual application-->
     <div class="ind_app">
 
@@ -77,17 +79,17 @@
             <div class="app_name_date">
 
                 <!--The job name-->
-                <h2> Cartography - Industrial attachment</h2>
+                <h2> {{app.job.job_name}} - {{app.job.job_level}}</h2>
 
                 <!--teh job date-->
-                <span>3 days ago</span>
+                <span> {{app.created}}</span>
 
             </div>
 
             <!--The location-->
             <div class="app_location">
 
-                <span>Nairobi, Kenya</span>
+                <span>{{app.job.company.company.companylocation.county}}, {{app.job.company.company.companylocation.country}}</span>
 
             </div>
 
@@ -95,7 +97,7 @@
             <div class="app_control_num_apps">
 
                 <!--the number of applicatnts-->
-                <span>18 Applicants</span>
+                <span>{{app.job.jobapplicants.applicants.count}} Applicants</span>
 
                 <!--App controls-->
                 <div class="app_control">
@@ -122,66 +124,7 @@
 
     </div>
 
-    <div class="ind_app">
-
-        <!--the logo section-->
-        <div class="logo_app_comp">
-
-            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="logo-company">
-
-        </div>
-
-        <!--The info part-->
-        <div class="info_applica">
-
-            <!--the name and date-->
-            <div class="app_name_date">
-
-                <!--The job name-->
-                <h2> Cartography - Industrial attachment</h2>
-
-                <!--teh job date-->
-                <span>3 days ago</span>
-
-            </div>
-
-            <!--The location-->
-            <div class="app_location">
-
-                <span>Nairobi, Kenya</span>
-
-            </div>
-
-            <!--the application controls-->
-            <div class="app_control_num_apps">
-
-                <!--the number of applicatnts-->
-                <span>18 Applicants</span>
-
-                <!--App controls-->
-                <div class="app_control">
-
-                    <!--withdrwa app-->
-                    <div class="withd_app">
-
-                        <span>Withdraw</span>
-
-                    </div>
-
-                    <!--The sent status-->
-                    <div class="app_sent_status">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 11.386l1.17-1.206c1.951.522 5.313 1.731 8.33 3.597 3.175-4.177 9.582-9.398 13.456-11.777l1.044 1.073-14 18.927-10-10.614z"/></svg>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+    {% endfor %}
 
 </div>
 
