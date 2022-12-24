@@ -172,9 +172,11 @@ def category(request, pk):
 
     for one_company in all_companies:
 
-        print(one_company.company.company)
+        #print(one_company.company.company)
 
         ind_loc_user = User.objects.filter(username = one_company.company.company)
+
+        #print(ind_loc_user)
 
         #user_profile = CompanyProfile.objects.filter(company_name = one_company)
 
@@ -186,15 +188,20 @@ def category(request, pk):
 
             ind_loc = CompanyLocation.objects.get(company__in = ind_loc_user)
 
+            #print(ind_loc.company.company_user)
+
+            #company_prof = CompanyProfile.objects.get()
+
             #append the latitudes to the list of latitudes
             #latitudes.append(ind_loc.latitude)
             #coordinate = [ind_loc.company.companyprofile.company_name,ind_loc.latitude,ind_loc.longitude]
-            coordinate = [ind_loc.company.companyprofile.company_name,ind_loc.latitude,ind_loc.longitude,ind_loc.company.companyprofile.logo.url]
+
+            coordinate = [ind_loc.company.company_user.company_name,ind_loc.latitude,ind_loc.longitude,ind_loc.company.company_user.logo.url]
 
             #print(ind_loc.company.companyprofile.logo.url)
+            #print(ind_loc.company.companyprofile.company_name)
 
-
-            coordinates.append(coordinate)
+            #coordinates.append(coordinate)
 
             #print(ind_loc.latitude)
 
