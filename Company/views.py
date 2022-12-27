@@ -286,8 +286,15 @@ def oppInfoapp(request, pk):
 
     thejob = Job.objects.get(job_id = pk)
 
+    application = JobApplicants.objects.get(job = thejob)
+
+    print(application.applicants.all())
+
+    
+
     context = {
-        'thejob':thejob
+        'thejob':thejob,
+        'applicants':application
     }
 
     return render(request, 'Company/Dashboard/seeapps.html',context)    
