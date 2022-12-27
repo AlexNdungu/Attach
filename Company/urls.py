@@ -42,4 +42,6 @@ urlpatterns = [
     #See opportunity information
     path('oppInformation/<pk>/', views.oppInfo, name='opp_info'),
 
+    path('oppInformationapp/<pk>/', views.oppInfoapp, name='opp_info_app'),
+
 ]

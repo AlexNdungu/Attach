@@ -281,3 +281,13 @@ def oppInfo(request, pk):
     }
 
     return render(request, 'Company/Dashboard/oppInfo.html',context)
+
+def oppInfoapp(request, pk):
+
+    thejob = Job.objects.get(job_id = pk)
+
+    context = {
+        'thejob':thejob
+    }
+
+    return render(request, 'Company/Dashboard/seeapps.html',context)    

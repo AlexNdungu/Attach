@@ -80,6 +80,10 @@
     transition: 0.1s ease-in;
 }
 
+.infoBtn:nth-child(2) {
+    display: none;
+}
+
 .infoBtn:hover {
     background-color: #4B39EF;
 }
