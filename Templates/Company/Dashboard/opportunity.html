@@ -62,20 +62,22 @@
 <!--See opoortunity details-->
 <div class="see_opps_dets">
 
+    {% for job in jobs %}
+
     <!--The compy ind opportunity-->
     <div class="ind_comp_it_op">
 
         <!--The op name-->
         <div class="comp_ind_op_name">
 
-            <h2>Cadastral survey</h2>
+            <h2>{{job.job_name}}</h2>
 
         </div>
 
         <!--The op name-->
         <div class="comp_ind_op_name">
 
-            <span>Industrial Attachment </span>
+            <span>{{job.job_level}}</span>
 
         </div>
 
@@ -117,60 +119,7 @@
 
     </div>
 
-    <div class="ind_comp_it_op">
-
-        <!--The op name-->
-        <div class="comp_ind_op_name">
-
-            <h2>Cadastral survey</h2>
-
-        </div>
-
-        <!--The op name-->
-        <div class="comp_ind_op_name">
-
-            <span>Industrial Attachment </span>
-
-        </div>
-
-        <!--The details-->
-        <div class="comp_det_cont">
-
-            <div class="open">
-
-                <span>open</span>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.972 2h-6.972l.714 5h2.021l-.429-3h3.694c1.112 1.388 1.952 2 4.277 2h9.283l-.2 1h2.04l.6-3h-11.723c-1.978 0-2.041-.417-3.305-2zm16.028 7h-24l2 13h20l2-13z"/></svg>
-
-            </div>
-
-            <div class="add_det">
-
-                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M7 2c1.695 1.942 2.371 3 4 3h13v17h-24v-20h7zm4 5c-2.339 0-3.537-1.388-4.917-3h-4.083v16h20v-13h-11zm2 6h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3z"/></svg>
-
-                <div class="line_sep"></div>
-
-                <span>1800</span>
-
-            </div>
-
-            <div class="add_det">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 7l-3.36-2.171c-.405.625-.64 1.371-.64 2.171 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-.742 0-1.438.202-2.033.554l2.033 3.446z"/></svg>
-
-                <div class="line_sep"></div>
-
-                <span>1800</span>
-
-            </div>
-
-           
-
-        </div>
-
-
-    </div>
-
+    {% endfor %}
 
 </div>
 

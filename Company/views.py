@@ -257,4 +257,16 @@ def postNewJob(request):
 
 #All opportunities
 def allOpps(request):
-    return render(request, 'Company/Dashboard/opportunity.html')    
+
+    company = CompanyProfile.objects.get(company = request.user)
+
+    #Now we get all the jobs owened by the logged in company
+    jobs = Job.objects.filter(company = company)
+
+    print(jobs)
+
+    context = {
+        'jobs':jobs
+    }
+
+    return render(request, 'Company/Dashboard/opportunity.html',context)    
