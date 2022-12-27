@@ -39,4 +39,7 @@ urlpatterns = [
     #The opportunity section
     path('resOpps/', views.allOpps, name='res_Opps'),
 
+    #See opportunity information
+    path('oppInformation/', views.oppInfo, name='opp_info'),
+
 ]

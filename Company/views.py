@@ -270,3 +270,10 @@ def allOpps(request):
     }
 
     return render(request, 'Company/Dashboard/opportunity.html',context)    
+
+
+def oppInfo(request):
+
+    
+
+    return render(request, 'Company/Dashboard/oppInfo.html')
