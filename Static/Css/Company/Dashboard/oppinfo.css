@@ -115,6 +115,10 @@
     background-color: #4B39EF;
 }
 
+.exColor {
+    background-color: #D14343;
+}
+
 .expand span {
     margin-left: 20px;
     margin-right: 10px;
@@ -123,6 +127,7 @@
 .expand svg {
     fill: #D9D9D9;
     margin-right: 20px;
+    transition: 0.2s ease-in;
 }
 
 /* The job info */
