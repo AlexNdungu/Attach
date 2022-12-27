@@ -272,8 +272,12 @@ def allOpps(request):
     return render(request, 'Company/Dashboard/opportunity.html',context)    
 
 
-def oppInfo(request):
+def oppInfo(request, pk):
 
-    
+    thejob = Job.objects.get(job_id = pk)
 
-    return render(request, 'Company/Dashboard/oppInfo.html')
+    context = {
+        'thejob':thejob
+    }
+
+    return render(request, 'Company/Dashboard/oppInfo.html',context)

@@ -40,6 +40,6 @@ urlpatterns = [
     path('resOpps/', views.allOpps, name='res_Opps'),
 
     #See opportunity information
-    path('oppInformation/', views.oppInfo, name='opp_info'),
+    path('oppInformation/<pk>/', views.oppInfo, name='opp_info'),
 
 ]

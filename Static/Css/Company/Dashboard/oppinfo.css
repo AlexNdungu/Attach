@@ -83,3 +83,51 @@
 .infoBtn:hover {
     background-color: #4B39EF;
 }
+
+/* Job description */
+.jobDesc {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #474747;
+    font-size: 18px;
+    color: #D9D9D9;
+}
+
+.expand {
+    width: max-content;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D9D9D9;
+    font-size: 18px;
+    background-color: #32772C;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.expand:hover {
+    background-color: #4B39EF;
+}
+
+.expand span {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.expand svg {
+    fill: #D9D9D9;
+    margin-right: 20px;
+}
+
+/* The job info */
+.allJInfo {
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+}
