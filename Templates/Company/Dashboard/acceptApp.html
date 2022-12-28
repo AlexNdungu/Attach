@@ -54,35 +54,42 @@
 
 
 <!--The accept button-->
+
 <div class="accept">
 
     <!--The button-->
+    {% if studentApp.status == False %}
     <div class="accBtn" id="accept">
 
-        <span>Approve</span>
+        <span id="appSeeSpan" >Approve</span>
 
     </div>
+
+    {% else %}
+
+    <!--The done btn-->
+    
+    <div class="done" id="accept">
+
+        <span>Approved</span>
+
+    </div>
+
+    {% endif %}
 
     <form id="justApp">
 
         {% csrf_token %}
 
     </form>
-
-    <!--The done btn-->
-    <!--
-        <div class="done">
-
-        <span>Approved</span>
-
-    </div>
-    -->
+    
 
 </div>
 
 <script>
 
     var job_id = "{{job.job_id}}";
+    var student_id = "{{student.stud_id}}";
 
 </script>
 

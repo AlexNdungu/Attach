@@ -304,13 +304,16 @@ def acceptApps(request, pk, id):
     #Get the job
     job = Job.objects.get(job_id = id)
 
-    print(job)
-
     student = Student.objects.get(stud_id = pk)
+
+    studentApp = StudentApplication.objects.get(student = student, job = job)
+
+    print(studentApp)
 
     context = {
         'student':student,
-        'job':job
+        'job':job,
+        'studentApp':studentApp
     }
 
     return render(request, 'Company/Dashboard/acceptApp.html',context) 
@@ -318,6 +321,29 @@ def acceptApps(request, pk, id):
 
 def approveJob(request):
 
-    #if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        jobID = request.POST.get('job_id')
+
+        StudID = request.POST.get('stud_id')
+
+        #Get the job and student
+        job = Job.objects.get(job_id = jobID)
+
+        student = Student.objects.get(stud_id = StudID)
+
+        #Add student to accepted in JobApplication
+        job_app = JobApplicants.objects.get(job = job)
+
+        job_app.accepted.add(student)
+
+        job_app.save()
+
+        #Update the students application
+        stud_app = StudentApplication.objects.get(student = student, job = job)
+
+        stud_app.status = True
+
+        stud_app.save()
     
-    return JsonResponse({'status':'created'})
+    return JsonResponse({'status':'Approved'})
