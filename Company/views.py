@@ -299,12 +299,25 @@ def oppInfoapp(request, pk):
 
     return render(request, 'Company/Dashboard/seeapps.html',context)   
 
-def acceptApps(request, pk):
+def acceptApps(request, pk, id):
+
+    #Get the job
+    job = Job.objects.get(job_id = id)
+
+    print(job)
 
     student = Student.objects.get(stud_id = pk)
 
     context = {
-        'student':student
+        'student':student,
+        'job':job
     }
 
     return render(request, 'Company/Dashboard/acceptApp.html',context) 
+
+
+def approveJob(request):
+
+    #if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+    
+    return JsonResponse({'status':'created'})

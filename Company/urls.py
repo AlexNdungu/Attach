@@ -44,6 +44,9 @@ urlpatterns = [
 
     path('oppInformationapp/<pk>/', views.oppInfoapp, name='opp_info_app'),
 
-    path('AcceptApps/<pk>/', views.acceptApps, name='accept_applications'),
+    path('AcceptApps/<pk>/<id>/', views.acceptApps, name='accept_applications'),
+
+    #Save job approve
+    path('approveJob/',views.approveJob, name='approve_job'),
 
 ]
