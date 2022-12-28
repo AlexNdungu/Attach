@@ -21,6 +21,11 @@ from .models import *
 def signUp(request):
     return render(request, 'Student\Signup.html')
 
+
+#See student profile
+def seeProfile(request):
+    return render(request, 'Student\Dashboard\seePro.html')
+
 #Profile
 def profile(request):
 

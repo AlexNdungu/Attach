@@ -10,6 +10,8 @@ urlpatterns = [
 
     path('dash/',views.dash, name='studentDash'),
 
+    path('studProf/', views.seeProfile, name='studentProfile'),
+
     path('profile/',views.profile, name='profile'),
 
     path('updateProfile/',views.updateProfile, name='update_profile'),
