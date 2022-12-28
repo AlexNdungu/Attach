@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('dash/',views.dash, name='studentDash'),
 
-    path('studProf/', views.seeProfile, name='studentProfile'),
+    path('studProf/<pk>/', views.seeProfile, name='studentProfile'),
 
     path('profile/',views.profile, name='profile'),
 

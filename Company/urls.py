@@ -44,4 +44,6 @@ urlpatterns = [
 
     path('oppInformationapp/<pk>/', views.oppInfoapp, name='opp_info_app'),
 
+    path('AcceptApps/<pk>/', views.acceptApps, name='accept_applications'),
+
 ]

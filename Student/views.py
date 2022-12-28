@@ -23,8 +23,15 @@ def signUp(request):
 
 
 #See student profile
-def seeProfile(request):
-    return render(request, 'Student\Dashboard\seePro.html')
+def seeProfile(request, pk):
+
+    student = Student.objects.get(stud_id = pk)
+
+    context = {
+        'student':student
+    }
+
+    return render(request, 'Student\Dashboard\seePro.html',context)
 
 #Profile
 def profile(request):

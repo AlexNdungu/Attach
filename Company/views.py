@@ -297,4 +297,14 @@ def oppInfoapp(request, pk):
         'applicants':application
     }
 
-    return render(request, 'Company/Dashboard/seeapps.html',context)    
+    return render(request, 'Company/Dashboard/seeapps.html',context)   
+
+def acceptApps(request, pk):
+
+    student = Student.objects.get(stud_id = pk)
+
+    context = {
+        'student':student
+    }
+
+    return render(request, 'Company/Dashboard/acceptApp.html',context) 
