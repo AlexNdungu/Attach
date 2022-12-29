@@ -15,5 +15,7 @@ urlpatterns = [
     path('course/', views.SeeCourse, name='course_url'),
     path('createCourse/', views.createCourse, name='create_course'),
     path('deleteCourse/', views.deleteCourse, name='delete_course'),
+    #allocated students
+    path('allocated',views.allocatedStudents, name='allocate_stud'),
 
 ]

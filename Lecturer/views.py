@@ -157,3 +157,7 @@ def deleteCourse(request):
         course.delete()
 
     return JsonResponse({'status':'Delete'})    
+
+
+def allocatedStudents(request):
+    return render(request, 'Lecturer/Dashboard/allocated.html')

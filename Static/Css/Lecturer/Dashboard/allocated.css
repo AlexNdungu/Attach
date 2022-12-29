@@ -1,0 +1,25 @@
+.body_body {
+    background-color: white;
+}
+
+.ind_nav_sections:nth-child(4) .highl_nav{
+    background-color: #4b39ef;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav{
+    background-color: #474747;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav:hover{
+    background-color: #4b39ef;
+}
+
+
+/* The change */
+.ind_head_cont:nth-child(1):hover{
+    background-color: #D14343;
+}
+
+.ind_head_cont:nth-child(2):hover{
+    background-color: #4b39ef;
+}
