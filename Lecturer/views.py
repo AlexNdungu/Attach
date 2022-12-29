@@ -164,3 +164,7 @@ def allocatedStudents(request):
 
 def requestStudents(request):
     return render(request, 'Lecturer/Dashboard/alrequest.html')    
+
+#Students will send requests to the lecturer
+def newRequest(request):
+    return render(request,'Lecturer/Dashboard/sendReq.html')    

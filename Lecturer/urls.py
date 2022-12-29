@@ -19,5 +19,7 @@ urlpatterns = [
     path('allocated',views.allocatedStudents, name='allocate_stud'),
 
     path('studRequest',views.requestStudents, name='request_stud'),
+    #This is the link to sending request from student to lecturer
+    path('Request',views.newRequest, name='new_request'),
 
 ]
