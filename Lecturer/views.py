@@ -161,3 +161,6 @@ def deleteCourse(request):
 
 def allocatedStudents(request):
     return render(request, 'Lecturer/Dashboard/allocated.html')
+
+def requestStudents(request):
+    return render(request, 'Lecturer/Dashboard/alrequest.html')    

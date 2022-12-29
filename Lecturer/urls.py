@@ -18,4 +18,6 @@ urlpatterns = [
     #allocated students
     path('allocated',views.allocatedStudents, name='allocate_stud'),
 
+    path('studRequest',views.requestStudents, name='request_stud'),
+
 ]
