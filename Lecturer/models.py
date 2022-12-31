@@ -128,3 +128,4 @@ class Lecturer(models.Model):
 
     def __str__(self):
         return self.lec_name   
+   

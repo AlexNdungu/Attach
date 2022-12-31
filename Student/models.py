@@ -45,3 +45,20 @@ class Student(models.Model):
     def __str__(self):
         return self.stud_name
 
+
+#The heading connection
+class HeadConnect(models.Model):
+
+    head_connect_id = models.AutoField(primary_key=True)
+
+    head = models.OneToOneField(HeadLecturer, on_delete=models.CASCADE)
+
+    students = models.ManyToManyField(Student, blank=True,verbose_name='All Connects')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.head.lec_name
