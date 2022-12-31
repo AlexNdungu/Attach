@@ -20,6 +20,6 @@ urlpatterns = [
 
     path('studRequest',views.requestStudents, name='request_stud'),
     #This is the link to sending request from student to lecturer
-    path('Request',views.newRequest, name='new_request'),
+    path('Request/<pk>/',views.newRequest, name='new_request'),
 
 ]

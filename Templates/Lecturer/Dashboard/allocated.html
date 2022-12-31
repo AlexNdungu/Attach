@@ -56,6 +56,28 @@
 
 </div>
 
+<!--The Link to send to students-->
+<div class="linkSent">
+
+    <span id="theLink" ></span>
+
+    <!--
+<span>{{request.user.headlecturer.lec_id}}</span>
+    -->
+    
+
+    <script>
+
+        var theLink = document.getElementById('theLink')
+
+        theLink.innerHTML = window.location.protocol + "//" + window.location.host + "/lecturer/Request/{{request.user.headlecturer.lec_id}}" 
+
+        // window.location.href
+
+
+    </script>
+
+</div>
 
 <!--All department heads-->
 <div class="all_dep_heads" id="all_dep_heads">

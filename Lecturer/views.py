@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from Institute.models import *
 from .models import *
+from Student.models import *
 
 
 # Create your views here.
@@ -166,5 +167,15 @@ def requestStudents(request):
     return render(request, 'Lecturer/Dashboard/alrequest.html')    
 
 #Students will send requests to the lecturer
-def newRequest(request):
-    return render(request,'Lecturer/Dashboard/sendReq.html')    
+def newRequest(request, pk):
+
+    head = HeadLecturer.objects.get(lec_id = pk)
+
+    connect_student = HeadConnect.objects.get(head = head)
+
+    context = {
+        'head':head,
+        'connect_student':connect_student
+    }
+
+    return render(request,'Lecturer/Dashboard/sendReq.html',context)    

@@ -28,7 +28,7 @@
     <!--The heading section-->
     <div class="head">
 
-        <h2>Connect With Mr Alex Meta Ndungu</h2>
+        <h2>Connect With {{head.lec_name}}</h2>
 
     </div>
 
@@ -37,7 +37,7 @@
 
         <!--The two connecting members-->
         <div class="imgAll">
-            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="">
+            <img src="{{head.profile_image.url}}" alt="">
         </div>
 
         <div class="imgAll">
