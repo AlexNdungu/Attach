@@ -26,66 +26,110 @@
 <body>
 
     <!--The heading section-->
-    <div class="head">
+    {% if request.user.is_authenticated %}
+    <div>
+        
+        <div class="head">
 
-        <h2>Connect With {{head.lec_name}}</h2>
-
-    </div>
-
-    <!--The me and them image-->
-    <div class="meThem">
-
-        <!--The two connecting members-->
-        <div class="imgAll">
-            <img src="{{head.profile_image.url}}" alt="">
+            <h2>Connect With {{head.lec_name}}</h2>
+    
         </div>
-
-        <div class="imgAll">
-            <img src="{{request.user.student.profile_image.url}}" alt="">
-        </div>
-
-    </div>
-
-    <!--The connect button-->
-    <div class="conSect">
-
-        <!--The btn-->
-        <div class="connect">
-
-            <span>Connect</span>
-
-        </div>
-
-    </div>
-
-    <!--The other members-->
-    <div class="otherMembers">
-
-        <!--The inner section-->
-        <div class="innerOther">
-
-            <!--The heading-->
-            <div class="otherHead">
-
-                <span>Other Members</span>
-
+    
+        <!--The me and them image-->
+        <div class="meThem">
+    
+            <!--The two connecting members-->
+            <div class="imgAll">
+                <img src="{{head.profile_image.url}}" alt="">
             </div>
-
-            <!--The rest of the section-->
-            <div class="otherRest">
-
-                <!--A single member-->
-                <div class="member">
-
-                    <img src="{% static 'Images/Company/Logo.jpg' %}" alt="">
-
+    
+            <div class="imgAll">
+                <img src="{{request.user.student.profile_image.url}}" alt="">
+            </div>
+    
+        </div>
+    
+        <!--The connect button-->
+        <div class="conSect">
+    
+            <!--The btn-->
+            <div class="connect">
+    
+                <span>Connect</span>
+    
+            </div>
+    
+        </div>
+    
+        <!--The other members-->
+        <div class="otherMembers">
+    
+            <!--The inner section-->
+            <div class="innerOther">
+    
+                <!--The heading-->
+                <div class="otherHead">
+    
+                    <span>Other Members</span>
+    
                 </div>
+    
+                <!--The rest of the section-->
+                <div class="otherRest">
+    
+                    <!--A single member-->
+                    <div class="member">
+    
+                        <img src="{% static 'Images/Company/Logo.jpg' %}" alt="">
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <!--The nit logged in image-->
+
+    <div class="notLogged">
+
+        <!--The head-->
+        <div class="HeadLog">
+
+            <span>You Are Not Authenticated !!</span>
+
+        </div>
+
+
+        <!--The logged not image-->
+        <div class="logNotImg">
+
+            <div class="theLogImg">
+
+                <img src="{% static 'Images/Student/not.png' %}" alt="not found">
 
             </div>
+
+
+        </div>
+
+        <!--Log in section-->
+        <div class="loginSec">
+
+            <a href="">
+                <button>Login</button>
+            </a>
 
         </div>
 
     </div>
+
+    {% endif %}
 
     <!--Boostrap Link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">

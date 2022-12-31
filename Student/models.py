@@ -78,9 +78,9 @@ class StudentLec(models.Model):
 
     student = models.OneToOneField(Student, on_delete=models.CASCADE, verbose_name='Student')
 
-    head = models.ForeignKey(HeadLecturer,on_delete=models.SET_NULL, null=True, verbose_name='Department Head')
+    head = models.ForeignKey(HeadLecturer,on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Department Head')
     
-    lec = models.ForeignKey(Lecturer, on_delete=models.SET_NULL, null=True, verbose_name='Lecturer')
+    lec = models.ForeignKey(Lecturer, on_delete=models.SET_NULL, null=True, blank=True,verbose_name='Lecturer')
 
     connected = models.BooleanField(default=False, verbose_name='Connection')
 
