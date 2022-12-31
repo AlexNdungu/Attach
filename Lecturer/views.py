@@ -173,9 +173,49 @@ def newRequest(request, pk):
 
     connect_student = HeadConnect.objects.get(head = head)
 
+    #Get Department
+    depart = Department.objects.get(head = head)
+
+    univ = head.institute
+
+    #Student and their depatrtment 
+    student = Student.objects.get(student = request.user)
+
+    stud_dep = student.department
+
+    stud_uni = student.institute
+
+    #Is the student and lecturer in the same department
+
+    same_dep = False
+
+    if stud_dep == depart:
+
+        same_dep = True
+
+    elif stud_dep != depart:
+
+        same_dep = False
+
+    #Is the student and lecturer in the same school
+
+    same_uni = False
+
+    if stud_uni == univ:
+
+        same_uni = True
+
+    elif stud_uni != univ:
+
+        same_uni = False    
+
+    print(univ)
+
     context = {
         'head':head,
-        'connect_student':connect_student
+        'connect_student':connect_student,
+        'same_dep':same_dep,
+        'same_uni':same_uni
     }
 
     return render(request,'Lecturer/Dashboard/sendReq.html',context)    

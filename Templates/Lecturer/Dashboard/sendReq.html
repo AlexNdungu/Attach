@@ -27,70 +27,149 @@
 
     <!--The heading section-->
     {% if request.user.is_authenticated %}
+
+    {% if same_uni == True %}
+
+    {% if same_dep == True %}
+
     <div>
         
         <div class="head">
 
             <h2>Connect With {{head.lec_name}}</h2>
-    
+
         </div>
-    
+
         <!--The me and them image-->
         <div class="meThem">
-    
+
             <!--The two connecting members-->
             <div class="imgAll">
                 <img src="{{head.profile_image.url}}" alt="">
             </div>
-    
+
             <div class="imgAll">
                 <img src="{{request.user.student.profile_image.url}}" alt="">
             </div>
-    
+
         </div>
-    
+
         <!--The connect button-->
         <div class="conSect">
-    
+
             <!--The btn-->
             <div class="connect">
-    
+
                 <span>Connect</span>
-    
+
             </div>
-    
+
         </div>
-    
+
         <!--The other members-->
         <div class="otherMembers">
-    
+
             <!--The inner section-->
             <div class="innerOther">
-    
+
                 <!--The heading-->
                 <div class="otherHead">
-    
+
                     <span>Other Members</span>
-    
+
                 </div>
-    
+
                 <!--The rest of the section-->
                 <div class="otherRest">
-    
+
                     <!--A single member-->
                     <div class="member">
-    
+
                         <img src="{% static 'Images/Company/Logo.jpg' %}" alt="">
-    
+
                     </div>
-    
+
                 </div>
-    
+
             </div>
-    
+
         </div>
 
     </div>
+
+    {% else %}
+
+    <div class="notLogged">
+
+        <!--The head-->
+        <div class="HeadLog">
+
+            <span>You Are Not In The Same Department As {{head.lec_name}} !!</span>
+
+        </div>
+
+
+        <!--The logged not image-->
+        <div class="logNotImg">
+
+            <div class="theLogImg">
+
+                <img src="{% static 'Images/Student/errorU.png' %}" alt="not found">
+
+            </div>
+
+
+        </div>
+
+        <!--Log in section-->
+        <div class="loginSec">
+
+            <a href="">
+                <button>Back</button>
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    {% else %}  
+        
+    <div class="notLogged">
+
+        <!--The head-->
+        <div class="HeadLog">
+
+            <span>You Are Not In The Same Institute As {{head.lec_name}} !!</span>
+
+        </div>
+
+
+        <!--The logged not image-->
+        <div class="logNotImg">
+
+            <div class="theLogImg">
+
+                <img src="{% static 'Images/Student/errorU.png' %}" alt="not found">
+
+            </div>
+
+
+        </div>
+
+        <!--Log in section-->
+        <div class="loginSec">
+
+            <a href="">
+                <button>Back</button>
+            </a>
+
+        </div>
+
+    </div>
+
+    {% endif %}
 
     {% else %}
 
