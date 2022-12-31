@@ -62,3 +62,34 @@ class HeadConnect(models.Model):
 
     def __str__(self):
         return self.head.lec_name
+
+
+
+LEC_CHOICES = (
+    ('none','NONE'),
+    ('head','HEAD'),
+    ('lecturer', 'LECTURER'),
+)        
+
+#The student connect 
+class StudentLec(models.Model):
+
+    student_lec_id = models.AutoField(primary_key=True)
+
+    student = models.OneToOneField(Student, on_delete=models.CASCADE, verbose_name='Student')
+
+    head = models.ForeignKey(HeadLecturer,on_delete=models.SET_NULL, null=True, verbose_name='Department Head')
+    
+    lec = models.ForeignKey(Lecturer, on_delete=models.SET_NULL, null=True, verbose_name='Lecturer')
+
+    connected = models.BooleanField(default=False, verbose_name='Connection')
+
+    whom = models.CharField(max_length=12, choices=LEC_CHOICES, default='none')
+
+    #Create And Update date
+    update = models.DateTimeField(auto_now=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.student.stud_name

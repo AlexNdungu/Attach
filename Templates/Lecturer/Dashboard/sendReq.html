@@ -41,7 +41,7 @@
         </div>
 
         <div class="imgAll">
-            <img src="{% static 'Images/Company/Logo.jpg' %}" alt="">
+            <img src="{{request.user.student.profile_image.url}}" alt="">
         </div>
 
     </div>
