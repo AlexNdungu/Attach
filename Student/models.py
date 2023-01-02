@@ -53,7 +53,9 @@ class HeadConnect(models.Model):
 
     head = models.OneToOneField(HeadLecturer, on_delete=models.CASCADE)
 
-    students = models.ManyToManyField(Student, blank=True,verbose_name='All Connects')
+    students = models.ManyToManyField(Student, blank=True,verbose_name='New Connects', related_name='student_Request')
+
+    acc_students = models.ManyToManyField(Student, blank=True,verbose_name='Accepted Connects', related_name='student_Request_accepted')
 
     #Create And Update date
     update = models.DateTimeField(auto_now=True)
