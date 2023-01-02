@@ -18,6 +18,7 @@ from django.contrib.auth.models import Group
 
 #Import 
 from Lecturer.models import *
+from Student.models import *
 
 from django.core import serializers
 
@@ -346,6 +347,11 @@ def createHead(request):
                 createdHead.profile_url = createdHead.profile_image.url
                 createdHead.act_url = createdHead.act.url    
                 createdHead.save() 
+
+                #Create a student head connect model
+                new_stud_connect = HeadConnect.objects.create(
+                    head = createdHead
+                )
      
 
                 NewHead = {
