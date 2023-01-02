@@ -219,3 +219,40 @@ def newRequest(request, pk):
     }
 
     return render(request,'Lecturer/Dashboard/sendReq.html',context)    
+
+
+#Now we send connection request
+def connectRequest(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        #Get the student
+        the_stud = Student.objects.get(student = request.user)
+
+        #Get The head lecturer
+        head_id = request.POST.get('head_id')
+
+        print(the_stud)
+
+        head = HeadLecturer.objects.get(lec_id = head_id)
+
+        #Get the connection
+        head_conn = HeadConnect.objects.get(head = head)
+
+        #Add student to pending request
+        head_conn.students.add(the_stud)
+
+        head_conn.save()
+
+        #Get the student connection
+        stud_head_conn = StudentLec.objects.get(student = the_stud)
+
+        stud_head_conn.head = head
+
+        stud_head_conn.connected = True
+
+        stud_head_conn.whom = 'head'
+
+        stud_head_conn.save()
+
+    return JsonResponse({'status':'Connect'})    
