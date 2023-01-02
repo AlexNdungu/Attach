@@ -179,7 +179,7 @@
 
 /* The Not Found Image */
 
-.logNotImg {
+.logNotImg,.connImg {
     width: 100%;
     height: 600px;
     display: flex;
@@ -187,12 +187,12 @@
     justify-content: center;
 }
 
-.theLogImg {
+.theLogImg,.connTheImg {
     width: 500px;
     height: 500px;
 }
 
-.theLogImg img {
+.theLogImg img,.connTheImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -220,4 +220,52 @@
 
 form {
     display: none;
+}
+
+/* Already connected */
+
+.alreadyConnected {
+    width: 100%;
+    height: 100vh;
+}
+
+.connectMessA {
+    width: 100%;
+    height: 80px;
+    background-color: #32772C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D9D9D9;
+    font-size: 20px;
+    font-weight: 600
+}
+
+
+/* Go to connection button */
+
+.viewConn{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connBtn {
+    width: 220px;
+    height: 60px;
+    background-color: #4B39EF;
+    color: #D9D9D9;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.connBtn:hover {
+    background-color: #32772C;
 }

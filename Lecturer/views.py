@@ -207,15 +207,21 @@ def newRequest(request, pk):
 
     elif stud_uni != univ:
 
-        same_uni = False    
+        same_uni = False  
 
-    print(univ)
+    #Is there an existing connection 
+    conn_stud_lec = StudentLec.objects.get(student = student)
+
+    conn_status = conn_stud_lec.connected
+
+    print(conn_status)
 
     context = {
         'head':head,
         'connect_student':connect_student,
         'same_dep':same_dep,
-        'same_uni':same_uni
+        'same_uni':same_uni,
+        'conn_status':conn_status
     }
 
     return render(request,'Lecturer/Dashboard/sendReq.html',context)    
