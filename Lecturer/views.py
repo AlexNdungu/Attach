@@ -164,7 +164,21 @@ def allocatedStudents(request):
     return render(request, 'Lecturer/Dashboard/allocated.html')
 
 def requestStudents(request):
-    return render(request, 'Lecturer/Dashboard/alrequest.html')    
+
+    #Check if its head or lec
+    #print(request.user.headlecturer)
+
+    theLec = HeadConnect.objects.get(head = request.user.headlecturer)
+
+    print(theLec.students.all)
+
+
+
+    context = {
+        'theLec':theLec,
+    }
+
+    return render(request, 'Lecturer/Dashboard/alrequest.html',context)    
 
 #Students will send requests to the lecturer
 def newRequest(request, pk):
