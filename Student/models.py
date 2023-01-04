@@ -86,6 +86,8 @@ class StudentLec(models.Model):
 
     connected = models.BooleanField(default=False, verbose_name='Connection')
 
+    approved = models.BooleanField(default=False, verbose_name='Approved')
+
     whom = models.CharField(max_length=12, choices=LEC_CHOICES, default='none')
 
     #Create And Update date

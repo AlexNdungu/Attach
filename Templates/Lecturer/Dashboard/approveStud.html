@@ -18,15 +18,76 @@
 <!--The rest section-->
 {% block rest %}
 
+    <!--The toast section success-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Connection Request Success!!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
+    <!--The toast section failure-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="failedToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="d-flex">
+    
+              <div class="toast-body">
+    
+                Connection Request Failed!!
+    
+              </div>
+    
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    
+            </div>
+    
+        </div> 
+
+    </div>
+
 <div class="approveSection">
 
     <!--The accept button-->
-    <div class="acceptBTN">
+    <div class="acceptBTN " id="acceptBTN" >
 
         <span>Accept Request</span>
 
     </div>
 
+    <form >
+
+        {% csrf_token %}
+
+    </form>
+
 </div>
+
+<script>
+
+    var studID = "{{student.stud_id}}";
+
+</script>
+
+{% endblock %}
+
+<!--The script section-->
+{% block script %}
+
+<script src="{% static 'Js/Lecturer/Dashboard/acceptStud.js' %}"></script>
 
 {% endblock %}

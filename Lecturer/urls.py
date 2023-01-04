@@ -21,7 +21,8 @@ urlpatterns = [
     path('studRequest',views.requestStudents, name='request_stud'),
     #Accept student
     path('acceptStud/<pk>/',views.approveStudent, name='accept_stud'),
-    
+    #Accept with js
+    path('approveStudNow/', views.approveStudNow, name='approve_Stud_Now'),
     #This is the link to sending request from student to lecturer
     path('Request/<pk>/',views.newRequest, name='new_request'),
     #Send connect request

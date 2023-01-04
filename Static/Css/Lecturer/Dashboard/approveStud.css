@@ -23,6 +23,23 @@
     transition: 0.1s ease-in;
 }
 
+.btnAllready {
+    width: 230px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #32772C;
+    font-size: 18px;
+    color: #D9D9D9;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
 .acceptBTN:hover {
     background-color: #32772C;
+}
+
+form {
+    display: none;
 }

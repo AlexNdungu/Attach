@@ -188,7 +188,11 @@ def approveStudent(request, pk):
         'student':student
     }
 
-    return render(request, 'Lecturer/Dashboard/approveStud.html',context)      
+    return render(request, 'Lecturer/Dashboard/approveStud.html',context)   
+
+
+def approveStudNow(request):
+    return JsonResponse({'status':'Connected'}) 
 
 #Students will send requests to the lecturer
 def newRequest(request, pk):
