@@ -513,7 +513,7 @@
 
                     </div>
 
-                    {% if request.user.student.cv_name != '0' %}
+                    {% if request.user.student.cv_name != '' %}
 
                     <a href="{{request.user.student.cv.url}}">
 
@@ -544,8 +544,9 @@
                         <img src="{% static 'Images/Student/pdf.png' %}" alt="file_type">
 
                     </div>
+                    
 
-                    {% if request.user.student.rec_name != '0' %}
+                    {% if request.user.student.rec_name != '' %}
 
                     <a href="{{request.user.student.rec.url}}">
 

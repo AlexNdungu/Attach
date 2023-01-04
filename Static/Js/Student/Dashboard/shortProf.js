@@ -8,7 +8,7 @@ document.getElementById('cvName').innerHTML = newCVName
 
 //Cut Recommned name
 let recNameCut = document.getElementById('recName').innerHTML;
-let newRecName = cvNameCut.substring(0, maxLength) + '...';
+let newRecName = recNameCut.substring(0, maxLength) + '...';
 
 document.getElementById('recName').innerHTML = newRecName
 
