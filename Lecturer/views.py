@@ -172,13 +172,23 @@ def requestStudents(request):
 
     print(theLec.students.all)
 
-
-
     context = {
         'theLec':theLec,
     }
 
-    return render(request, 'Lecturer/Dashboard/alrequest.html',context)    
+    return render(request, 'Lecturer/Dashboard/alrequest.html',context)  
+
+
+#Now we approve a student
+def approveStudent(request, pk):
+
+    student = Student.objects.get(stud_id = pk)
+
+    context = {
+        'student':student
+    }
+
+    return render(request, 'Lecturer/Dashboard/approveStud.html',context)      
 
 #Students will send requests to the lecturer
 def newRequest(request, pk):
