@@ -211,6 +211,8 @@ def approveStudNow(request):
         #Add student to pending request
         head_conn.acc_students.add(the_stud)
 
+        head_conn.students.remove(the_stud)
+
         head_conn.save()
 
         #Get the student connection
