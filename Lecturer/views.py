@@ -192,6 +192,38 @@ def approveStudent(request, pk):
 
 
 def approveStudNow(request):
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+
+        #Get The student id
+        stud_id = request.POST.get('stud_id')
+
+        #Get the student
+        the_stud = Student.objects.get(stud_id = stud_id)
+
+        print(the_stud)
+
+        head = request.user.headlecturer
+
+        #Get the connection
+        head_conn = HeadConnect.objects.get(head = head)
+
+        #Add student to pending request
+        head_conn.acc_students.add(the_stud)
+
+        head_conn.save()
+
+        #Get the student connection
+        stud_head_conn = StudentLec.objects.get(student = the_stud)
+
+        #stud_head_conn.head = head
+
+        stud_head_conn.approved = True
+
+        #stud_head_conn.whom = 'head'
+
+        stud_head_conn.save()
+
     return JsonResponse({'status':'Connected'}) 
 
 #Students will send requests to the lecturer
