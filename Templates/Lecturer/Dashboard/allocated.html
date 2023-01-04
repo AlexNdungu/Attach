@@ -34,7 +34,7 @@
 
         <!--Department number-->
         <div class="dep_num">
-            <h2>10</h2>
+            <h2>{{theLec.acc_students.count}}</h2>
         </div>
 
     </div>
@@ -82,22 +82,24 @@
 <!--All department heads-->
 <div class="all_dep_heads" id="all_dep_heads">
 
+    {% for student in theLec.acc_students.all %}
+
     <!--Individual department head-->
     <div class="ind_dep_head">
 
         <!--The department head image-->
         <div class="dep_head_img_sect">
 
-            <span class="head_id" >{{head.lecturer.username}}</span>
+            <span class="head_id" >{{student.stud_id}}</span>
 
-            <img class="del_profile_img" src="{{head.profile_image.url}}" alt="">
+            <img class="del_profile_img" src="{{student.profile_image.url}}" alt="">
 
             <!--The head name section-->
             <div class="dep_head_name_sec">
 
                 <!--The actual name-->
                 <div class="head_act_name">
-                    <span class="parse_del_name" >{{head.lec_name}}</span>
+                    <span class="parse_del_name" >{{student.stud_name}}</span>
                 </div>
 
             </div>
@@ -134,7 +136,7 @@
 
     </div>
 
-
+    {% endfor %}
 
 </div>
 

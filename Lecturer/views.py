@@ -161,7 +161,19 @@ def deleteCourse(request):
 
 
 def allocatedStudents(request):
-    return render(request, 'Lecturer/Dashboard/allocated.html')
+
+    #Check if its head or lec
+    #print(request.user.headlecturer)
+
+    theLec = HeadConnect.objects.get(head = request.user.headlecturer)
+
+    print(theLec.students.all)
+
+    context = {
+        'theLec':theLec,
+    }
+
+    return render(request, 'Lecturer/Dashboard/allocated.html',context)
 
 def requestStudents(request):
 
