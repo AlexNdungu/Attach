@@ -213,11 +213,11 @@ def category(request, pk):
             #print(ind_loc.company.companyprofile.logo.url)
             #print(ind_loc.company.companyprofile.company_name)
 
-            #coordinates.append(coordinate)
+            coordinates.append(coordinate)
 
             #print(ind_loc.latitude)
 
-    #print(coordinates)
+    print(coordinates)
 
     context = {
         'category':this_categ,
