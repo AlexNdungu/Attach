@@ -144,24 +144,3 @@ function initNewMap(){
 
 }
 
-// var markers = [];
-// for (var i = 0; i < data.length; i++) {
-//     var pos = new google.maps.LatLng(data[i].latitud, data[i].longitud);
-
-//     markers[i] = new google.maps.Marker({
-//         position: pos,
-//         map: map,
-//         icon: 'images/locred.png',
-//         description: data[i].desc,
-//         id: i
-//     });
-
-//     var infowindow = new google.maps.InfoWindow({
-//         content: data[i].name
-//     });
-
-//     infowindow.open(map, markers[i]);
-//     google.maps.event.addListener(markers[i], 'click', function () {
-//         alert(markers[this.id].description)
-//     })
-// }
