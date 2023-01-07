@@ -6,6 +6,7 @@ from Institute.models import *
 from .models import *
 from Student.models import *
 from Attach import settings
+from Company.models import *
 
 # Create your views here.
 
@@ -340,6 +341,31 @@ def connectRequest(request):
 
 #The student map
 def map(request):
+
+    #The head lecturer
+
+    head = HeadLecturer.objects.get(lecturer = request.user)
+
+    connection = HeadConnect.objects.get(head = head)
+
+    #create an empty list
+    coordinates = []
+
+    #print(connection.acc_students.all)
+
+    for student in connection.acc_students.all():
+
+        job_con = StudentApplication.objects.filter(student = student)
+
+        if job_con.exists():
+
+            for student_job in job_con:
+
+                print(student_job.student)
+                
+                if student_job.status == True:
+
+                    
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
