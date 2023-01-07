@@ -108,8 +108,10 @@ function initNewMap(){
             position: new google.maps.LatLng(new_latitudes[a], new_longitudes[a]),
             map: map,
             //title: new_name[a]
-            optimized: false,
-            icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
+
+            //Dispay user icons
+            //optimized: false,
+            //icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
         });
 
         google.maps.event.addListener(marker, 'click', (function (marker, a) {
