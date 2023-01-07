@@ -1,0 +1,11 @@
+.ind_nav_sections:nth-child(6) .highl_nav{
+    background-color: #4b39ef;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav{
+    background-color: #474747;
+}
+
+.ind_nav_sections:nth-child(3) .highl_nav:hover{
+    background-color: #4b39ef;
+}

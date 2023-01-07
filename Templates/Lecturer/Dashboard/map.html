@@ -1,0 +1,28 @@
+<!--This page inherits from index.html-->
+{% extends 'Inherite/lecturer.html' %}
+
+{% load static %}
+
+<!--The heading section-->
+{% block head %}
+
+<!--The title-->
+
+<!--The dashboard css-->
+<link rel="stylesheet" href="{% static '/Css/Institute/Dashboard/heads.css' %}">
+<link rel="stylesheet" href="{% static '/Css/Lecturer/Dashboard/map.css' %}">
+
+
+{% endblock %}
+
+<!--The page user is in-->
+
+{% block place %}Students Map{% endblock %}
+
+<!--The body section-->
+{% block body %}
+{% endblock %}
+
+<!--The bottom section-->
+{% block below %}
+{% endblock %}

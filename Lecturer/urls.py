@@ -28,4 +28,7 @@ urlpatterns = [
     #Send connect request
     path('sendConnection/', views.connectRequest, name='connect_Request'),
 
+    #The student map
+    path('map/',views.map, name='student_map'),
+
 ]

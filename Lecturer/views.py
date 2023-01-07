@@ -336,3 +336,8 @@ def connectRequest(request):
         stud_head_conn.save()
 
     return JsonResponse({'status':'Connect'})    
+
+
+#The student map
+def map(request):
+    return render(request,'Lecturer/Dashboard/map.html')    
