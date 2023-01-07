@@ -9,3 +9,18 @@
 .ind_nav_sections:nth-child(3) .highl_nav:hover{
     background-color: #4b39ef;
 }
+
+/* The map section */
+
+.map {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    width: 90%;
+    height: 90%;
+}

@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 from Institute.models import *
 from .models import *
 from Student.models import *
-
+from Attach import settings
 
 # Create your views here.
 
@@ -340,4 +340,10 @@ def connectRequest(request):
 
 #The student map
 def map(request):
-    return render(request,'Lecturer/Dashboard/map.html')    
+
+    context = {
+        'google_map_api':settings.GOOGLE_API_KEY,
+        'base_country':settings.BASE_COUNTRY
+    }
+
+    return render(request,'Lecturer/Dashboard/map.html',context)    

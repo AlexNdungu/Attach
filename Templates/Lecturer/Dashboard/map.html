@@ -21,8 +21,28 @@
 
 <!--The body section-->
 {% block body %}
+
+<div class="map">
+
+    <div id="map">
+        
+    </div>
+
+
+    <script>
+
+        var google_api_key = "{{google_map_api}}";
+        
+    </script>
+
+</div>
+
+
 {% endblock %}
 
 <!--The bottom section-->
 {% block below %}
+
+<script src="{% static 'Js/Lecturer/Dashboard/map.js' %}"></script>
+
 {% endblock %}
