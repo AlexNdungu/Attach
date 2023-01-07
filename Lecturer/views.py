@@ -361,15 +361,23 @@ def map(request):
 
             for student_job in job_con:
 
-                print(student_job.student)
+                #print(student_job.student)
                 
                 if student_job.status == True:
 
-                    
+                    #print(student_job.student.profile_image.url)
+
+                    coordinate = [student_job.student.stud_name,student_job.job.company.company.companylocation.latitude,student_job.job.company.company.companylocation.longitude,student_job.student.profile_image.url]
+
+            #print(ind_loc.company.companyprofile.logo.url)
+            #print(ind_loc.company.companyprofile.company_name)
+
+            coordinates.append(coordinate)
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
-        'base_country':settings.BASE_COUNTRY
+        'base_country':settings.BASE_COUNTRY,
+        'coordinates':coordinates
     }
 
     return render(request,'Lecturer/Dashboard/map.html',context)    
