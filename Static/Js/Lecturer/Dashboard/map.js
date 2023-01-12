@@ -24,6 +24,8 @@ let new_longitudes = [];
 
 let new_images = [];
 
+let new_ids = [];
+
 for(let a =0; a < coordinates.length; a++){
     //console.log(coordinates[a].innerHTML)
 
@@ -40,10 +42,6 @@ for(let a =0; a < coordinates.length; a++){
     //Here we push the name
 
     new_name.push(names);
-
-    //console.log(names)
-
-    //console.log(names)
 
     //Here we split latitude
 
@@ -78,7 +76,16 @@ for(let a =0; a < coordinates.length; a++){
 
     //console.log(images)
 
+    //Parse Student id
+    //console.log(result)
 
+    let result6 = result[4].split("]");
+
+    console.log(result6[0])
+
+    let new_id = result6[0]
+
+    new_ids.push(new_id)
 
 }
 

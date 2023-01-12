@@ -367,7 +367,7 @@ def map(request):
 
                     #print(student_job.student.profile_image.url)
 
-                    coordinate = [student_job.student.stud_name,student_job.job.company.company.companylocation.latitude,student_job.job.company.company.companylocation.longitude,student_job.student.profile_image.url]
+                    coordinate = [student_job.student.stud_name,student_job.job.company.company.companylocation.latitude,student_job.job.company.company.companylocation.longitude,student_job.student.profile_image.url,student_job.student.stud_id]
 
             #print(ind_loc.company.companyprofile.logo.url)
             #print(ind_loc.company.companyprofile.company_name)
