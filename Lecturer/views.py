@@ -381,3 +381,14 @@ def map(request):
     }
 
     return render(request,'Lecturer/Dashboard/map.html',context)    
+
+#visit student
+def visit(request):
+
+    context = {
+        'google_map_api':settings.GOOGLE_API_KEY,
+        'base_country':settings.BASE_COUNTRY,
+        #'coordinates':coordinates
+    }
+
+    return render(request,'Lecturer/Dashboard/visit.html',context)     

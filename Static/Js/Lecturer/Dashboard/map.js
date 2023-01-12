@@ -41,7 +41,7 @@ for(let a =0; a < coordinates.length; a++){
 
     new_name.push(names);
 
-    //console.log(result[1])
+    //console.log(names)
 
     //console.log(names)
 
@@ -110,8 +110,8 @@ function initNewMap(){
             //title: new_name[a]
 
             //Dispay user icons
-            //optimized: false,
-            //icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
+            optimized: false,
+            icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
         });
 
         google.maps.event.addListener(marker, 'click', (function (marker, a) {
@@ -119,7 +119,9 @@ function initNewMap(){
                 map.setZoom(7);
                 setTimeout(function(){ 
 
-                    infowindow.setContent(new_name[a]);
+                    var content = `<div class="imgPop"><img class="popImg" src="${new_images[a]}"></div><div id="content"><div id="siteNotice"></div><h3 id="firstHeading" class="firstHeading">${new_name[a]}</h3><p><a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">Visit ${new_name[a]}</a></p></div></div>`
+
+                    infowindow.setContent(content);
                     infowindow.open(map, marker);
                     map.setCenter(marker.getPosition());
                     map.setZoom(8);

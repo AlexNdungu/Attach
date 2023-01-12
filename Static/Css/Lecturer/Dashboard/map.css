@@ -28,3 +28,16 @@
 .coordinate {
     display: none;
 }
+
+
+
+.imgPop {
+    width: 100px;
+    height: 100px;
+}
+
+.imgPop img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
