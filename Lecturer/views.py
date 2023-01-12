@@ -397,11 +397,17 @@ def visit(request, pk):
 
     print(location)
 
+    #Get current head lec image
+    head = HeadLecturer.objects.get(lecturer = request.user)
+
+    head_image_url = head.profile_image.url
+
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
         'base_country':settings.BASE_COUNTRY,
         'student':student,
-        'location':location
+        'location':location,
+        'head_image_url':head_image_url
         #'coordinates':coordinates
     }
 

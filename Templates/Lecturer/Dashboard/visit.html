@@ -1,12 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Attachment :: Visit {{student.stud_name}}</title>
+
+    <link rel="stylesheet" href="{% static '/Css/Lecturer/Dashboard/visit.css' %}">
+
+    <!--The ajax link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 </head>
 <body>
+
+    <!--The visited-->
+    <div class="visited">
+
+
+
+    </div>
 
     <!--The map section-->
     
@@ -16,7 +32,23 @@
 
         </div>
 
+        <script>
+
+            var google_api_key = "{{google_map_api}}";
+
+            //Lets get the longitude and latitude
+            var long = "{{location.longitude}}"
+            var lat = "{{location.latitude}}"
+
+            var lec_image = "{{head_image_url}}"
+            var stud_img = "{{student.profile_image.url}}"
+            
+        </script>
+
     </div>
 
 </body>
+<!--The js script-->
+<script src="{% static 'Js/Lecturer/Dashboard/visit.js' %}"></script>
+
 </html>
