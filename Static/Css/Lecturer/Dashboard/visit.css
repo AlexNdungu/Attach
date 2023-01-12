@@ -11,9 +11,23 @@
 .visited {
     width: 100%;
     height: 100px;
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+.lec,.stud {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+}
+
+.lec img,.stud img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
 /* The map section */
 
