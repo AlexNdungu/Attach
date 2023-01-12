@@ -81,17 +81,18 @@ for(let a =0; a < coordinates.length; a++){
 
     let result6 = result[4].split("]");
 
-    console.log(result6[0])
+    //console.log(result6[0])
 
-    let new_id = result6[0]
+    let result7 = result6[0].split("");
+
+    let new_id = result7[1]
+
+    //console.log(new_id)
 
     new_ids.push(new_id)
 
 }
 
-//console.log(new_name);
-//console.log(new_latitudes);
-//console.log(new_longitudes);
 
 
 function initNewMap(){
@@ -121,12 +122,22 @@ function initNewMap(){
             icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
         });
 
+        let link_id = new_ids[a]
+
+        //console.log(link_id)
+
+        let visit_url = window.location.protocol + "//" + window.location.host + "/Lecturer/visit/"+link_id+"/"
+
+        //Update the visit url
+
+        console.log(visit_url)
+
         google.maps.event.addListener(marker, 'click', (function (marker, a) {
             return function () {
                 map.setZoom(7);
                 setTimeout(function(){ 
 
-                    var content = `<div class="imgPop"><img class="popImg" src="${new_images[a]}"></div><div id="content"><div id="siteNotice"></div><h3 id="firstHeading" class="firstHeading">${new_name[a]}</h3><p><a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">Visit ${new_name[a]}</a></p></div></div>`
+                    var content = `<div class="imgPop"><img class="popImg" src="${new_images[a]}"></div><div id="content"><div id="siteNotice"></div><h3 id="firstHeading" class="firstHeading">${new_name[a]}</h3><p><a href="${visit_url}">Visit ${new_name[a]}</a></p></div></div>`
 
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
@@ -137,6 +148,8 @@ function initNewMap(){
 
             }
         })(marker, a));
+
+        
 
     }
 
