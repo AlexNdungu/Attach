@@ -126,7 +126,7 @@ function initNewMap(){
 
         //console.log(link_id)
 
-        let visit_url = window.location.protocol + "//" + window.location.host + "/Lecturer/visit/"+link_id+"/"
+        let visit_url = window.location.protocol + "//" + window.location.host + "/lecturer/visit/"+link_id+"/"
 
         //Update the visit url
 

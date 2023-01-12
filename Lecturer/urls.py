@@ -31,6 +31,6 @@ urlpatterns = [
     #The student map
     path('map/',views.map, name='student_map'),
 
-    path('visit/', views.visit, name='visit_student'),
+    path('visit/<pk>/', views.visit, name='visit_student'),
 
 ]

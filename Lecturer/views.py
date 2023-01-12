@@ -383,7 +383,11 @@ def map(request):
     return render(request,'Lecturer/Dashboard/map.html',context)    
 
 #visit student
-def visit(request):
+def visit(request, pk):
+
+    student = Student.objects.get(stud_id = pk)
+
+    
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
