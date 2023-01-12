@@ -387,11 +387,21 @@ def visit(request, pk):
 
     student = Student.objects.get(stud_id = pk)
 
-    
+    #Now get the coordinates of the company
+    the_job = StudentApplication.objects.get(student = student)
+
+    #Now get the company
+    company = the_job.job.company.company
+
+    location = CompanyLocation.objects.get(company = company)
+
+    print(location)
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
         'base_country':settings.BASE_COUNTRY,
+        'student':student,
+        'location':location
         #'coordinates':coordinates
     }
 
