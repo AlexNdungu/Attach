@@ -221,7 +221,7 @@
                     <!--The institute logo-->
                     <div class="insti_own_logo">
 
-                        <img src="{% static 'Images/Institute/dkut.png' %}" alt="">
+                        <img src="{{request.user.headlecturer.profile_image.url}}" alt="">
 
                     </div>
 

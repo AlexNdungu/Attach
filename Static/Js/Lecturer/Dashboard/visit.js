@@ -8,6 +8,10 @@ let current_long;
 
 console.log(longitude)
 
+//Dispaly distance and time
+let DispalyDistance = document.getElementById('DispalyDistance');
+let DisplayTime = document.getElementById('DisplayTime');
+
 
 $.getScript( "https://maps.googleapis.com/maps/api/js?key=" + google_api_key + "&libraries=places") 
 .done(function( script, textStatus ) {
@@ -98,6 +102,31 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             }, function(response, status) {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
+
+                const service = new google.maps.DistanceMatrixService();
+
+                const origin1 = { lat: current_lat, lng: current_long };
+                const destinationA = { lat: latitude, lng: longitude };
+                const request = {
+                    origins: [origin1],
+                    destinations: [destinationA],
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.METRIC,
+                    avoidHighways: false,
+                    avoidTolls: false,
+                };
+
+                service.getDistanceMatrix(request).then((response) => {
+                    
+                    console.log(response.rows[0].elements[0])
+
+                    //Lets display the distance
+                    DispalyDistance.innerHTML = response.rows[0].elements[0].distance.text;
+
+                    //Display time
+                    DisplayTime.innerHTML = response.rows[0].elements[0].duration.text;
+                
+                });
         
         
             } else {
