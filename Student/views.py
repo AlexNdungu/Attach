@@ -234,7 +234,10 @@ def category(request, pk):
 #The heat map
 def Heat(request):
 
-    m = folium.Map(location=[41,29])
+    m = folium.Map(location=[-1.286389,36.817223])
+
+    #Add a marker
+    folium.Marker(location=[-1.286389,36.817223]).add_to(m)
 
     m = m._repr_html_()
 
