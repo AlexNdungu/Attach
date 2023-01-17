@@ -16,6 +16,9 @@ from Lecturer.models import *
 
 from .models import *
 
+#The map
+import folium
+
 # Create your views here.
 
 def signUp(request):
@@ -231,7 +234,15 @@ def category(request, pk):
 #The heat map
 def Heat(request):
 
-    return render(request, 'Student\Dashboard\heat.html')
+    m = folium.Map(location=[41,29])
+
+    m = m._repr_html_()
+
+    context = {
+        'map':m
+    }
+
+    return render(request, 'Student\Dashboard\heat.html',context)
 
 
 #Opportunities section
