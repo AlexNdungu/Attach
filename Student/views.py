@@ -228,6 +228,11 @@ def category(request, pk):
 
     return render(request, 'Student\Dashboard\category.html',context)
 
+#The heat map
+def Heat(request):
+
+    return render(request, 'Student\Dashboard\heat.html')
+
 
 #Opportunities section
 
