@@ -18,6 +18,7 @@ from .models import *
 
 #The map
 import folium
+from folium.plugins import HeatMap
 
 # Create your views here.
 
@@ -232,12 +233,44 @@ def category(request, pk):
     return render(request, 'Student\Dashboard\category.html',context)
 
 #The heat map
-def Heat(request):
+def Heat(request, pk):
+
+    #Create a map
 
     m = folium.Map(location=[-1.286389,36.817223])
 
-    #Add a marker
-    folium.Marker(location=[-1.286389,36.817223]).add_to(m)
+    #Lets get all the companies in this category
+    #Get the category maching the id
+    this_categ = Category.objects.get(cate_id = pk)
+
+    all_companies = CompanyCategory.objects.filter(category = this_categ)
+
+    coordinates = []
+
+    #print(all_companies)
+    for one_company in all_companies:
+
+        #print(one_company.company.company)
+
+        comp_user = User.objects.filter(username = one_company.company.company)
+        print(comp_user)
+
+        if comp_user:
+
+            comp_loc = CompanyLocation.objects.get(company__in = comp_user)
+
+            #Add a marker
+            #folium.Marker(location=[comp_loc.latitude,comp_loc.longitude]).add_to(m)
+            
+            #Create a list of coorsinates
+            coordinate = [comp_loc.latitude,comp_loc.longitude]
+
+            coordinates.append(coordinate)
+        
+    print(coordinates)
+
+    #Create a headmap
+    HeatMap(coordinates).add_to(m)
 
     m = m._repr_html_()
 

@@ -23,7 +23,7 @@ urlpatterns = [
     path('categories/', views.categories, name='stuCats'),
 
     #Heat map
-    path('Heat/', views.Heat, name='Heat'),
+    path('Heat/<pk>/', views.Heat, name='Heat'),
 
     #one category
     path('category/<pk>/', views.category, name='campOneCat'),
