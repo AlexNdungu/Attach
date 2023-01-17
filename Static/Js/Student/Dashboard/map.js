@@ -109,7 +109,7 @@ function initNewMap(){
             map: map,
             //title: new_name[a]
             optimized: false,
-            icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
+            //icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
         });
 
         google.maps.event.addListener(marker, 'click', (function (marker, a) {

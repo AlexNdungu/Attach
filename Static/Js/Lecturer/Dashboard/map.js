@@ -119,7 +119,7 @@ function initNewMap(){
 
             //Dispay user icons
             optimized: false,
-            icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
+            //icon: {url:new_images[a], scaledSize: new google.maps.Size(20, 20)},
         });
 
         let link_id = new_ids[a]
