@@ -428,6 +428,19 @@ def folStud(request):
 
     m = folium.Map(location=[-1.286389,36.817223])
 
+    #Now we get all the regions 
+
+    counties = []
+
+    for county in all_locations:
+
+        counties.append(county.county)
+
+    #print(counties)
+
+    new_counties = [*set(counties)]
+    print(new_counties)
+
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         print('ajax')
 
@@ -463,7 +476,6 @@ def folStud(request):
 
 
     else:
-        print('not ajax')
         #Now we get all tye company locations
 
         #Extract the coordinates
@@ -484,7 +496,8 @@ def folStud(request):
         m = m._repr_html_()
 
     context = {
-        'map':m
+        'map':m,
+        'Counties':new_counties
     }
 
     return render(request,'Lecturer/Dashboard/folStud.html',context )    
