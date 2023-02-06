@@ -422,29 +422,59 @@ def visit(request, pk):
 #The student Folium Map
 def folStud(request):
 
+    all_locations = CompanyLocation.objects.all()
+
     #Create a map
 
     m = folium.Map(location=[-1.286389,36.817223])
 
-    #Now we get all tye company locations
-    all_locations = CompanyLocation.objects.all()
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        print('ajax')
 
-    #Extract the coordinates
-    coordinates = []
+        inst = request.POST.get('heat')
 
-    for one_location in all_locations:
+        #print(inst)
 
-        #print(one_location.longitude)
+        if inst == 'Heat':
 
-        coordinate = [one_location.latitude,one_location.longitude]
+            coordinates = []
 
-        coordinates.append(coordinate)
+            for one_location in all_locations:
 
-        folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+            #print(one_location.longitude)
 
-    print(coordinates)
+                coordinate = [one_location.latitude,one_location.longitude]
 
-    m = m._repr_html_()
+                coordinates.append(coordinate)
+
+            HeatMap(coordinates).add_to(m)
+
+            m = m._repr_html_()
+
+            print(m)
+
+            return JsonResponse({'data': m}) 
+
+    else:
+        print('not ajax')
+        #Now we get all tye company locations
+
+        #Extract the coordinates
+        coordinates = []
+
+        for one_location in all_locations:
+
+            #print(one_location.longitude)
+
+            coordinate = [one_location.latitude,one_location.longitude]
+
+            coordinates.append(coordinate)
+
+            folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+
+        print(coordinates)
+
+        m = m._repr_html_()
 
     context = {
         'map':m
