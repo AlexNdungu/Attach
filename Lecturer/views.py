@@ -8,6 +8,11 @@ from Student.models import *
 from Attach import settings
 from Company.models import *
 
+
+#The map
+import folium
+from folium.plugins import HeatMap
+
 # Create your views here.
 
 def Inherite(request):
@@ -416,4 +421,15 @@ def visit(request, pk):
 
 #The student Folium Map
 def folStud(request):
-    return render(request,'Lecturer/Dashboard/folStud.html' )    
+
+    #Create a map
+
+    m = folium.Map(location=[-1.286389,36.817223])
+
+    m = m._repr_html_()
+
+    context = {
+        'map':m
+    }
+
+    return render(request,'Lecturer/Dashboard/folStud.html',context )    
