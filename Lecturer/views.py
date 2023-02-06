@@ -441,8 +441,6 @@ def folStud(request):
 
             for one_location in all_locations:
 
-            #print(one_location.longitude)
-
                 coordinate = [one_location.latitude,one_location.longitude]
 
                 coordinates.append(coordinate)
@@ -454,22 +452,16 @@ def folStud(request):
             return JsonResponse({'data': m}) 
 
         elif inst == 'Pins':
-            coordinates = []
 
             for one_location in all_locations:
-
-
-                coordinate = [one_location.latitude,one_location.longitude]
-
-                coordinates.append(coordinate)
 
                 folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
 
             m = m._repr_html_()
 
-            return JsonResponse({'data': m}) 
+            return JsonResponse({'data': m})
 
-            
+
     else:
         print('not ajax')
         #Now we get all tye company locations
