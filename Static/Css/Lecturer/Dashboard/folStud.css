@@ -34,8 +34,8 @@
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 
@@ -53,7 +53,7 @@
 
 .mapSelf {
     width: calc(100% - 230px);
-    height: 98%;
+    height: max-content;
     border-radius: 15px;
     margin-right: 10px;
     background-color: #D9D9D9;
