@@ -412,3 +412,8 @@ def visit(request, pk):
     }
 
     return render(request,'Lecturer/Dashboard/visit.html',context)     
+
+
+#The student Folium Map
+def folStud(request):
+    return render(request,'Lecturer/Dashboard/folStud.html' )    

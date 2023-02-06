@@ -33,4 +33,7 @@ urlpatterns = [
 
     path('visit/<pk>/', views.visit, name='visit_student'),
 
+    #Folium Student Map
+    path('studFol/', views.folStud, name='stud_fol'),
+
 ]
