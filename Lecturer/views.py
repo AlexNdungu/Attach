@@ -12,6 +12,7 @@ from Company.models import *
 #The map
 import folium
 from folium.plugins import HeatMap
+from folium.plugins import MarkerCluster
 
 # Create your views here.
 
@@ -486,6 +487,22 @@ def folStud(request):
                 if one_location.county == inst:
 
                     folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+
+            m = m._repr_html_()
+
+            return JsonResponse({'data': m})
+
+        elif inst == 'Number':
+
+            marker_cluster = MarkerCluster(
+                name="clustered name",
+            ).add_to(m)
+
+            for one_location in all_locations:
+                #print(row)
+                folium.Marker(location=[one_location.latitude, one_location.longitude],popup=one_location).add_to(marker_cluster)
+
+            folium.LayerControl().add_to(m)
 
             m = m._repr_html_()
 
