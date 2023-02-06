@@ -438,7 +438,7 @@ def folStud(request):
 
     #print(counties)
 
-    new_counties = [*set(counties)]
+    new_counties = sorted([*set(counties)])
     print(new_counties)
 
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
@@ -447,7 +447,7 @@ def folStud(request):
         inst = request.POST.get('inst')
 
         #print(inst)
-
+        #Heat Map
         if inst == 'Heat':
 
             coordinates = []
@@ -464,6 +464,7 @@ def folStud(request):
 
             return JsonResponse({'data': m}) 
 
+        #Pins Map
         elif inst == 'Pins':
 
             for one_location in all_locations:
@@ -474,6 +475,21 @@ def folStud(request):
 
             return JsonResponse({'data': m})
 
+
+        #Region Map
+        elif inst == 'Region':
+
+            inst = request.POST.get('county')
+            
+            for one_location in all_locations:
+
+                if one_location.county == inst:
+
+                    folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+
+            m = m._repr_html_()
+
+            return JsonResponse({'data': m})
 
     else:
         #Now we get all tye company locations

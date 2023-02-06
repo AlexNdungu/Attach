@@ -1,8 +1,10 @@
 //Lets get all the neccessary items
 let heatBtn = document.getElementById('heat_Map');
 let pinBtn = document.getElementById('pins_Map');
+let oneCountys = document.getElementsByClassName('oneCounty');
 
 let mapSelf = document.getElementById('mapSelf');
+let countyNames = document.getElementsByClassName('countyName')
 
 let csrf = document.getElementsByName('csrfmiddlewaretoken');
 
@@ -27,8 +29,6 @@ heatBtn.addEventListener('click', ()=> {
         processData: false,
         contentType: false,
         success: function(response){
-
-            console.log(response.data)
 
             mapSelf.innerHTML = response.data
             
@@ -61,8 +61,6 @@ pinBtn.addEventListener('click', ()=> {
         contentType: false,
         success: function(response){
 
-            console.log(response.data)
-
             mapSelf.innerHTML = response.data
             
         },
@@ -72,3 +70,43 @@ pinBtn.addEventListener('click', ()=> {
     });
 
 });
+
+//Region
+for(let a = 0; a < oneCountys.length; a++){
+
+    oneCountys[a].addEventListener('click', ()=> {
+
+        //Close the modal
+        document.getElementById('closeModal').click();
+
+        console.log(countyNames[a].innerHTML)
+
+        mapSelf.innerHTML = '';
+
+        let formData = new FormData();
+
+        formData.append('inst','Region');
+
+        formData.append('county',countyNames[a].innerHTML);
+
+        formData.append('csrfmiddlewaretoken', csrf[0].value);
+
+        $.ajax({
+            type:'POST',
+            url:'/lecturer/studFol/',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response){
+
+                mapSelf.innerHTML = response.data
+                
+            },
+            error: function(error){
+                
+            }
+        });
+
+    });
+
+}
