@@ -426,6 +426,24 @@ def folStud(request):
 
     m = folium.Map(location=[-1.286389,36.817223])
 
+    #Now we get all tye company locations
+    all_locations = CompanyLocation.objects.all()
+
+    #Extract the coordinates
+    coordinates = []
+
+    for one_location in all_locations:
+
+        #print(one_location.longitude)
+
+        coordinate = [one_location.latitude,one_location.longitude]
+
+        coordinates.append(coordinate)
+
+        folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+
+    print(coordinates)
+
     m = m._repr_html_()
 
     context = {
