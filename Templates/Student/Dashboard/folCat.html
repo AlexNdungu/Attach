@@ -38,7 +38,23 @@
         <!--The section menu-->
         <div class="section_menu">
 
-            
+            <!--The category-->
+            {% for cat in categories %}
+            <div class="category">
+
+                <h4>{{cat.cate_name}}</h4>
+
+                <p>{{cat.cate_description}}</p>
+
+                <!--The activate map button-->
+                <div class="change_map">
+
+                    <span>On Map</span>
+
+                </div>
+
+            </div>
+            {% endfor %}
 
         </div>
 

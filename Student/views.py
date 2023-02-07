@@ -403,5 +403,12 @@ def applied(request):
 
 #Folium Map For Company Category
 def FoliumCategory(request):
-    return render(request, 'Student/Dashboard/folCat.html')
+
+    all_cat = Category.objects.all()
+
+    context = {
+        'categories':all_cat
+    }
+
+    return render(request, 'Student/Dashboard/folCat.html',context)
 
