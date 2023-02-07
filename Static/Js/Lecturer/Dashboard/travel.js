@@ -38,30 +38,18 @@ function initMap() {
             zoom: 7,
             center: myLatLng
         });
+
         directionsDisplay.setMap(map);
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        calculateAndDisplayRoute(directionsService, directionsDisplay,myLatLng);
 
-        //var newIc = document.getElementById('img').src;
-
-        var marker = new google.maps.Marker({
-            position: { lat: -1.28333, lng: 36.81667 },
-            //map: map,
-            optimized: false,
-            //icon: {url:newIc, scaledSize: new google.maps.Size(20, 20)},
-            title: 'Click to zoom'
-        });
-        
-        marker.setMap(map);
-
-        
     }
-
 
 }
 
 
 //The waypoints
-const waypts = []
+var waypts = []
+const lastCood = []
 
 //Lets get the coordinates
 let coods = document.getElementsByClassName('coods');
@@ -76,23 +64,26 @@ for(let a = 0; a < coods.length; a++){
     //console.log(coods[a].innerHTML.split(",")[1].split("'")[1])
     let long = parseFloat(coods[a].innerHTML.split(",")[1].split("'")[1])
 
-
     //Lets push the waypoints
-    waypts.push({location: {lat: lat, lng: long},stopover: true},)
+    waypts.push({location: {lat: lat, lng: long},stopover: true})
+
+
+    //Now lets get the lats item in the loop
+    let last_lat = parseFloat(coods[coods.length - 1].innerHTML.split(",")[0].split("'")[1])
+    let last_long = parseFloat(coods[coods.length - 1].innerHTML.split(",")[1].split("'")[1])
+
+    lastCood.push({lat: last_lat, lng: last_long})
 }
 
-// const waypts = [
-//     {location: {lat: -1.218459, lng: 36.886906},
-//     stopover: true},
-//     {location: {lat: -1.038757, lng: 37.083375},
-//     stopover: true}
-//     ];
+
+//Remove the last element in way points since it is the 
+waypts.pop()
 
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, myLatLng) {
     directionsService.route({
-        origin: { lat: -1.28333, lng: 36.81667 },
-        destination: { lat: -0.427781, lng: 36.943359 },
+        origin: myLatLng,
+        destination: lastCood[0],
         waypoints: waypts,
         optimizeWaypoints: true,
         travelMode: google.maps.TravelMode.DRIVING,
