@@ -36,4 +36,7 @@ urlpatterns = [
     #Folium Student Map
     path('studFol/', views.folStud, name='stud_fol'),
 
+    #Travel Map
+    path('Travel/', views.Travel, name='trav_map'),
+
 ]
