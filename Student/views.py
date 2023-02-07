@@ -404,10 +404,58 @@ def applied(request):
 #Folium Map For Company Category
 def FoliumCategory(request):
 
+    #Create a map
+    m = folium.Map(location=[-1.286389,36.817223])
+
+    #Get the categories
     all_cat = Category.objects.all()
 
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        
+        cat_id = request.POST.get('cat_id')
+
+        #Get that specific Category
+        the_cat = Category.objects.get(cate_id = cat_id)
+
+        #Get the category
+        spec_cats = CompanyCategory.objects.filter(category = the_cat)
+
+        #Loop through cats
+        for one_company_cat in spec_cats:
+
+            print(one_company_cat.company.company.companylocation)
+
+            folium.Marker(location=[one_company_cat.company.company.companylocation.latitude, one_company_cat.company.company.companylocation.longitude]).add_to(m)
+
+        m = m._repr_html_()
+
+        return JsonResponse({'data': m, 'cat':the_cat.cate_name})
+
+    else:  
+
+        #The initial load  
+
+        all_locations = CompanyLocation.objects.all()
+
+        coordinates = []
+
+        for one_location in all_locations:
+
+            #print(one_location.longitude)
+
+            coordinate = [one_location.latitude,one_location.longitude]
+
+            coordinates.append(coordinate)
+
+            folium.Marker(location=[one_location.latitude, one_location.longitude]).add_to(m)
+
+        m = m._repr_html_()
+
+
     context = {
-        'categories':all_cat
+        'categories':all_cat,
+        'm':m
     }
 
     return render(request, 'Student/Dashboard/folCat.html',context)

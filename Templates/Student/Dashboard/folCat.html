@@ -29,7 +29,8 @@
     <!--The head menu-->
     <div class="head_menu">
 
-        
+        <h4 id="cat_name" ></h4>
+
     </div>
 
     <!--The main-->
@@ -53,7 +54,7 @@
 
                 </div>
 
-                <span>{{cat.cate_id}}</span>
+                <span class="cat_ids" >{{cat.cate_id}}</span>
 
             </div>
             {% endfor %}
@@ -61,13 +62,20 @@
         </div>
 
         <!--The map section-->
-        <div class="map_section">
+        <div class="map_section" id="map_section">
 
-
+            {{m | safe}}
 
         </div>
 
     </div>
+
+    <!--I want the token -->
+    <form >
+
+        {% csrf_token %}
+
+    </form>
     
 
 <!--Boostrap Link-->

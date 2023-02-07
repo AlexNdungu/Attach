@@ -12,6 +12,10 @@
     width: 100%;
     height: 70px;
     background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B39EF;
 }
 
 /* The main section */
@@ -36,6 +40,13 @@
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
+}
+
+/* The map section */
+.map_section {
+    width: calc(100% - 430px);
+    height: 98%;
+    margin-right: 10px;
 }
 
 /* The category */
@@ -73,7 +84,16 @@
     color: #D9D9D9;
 }
 
+.m_act {
+    background-color: #D9D9D9;
+    color: #474747;
+}
+
 .change_map:hover {
     background-color: #D9D9D9;
     color: #474747;
+}
+
+.cat_ids {
+    display: none;
 }
