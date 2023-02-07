@@ -80,11 +80,14 @@
                 
                     <!--The county-->
                     {% for county in Counties %}
-                    <div class="oneCounty1">
+                    <a href="{% url 'Lecturer:trav_map' county %}">
+                        <div class="oneCounty1">
 
-                        <span class="countyName" >{{county}}</span>
+                            <span class="countyName" >{{county}}</span>
+    
+                        </div>
+                    </a>
 
-                    </div>
                     {% endfor %}
 
                 </div>

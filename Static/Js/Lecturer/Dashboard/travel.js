@@ -25,7 +25,6 @@ function initMap() {
         //icon: {url:newIc, scaledSize: new google.maps.Size(20, 20)},
         title: 'Click to zoom'
     });
-    //C:\Users\Alex Meta Ndung'u\Documents\Django\Mapi\Static\Images\Logo.jpg
     
     marker.setMap(map);
 

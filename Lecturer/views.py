@@ -537,7 +537,9 @@ def folStud(request):
 
 
 #The traveling map
-def Travel(request):
+def Travel(request,str):
+
+    print(str)
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
