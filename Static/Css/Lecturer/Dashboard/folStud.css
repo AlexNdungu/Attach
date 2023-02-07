@@ -42,7 +42,7 @@
 /* The navigation */
 
 .navMap {
-    width: 70px;
+    width: 200px;
     height: 98%;
     border-radius: 15px;
     margin-left: 10px;
@@ -54,17 +54,23 @@
 }
 
 .men {
-    width: 60px;
+    width: 190px;
     height: 60px;
     border-radius: 10px;
     margin-top: 5px;
     background-color: #474747;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     fill: #D9D9D9;
     transition: 0.1s ease-in;
     cursor: pointer;
+}
+
+.men span {
+    font-size: 19px;
+    color: #D9D9D9;
+    margin: 20px;
 }
 
 .men:hover{
@@ -74,15 +80,16 @@
 
 .men svg {
     transform: scale(1.2);
+    margin-left: 20px;
 }
 
 /* The map */
 
 .mapSelf {
-    width: calc(100% - 100px);
+    width: calc(100% - 230px);
     height: max-content;
     border-radius: 15px;
-    margin-right: 10px;
+    margin-right: 5px;
     background-color: #D9D9D9;
 }
 
@@ -94,7 +101,7 @@
     flex-wrap: wrap;
 }
 
-.oneCounty {
+.oneCounty,.oneCounty1 {
     width: max-content;
     height: 45px;
     padding: 10px;
@@ -109,6 +116,6 @@
     transition: 0.1s ease-in;
 }
 
-.oneCounty:hover {
+.oneCounty:hover,.oneCounty1:hover {
     background-color: #4B39EF;
 }

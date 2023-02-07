@@ -534,3 +534,8 @@ def folStud(request):
     }
 
     return render(request,'Lecturer/Dashboard/folStud.html',context )    
+
+
+#The traveling map
+def Travel(request):
+    return render(request, 'Lecturer/Dashboard/travel.html')
