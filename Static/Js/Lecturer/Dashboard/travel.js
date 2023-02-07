@@ -1,5 +1,6 @@
 //Here we get the script with the map
-//console.log(coordinates)
+
+
 
 $.getScript( "https://maps.googleapis.com/maps/api/js?key=" + google_api_key + "&libraries=places") 
 .done(function( script, textStatus ) {
@@ -8,26 +9,53 @@ $.getScript( "https://maps.googleapis.com/maps/api/js?key=" + google_api_key + "
 })
 
 function initMap() {
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        center: { lat: -1.28333, lng: 36.81667 }
-    });
-    directionsDisplay.setMap(map);
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-    //var newIc = document.getElementById('img').src;
+    //My coordinates
+    let my_lat;
+    let my_long;
 
-    var marker = new google.maps.Marker({
-        position: { lat: -1.28333, lng: 36.81667 },
-        //map: map,
-        optimized: false,
-        //icon: {url:newIc, scaledSize: new google.maps.Size(20, 20)},
-        title: 'Click to zoom'
-    });
-    
-    marker.setMap(map);
+    navigator.geolocation.getCurrentPosition(
+        function (position) {  
+            initMap2(position.coords.latitude, position.coords.longitude)
+
+        },
+        function errorCallback(error) {
+           console.log(error)
+        }
+    );
+
+
+    function initMap2(lat, lng){
+
+        var myLatLng = {
+            lat,
+            lng
+        };
+
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: myLatLng
+        });
+        directionsDisplay.setMap(map);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+        //var newIc = document.getElementById('img').src;
+
+        var marker = new google.maps.Marker({
+            position: { lat: -1.28333, lng: 36.81667 },
+            //map: map,
+            optimized: false,
+            //icon: {url:newIc, scaledSize: new google.maps.Size(20, 20)},
+            title: 'Click to zoom'
+        });
+        
+        marker.setMap(map);
+
+        
+    }
+
 
 }
 
@@ -61,9 +89,6 @@ for(let a = 0; a < coods.length; a++){
 //     ];
 
 
-
-console.log(waypts)    
-
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
         origin: { lat: -1.28333, lng: 36.81667 },
@@ -83,7 +108,4 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
     });
 }
-
-
-
 
