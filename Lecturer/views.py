@@ -557,7 +557,8 @@ def Travel(request,str):
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
-        'coordinates':coordinates
+        'coordinates':coordinates,
+        'region':str
     }
 
     return render(request, 'Lecturer/Dashboard/travel.html', context)
