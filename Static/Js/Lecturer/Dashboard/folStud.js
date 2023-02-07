@@ -5,7 +5,8 @@ let numberBtn = document.getElementById('number_Map');
 let oneCountys = document.getElementsByClassName('oneCounty');
 
 let mapSelf = document.getElementById('mapSelf');
-let countyNames = document.getElementsByClassName('countyName')
+let countyNames = document.getElementsByClassName('countyName');
+let Activity = document.getElementById('Activity');
 
 let csrf = document.getElementsByName('csrfmiddlewaretoken');
 
@@ -32,6 +33,9 @@ heatBtn.addEventListener('click', ()=> {
         success: function(response){
 
             mapSelf.innerHTML = response.data
+
+            //Change The span
+            Activity.innerHTML = 'Heat Map';
             
         },
         error: function(error){
@@ -63,6 +67,8 @@ pinBtn.addEventListener('click', ()=> {
         success: function(response){
 
             mapSelf.innerHTML = response.data
+
+            Activity.innerHTML = 'Location Pins'
             
         },
         error: function(error){
@@ -94,6 +100,8 @@ numberBtn.addEventListener('click', ()=> {
         success: function(response){
 
             mapSelf.innerHTML = response.data
+
+            Activity.innerHTML = 'Region Numbers'
             
         },
         error: function(error){
@@ -132,6 +140,9 @@ for(let a = 0; a < oneCountys.length; a++){
             success: function(response){
 
                 mapSelf.innerHTML = response.data
+
+                //Change County
+                Activity.innerHTML = countyNames[a].innerHTML;
                 
             },
             error: function(error){
@@ -140,5 +151,29 @@ for(let a = 0; a < oneCountys.length; a++){
         });
 
     });
+
+}
+
+
+//Now lets focus on a button
+let men = document.getElementsByClassName('men');
+
+for(let a = 0; a < men.length; a++){
+
+    men[a].addEventListener('click', ()=> {
+
+        for(let b = 0; b < men.length; b++){
+
+            if(men[b].classList.contains('m_act')){
+
+                men[b].classList.remove('m_act')
+
+            }
+
+        }
+
+        men[a].classList.add('m_act');
+
+    })
 
 }
