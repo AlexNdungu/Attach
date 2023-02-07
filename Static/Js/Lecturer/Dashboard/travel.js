@@ -1,4 +1,5 @@
 //Here we get the script with the map
+//console.log(coordinates)
 
 $.getScript( "https://maps.googleapis.com/maps/api/js?key=" + google_api_key + "&libraries=places") 
 .done(function( script, textStatus ) {
@@ -30,12 +31,38 @@ function initMap() {
 
 }
 
-const waypts = [
-    {location: {lat: -1.218459, lng: 36.886906},
-    stopover: true},
-    {location: {lat: -1.038757, lng: 37.083375},
-    stopover: true}
-    ];
+
+//The waypoints
+const waypts = []
+
+//Lets get the coordinates
+let coods = document.getElementsByClassName('coods');
+
+for(let a = 0; a < coods.length; a++){
+
+    //Latitudes
+    //console.log(coods[a].innerHTML.split(",")[0].split("'")[1])
+    let lat = parseFloat(coods[a].innerHTML.split(",")[0].split("'")[1])
+
+    //Longitude
+    //console.log(coods[a].innerHTML.split(",")[1].split("'")[1])
+    let long = parseFloat(coods[a].innerHTML.split(",")[1].split("'")[1])
+
+
+    //Lets push the waypoints
+    waypts.push({location: {lat: lat, lng: long},stopover: true},)
+}
+
+// const waypts = [
+//     {location: {lat: -1.218459, lng: 36.886906},
+//     stopover: true},
+//     {location: {lat: -1.038757, lng: 37.083375},
+//     stopover: true}
+//     ];
+
+
+
+console.log(waypts)    
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
@@ -56,6 +83,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }
     });
 }
+
 
 
 

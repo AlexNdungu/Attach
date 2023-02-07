@@ -539,10 +539,25 @@ def folStud(request):
 #The traveling map
 def Travel(request,str):
 
-    print(str)
+    #Get all coordinates in that county
+    all_coods = CompanyLocation.objects.filter(county = str)
+
+    #print(all_coods)
+
+    coordinates = []
+
+    #Loop through the coordinates
+    for cood in all_coods:
+
+        coordinate = [cood.latitude,cood.longitude]
+
+        coordinates.append(coordinate)
+
+    print(coordinates)
 
     context = {
         'google_map_api':settings.GOOGLE_API_KEY,
+        'coordinates':coordinates
     }
 
     return render(request, 'Lecturer/Dashboard/travel.html', context)
