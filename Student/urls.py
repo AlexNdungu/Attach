@@ -41,4 +41,7 @@ urlpatterns = [
 
     #Applied attachments
     path('applied/',views.applied, name='applied'),
+
+    #Folium Category Map
+    path('catFolium/',views.FoliumCategory, name='fol_cat'),
 ]

@@ -399,3 +399,9 @@ def applied(request):
     }
 
     return render(request,'Student/Dashboard/applied.html',context)     
+
+
+#Folium Map For Company Category
+def FoliumCategory(request):
+    return render(request, 'Student/Dashboard/folCat.html')
+
